@@ -1,6 +1,24 @@
 try{
 
+    function headerSendwich(){
+
+        $(document).on('click', '.header-sedwich', function(){
+
+            if($(this).is('.active')){
+                $(this).removeClass('active');
+                $('.main-menu nav').stop().slideUp(300);
+            }else{
+                $(this).addClass('active');
+                $('.main-menu nav').stop().slideDown(300);
+            }
+
+        });
+
+    }
+
     $(document).ready(function(){
+
+        headerSendwich();
 
     });
 
