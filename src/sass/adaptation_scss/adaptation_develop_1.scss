@@ -26,11 +26,11 @@
             }
         }
 
-        .header-nav{
+        .header-nav{padding-bottom: 40px;
             .header-sendwich-wrap{display: block;}
-            .main-menu{padding: 15px 0 5px 0;
+            .main-menu{padding: 15px 0 5px 0;position: absolute;width: 100%;
                 nav{display: none;padding: 0 5px;
-                    ul{flex-wrap:wrap;height: auto;
+                    ul{flex-wrap:wrap;height: auto;justify-content:center;
                         li{padding: 0 5px;margin-bottom: 10px;}
                     }
                 }

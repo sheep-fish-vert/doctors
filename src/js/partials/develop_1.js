@@ -14,6 +14,14 @@ try{
 
         });
 
+        $(window).resize(function(){
+
+            if($(window).width()>992){
+                $('.main-menu nav').removeAttr('style');
+            }
+
+        });
+
     }
 
     $(document).ready(function(){
