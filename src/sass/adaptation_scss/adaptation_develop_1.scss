@@ -15,6 +15,30 @@
 }
 @media screen and (max-width: 992px){
 
+    /* header */
+
+        .header-left{display: flex;justify-content:space-between;}
+        .top-menu{float: none;width:calc(100% - 80px);
+            ul{width: 100%;
+                li{
+                    &:first-child{padding-left: 0;}
+                }
+            }
+        }
+
+        .header-nav{
+            .header-sendwich-wrap{display: block;}
+            .main-menu{padding: 15px 0 5px 0;
+                nav{display: none;padding: 0 5px;
+                    ul{flex-wrap:wrap;height: auto;
+                        li{padding: 0 5px;margin-bottom: 10px;}
+                    }
+                }
+            }
+        }
+
+    /* /header */
+
 }
 @media screen and (max-width: 767px){
 
@@ -23,6 +47,26 @@
 
 }
 @media screen and (max-width: 479px){
+
+    /* header */
+
+        .header-left{flex-wrap:wrap;
+            .content-block{width: 100%;text-align: center;
+                .logo, .doctor-naming{margin: 0 auto;}
+            }
+        }
+
+        .top-menu{width: 100%;padding-bottom: 50px;
+            ul{display: flex;height: auto;flex-wrap:wrap;justify-content:space-between;
+                li{display: block;margin-bottom: 20px;width: 50%;text-align: center;padding: 0 5px;}
+            }
+        }
+
+        .header-nav{
+            .header-sendwich-wrap{right:calc(50% - 15px);bottom:calc(100% + 15px);}
+        }
+
+    /* /header */
 
 }
 @media screen and (max-width: 320px){
