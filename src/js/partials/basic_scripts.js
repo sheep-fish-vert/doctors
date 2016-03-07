@@ -36,6 +36,10 @@ function oneHeightItems(){
     }
 
     oneHeight($('.oneHeight'));
+
+    if($(window).width()>992){
+        oneHeight($('.about-item'));
+    }
 }
 
 /*scroll animation*/
@@ -120,7 +124,7 @@ function headeButer(menuMobile,toggleMenu){
 
 /* DOCUMENT READY  */
 $(document).ready(function() {
-    //oneHeightItems();
+    oneHeightItems();
     $('.footer_placeholder').height($('.footer').outerHeight());
 
     //goTo();
