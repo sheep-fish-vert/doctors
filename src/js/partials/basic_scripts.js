@@ -40,6 +40,13 @@ function oneHeightItems(){
     if($(window).width()>992){
         oneHeight($('.about-item'));
     }
+    $(window).resize(function() {
+        if($(window).width()>992){
+            oneHeight($('.about-item'));
+        }else{
+            $('.about-item').removeAttr('style');
+        }
+    });
 }
 
 /*scroll animation*/
