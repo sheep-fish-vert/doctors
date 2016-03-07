@@ -14,16 +14,33 @@
 
 }
 @media screen and (max-width: 992px){
+    .description-doc{padding: 15px; max-width: 550px; margin: 0 auto;
+        .ctext p, .ctext h2 {text-align: center;}
+    }
 
 }
 @media screen and (max-width: 767px){
+    .wrap-content .content-box { padding-top: 35px;
+        .face-place-doc{ padding-left: 0;
+            .convert-foto { width: 250px; height: 250px;}
+            .button-row { padding: 20px 0 20px;}
+        }
+    }
 
 }
 @media screen and (max-width: 666px){
 
 }
 @media screen and (max-width: 479px){
-
+    .description-doc .ctext{
+        p{font-size: 14px;}
+        h2 {font-size: 24px; font-weight: 700; text-transform: uppercase;  line-height: 30px;}
+        ul {font-size: 22px;
+            li{font-size: 14px; padding-bottom: 5px;}
+        }
+    }
+    .button-spec{font-size: 14px;}
+    .wrap-content .content-box .face-place-doc .convert-foto { width: 200px; height: 200px;}
 }
 @media screen and (max-width: 320px){
 
