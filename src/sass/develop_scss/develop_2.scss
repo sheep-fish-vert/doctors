@@ -42,3 +42,28 @@
         }
     }
 }
+
+.footer {position: static;}
+.text-block{ max-width: 1000px; margin: 0 auto; padding: 15px;
+    p{font-size: 16px; font-family: "Roboto", sans-serif; font-weight: 300; color: rgb(0, 0, 0);line-height: 1.5;
+        span{font-weight: 500;}
+        a{color: rgb(0, 0, 0); text-decoration: none;}
+    }
+}
+
+.footer-tab{ height: 80px;
+    .classic-box{background-color: rgb(255, 255, 255); box-shadow: 0px 4px 6px 0px rgba(66, 69, 72, 0.2); border-radius: 3px;}
+    a{display: block; text-decoration: none; font-size: 16px; font-family: "Roboto", sans-serif; color: rgb(0, 0, 0);line-height: 80px; text-align: center;
+        span{position: relative;}
+        img{ position: absolute; top: 50%; left: 0;}
+    }
+    .logio-tab span{padding-left: 45px;
+        img{top: calc(50% - 36px/2);}
+    }
+    .phone span{padding-left: 25px;
+        img{top: calc(50% - 16px/2);}
+    }
+    .mail span{padding-left: 25px;
+        img{top: calc(50% - 12px/2);}
+    }
+}
