@@ -3,6 +3,9 @@
         .face-place-doc{ text-align: center; padding-left: 20px;
             .convert-foto{width:408px;  height: 408px; border-radius: 50%; overflow: hidden; position: relative; margin: 0 auto;
                 img{position: absolute; left:0px; top: 0px;right: 0px;}
+                &.no-avatar{background-color: #f4f5f9;box-shadow:0 4px 4px 0 rgba(0, 0, 0, .2);
+                    &:before{content:'';display: block;position: absolute;width: 194px;height: 192px;background-image:url(../images/no-avatar.png);background-repeat: no-repeat;left: calc(50% - 97px);top:calc(50% - 96px);}
+                }
             }
 
             .button-row{padding: 56px 0 29px;}

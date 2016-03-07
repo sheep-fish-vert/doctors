@@ -52,6 +52,7 @@
 
         .header-left{flex-wrap:wrap;
             .content-block{width: 100%;text-align: center;
+                &:last-child{max-width: none;}
                 .logo, .doctor-naming{margin: 0 auto;}
             }
         }

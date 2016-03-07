@@ -2,19 +2,45 @@
 
     .main-top{
         .content-block{ display: inline-block;
+            &:last-child{max-width:calc(100% - 232px);}
+            a{text-decoration: none;}
             .logo{ display: table; height: 80px;
                 .logo-img{display: table-cell; vertical-align: middle;}
                 .logo-text{ padding-left: 20px; display: table-cell; vertical-align: middle; font-size: 12px;font-family: "Roboto", sans-serif; font-weight: 300;
                     span{font-weight: 700; font-size: 24px;}
                 }
             }
-            .doctor-naming{display: table; height: 80px;
+            .doctor-naming{display: table; height: 80px;padding-left: 10px;
                 .user-face{display: table-cell; vertical-align: middle;
-                    .convert-img{border-radius: 50%; width: 34px; height: 34px; position: relative; overflow: hidden;}
+                    .convert-img{border-radius: 50%; width: 34px; height: 34px; position: relative; overflow: hidden;
+                        img{max-width: none;height: 100%;}
+                    }
                 }
                 .user-naming{display: table-cell; vertical-align: middle; font-size: 16px; font-family: "Roboto", sans-serif; line-height: 1.2; font-weight: 400; padding-left: 20px;
                     .user-name{ color: rgb(0, 174, 195);}
-                    .user-specialization{ color: #757575; font-size: 16px;}
+                    .user-specialization{ color: #757575; font-size: 16px;position: relative;
+                        &:after{content:'';display: block;position: absolute;top: 100%;height: 1px;width: 0;background-color:#757575;transition:width 300ms ease;}
+                    }
+                }
+                &.no-avatar{
+                    .user-face{
+                        .convert-img{background-color: #00acc1;position: relative;
+                            &:after{content: '';display: block;position: absolute;width: 10px;height: 14px;background-image: url(../images/no-avatar-header.png);background-repeat: no-repeat;left: calc(50% - 5px);top:calc(50% - 7px);}
+                        }
+                    }
+                }
+                &.user-enter{
+                    .user-face{
+                        .convert-img{background-color:transparent;position: relative;
+                            &:after{content: '';display: block;position: absolute;width: 10px;height: 14px;background-image: url(../images/enter-avatar-header.png);background-repeat: no-repeat;left: calc(50% - 5px);top:calc(50% - 7px);}
+                        }
+                    }
+                    .user-naming{padding-left:0;}
+                }
+                &:hover{
+                    .user-specialization{
+                        &:after{width: 100%;}
+                    }
                 }
 
             }
