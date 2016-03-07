@@ -36,6 +36,17 @@ function oneHeightItems(){
     }
 
     oneHeight($('.oneHeight'));
+
+    if($(window).width()>992){
+        oneHeight($('.about-item .about-item-wrap'));
+    }
+    $(window).resize(function() {
+        if($(window).width()>992){
+            oneHeight($('.about-item .about-item-wrap'));
+        }else{
+            $('.about-item .about-item-wrap').removeAttr('style');
+        }
+    });
 }
 
 /*scroll animation*/
@@ -120,7 +131,7 @@ function headeButer(menuMobile,toggleMenu){
 
 /* DOCUMENT READY  */
 $(document).ready(function() {
-    //oneHeightItems();
+    oneHeightItems();
     $('.footer_placeholder').height($('.footer').outerHeight());
 
     //goTo();

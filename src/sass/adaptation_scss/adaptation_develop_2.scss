@@ -11,12 +11,13 @@
 
 }
 @media screen and (max-width: 1024px){
-
+    .footer-tab a { line-height: 50px;}
 }
 @media screen and (max-width: 992px){
     .description-doc{padding: 15px; max-width: 550px; margin: 0 auto;
         .ctext p, .ctext h2 {text-align: center;}
     }
+
 
 }
 @media screen and (max-width: 767px){
@@ -30,6 +31,7 @@
 }
 @media screen and (max-width: 666px){
 
+
 }
 @media screen and (max-width: 479px){
     .description-doc .ctext{
@@ -41,6 +43,7 @@
     }
     .button-spec{font-size: 14px;}
     .wrap-content .content-box .face-place-doc .convert-foto { width: 200px; height: 200px;}
+    .text-block p {font-size: 14px;}
 }
 @media screen and (max-width: 320px){
 
