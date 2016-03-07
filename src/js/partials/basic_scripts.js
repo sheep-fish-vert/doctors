@@ -38,13 +38,13 @@ function oneHeightItems(){
     oneHeight($('.oneHeight'));
 
     if($(window).width()>992){
-        oneHeight($('.about-item'));
+        oneHeight($('.about-item .about-item-wrap'));
     }
     $(window).resize(function() {
         if($(window).width()>992){
-            oneHeight($('.about-item'));
+            oneHeight($('.about-item .about-item-wrap'));
         }else{
-            $('.about-item').removeAttr('style');
+            $('.about-item .about-item-wrap').removeAttr('style');
         }
     });
 }
