@@ -3,7 +3,7 @@ try{
 
         function showHideScrollButton(){
 
-            console.log($(window).scrollTop()+', '+$(window).height()/2);
+
 
             if($(window).scrollTop() > ($(window).height()/2)){
 
