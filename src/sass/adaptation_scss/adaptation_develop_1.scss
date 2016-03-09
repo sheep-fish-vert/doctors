@@ -28,16 +28,19 @@
 
         .header-nav{padding-bottom: 40px;
             .header-sendwich-wrap{display: block;}
-            .main-menu{padding: 15px 0 5px 0;position: absolute;width: 100%;
-                nav{display: none;padding: 0 5px;
-                    ul{flex-wrap:wrap;height: auto;justify-content:center;
-                        li{padding: 0 5px;margin-bottom: 10px;}
+            .main-menu{padding: 0;position: absolute;width: 100%;
+                nav{display: none;padding: 10px 5px 0;
+                    ul{display: block; height: auto;
+                        li{padding:10px 5px; height: 40px; display: block;
+                            a{line-height: 20px;}
+                        }
                     }
                 }
             }
         }
 
     /* /header */
+
 
 }
 @media screen and (max-width: 767px){
