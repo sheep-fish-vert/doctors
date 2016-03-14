@@ -28,11 +28,16 @@
 
         .header-nav{padding-bottom: 40px;
             .header-sendwich-wrap{display: block;}
-            .main-menu{padding: 0;position: absolute;width: 100%;
+            .main-menu{padding: 0;position: absolute;left:0;right:0;
                 nav{display: none;padding: 10px 5px 0;
-                    ul{display: block; height: auto;
-                        li{padding:10px 5px; height: 40px; display: block;
-                            a{line-height: 20px;}
+                    ul{display: block; height: auto;padding-bottom: 10px;
+                        li{display: block;
+                            a{line-height: 20px;padding:10px 5px;
+                                &:after{width: 300px;height: 4px;left:calc(50% - 150px);transform:scale(0);}
+                                &:hover{
+                                    &:after{transform:scale(1);}
+                                }
+                            }
                         }
                     }
                 }
@@ -61,7 +66,7 @@
         }
 
         .top-menu{width: 100%;padding-bottom: 50px;
-            ul{display: flex;height: auto;flex-wrap:wrap;justify-content:space-between;
+            ul{display: flex;height: auto;flex-wrap:wrap;justify-content:space-around;
                 li{display: block;margin-bottom: 20px;width: 50%;text-align: center;padding: 0 5px;}
             }
         }

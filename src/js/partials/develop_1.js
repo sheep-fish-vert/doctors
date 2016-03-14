@@ -20,6 +20,7 @@ try{
 
             if($(window).width()>992){
                 $('.main-menu nav').removeAttr('style');
+                $('.header-sedwich').removeClass('active');
             }
 
         });
