@@ -103,61 +103,52 @@
                         p{color: #999999; font-size: 12px;}
                     }
                 }
-                .block-button{ display: table; min-height: 70px;
-                    .drop{ display: table-cell; text-decoration: none; vertical-align: middle; position: relative;
-                        .convert{width: 40px; height: 40px; border-radius: 50%;  background-color: white; cursor: pointer; display: flex; justify-content:center; align-items: center; transition: all 0.3s; color: #bababa; font-size: 26px;
-                            &:hover{background-color: #efefef; color: #767676;}
-                        }
-
-                        .hide-hipe{display: none; position: absolute; background-color: white; right: 0; z-index: 10;}
-
-
-                        .soc-blok{ width: 350px; height: 110px; border-style: solid; border-width: 1px;  border-color: rgb(240, 240, 240); background-color: rgb(255, 255, 255);   @include box-shadow;  padding: 20px;
-                            .title-soc{font-size: 16px; font-family: "Roboto", sans-serif; color: rgb(0, 0, 0); text-align: center; font-weight: 300;  text-transform: uppercase;  line-height: 1.2;  padding-bottom: 10px; }
-                            ul{display: flex; justify-content: space-around; width: 100%;
-                                li {border-bottom: none;padding: 0;
-                                    &:before{display: none;}
-                                    a{text-decoration: none;}
-                                }
-
-                            }
-                        }
-
-                        .share-block{ width:285px; border-style: solid; border-width: 1px; border-color: rgb(240, 240, 240); background-color: rgb(255, 255, 255); @include box-shadow;
-                            ul li{font-size: 20px; color: rgb(117, 117, 117); padding: 10px 20px; border: none; transition: all 0.2s;
-                                a{text-decoration: none; display: block; color: rgb(117, 117, 117); display: table; min-height: 10px;
-                                    span{font-size: 16px; padding-left: 15px; display: table-cell; vertical-align: middle;}
-                                    i{ display: table-cell; vertical-align:  middle;}
-                                }
-
-                                &:first-child{padding-top: 20px; }
-                                &:last-child{border-top:2px solid #efefef; padding-bottom: 20px; }
-                                &:before{display: none;}
-                                &:hover{background-color:#00AEC3;
-                                    a{color: white;}
-                                }
-                            }
-
-                        }
-
-                    }
-                    .active-drop {
-                        .convert{ transform: rotate(90deg); background-color: #efefef; color: #767676; }
-                        //.hide-hipe{width: auto; height: auto;}
-                    }
-                }
             }
             li:last-child{ border-bottom:0px solid #efefef; }
         }
     }
 }
-.material_icons_remove_red_eye {
-  font-size: 20px;
-  font-family: "MaterialIcons";
-  color: rgb(117, 117, 117);
-  line-height: 1.35;
-  position: absolute;
-  left: 1269.937px;
-  top: 442px;
-  z-index: 138;
+
+.block-button{ display: table; min-height: 70px;
+    .drop{ display: table-cell; text-decoration: none; vertical-align: middle; position: relative;
+        .convert{width: 40px; height: 40px; border-radius: 50%;  background-color: white; cursor: pointer; display: flex; justify-content:center; align-items: center; transition: all 0.3s; color: #bababa; font-size: 26px;
+            &:hover{background-color: #efefef; color: #767676;}
+        }
+
+        .hide-hipe{display: none; position: absolute; background-color: white; right: 0; z-index: 10;}
+
+
+        .soc-blok{ width: 350px; height: 110px; border-style: solid; border-width: 1px;  border-color: rgb(240, 240, 240); background-color: rgb(255, 255, 255);   @include box-shadow;  padding: 20px;
+            .title-soc{font-size: 16px; font-family: "Roboto", sans-serif; color: rgb(0, 0, 0); text-align: center; font-weight: 300;  text-transform: uppercase;  line-height: 1.2;  padding-bottom: 10px; }
+            ul{display: flex; justify-content: space-around; width: 100%;
+                li {border-bottom: none;padding: 0;
+                    &:before{display: none;}
+                    a{text-decoration: none;}
+                }
+
+            }
+        }
+
+        .share-block{ width:285px; border-style: solid; border-width: 1px; border-color: rgb(240, 240, 240); background-color: rgb(255, 255, 255); @include box-shadow;
+            ul li{font-size: 20px; color: rgb(117, 117, 117); padding: 10px 20px; border: none; transition: all 0.2s;
+                a{text-decoration: none; display: block; color: rgb(117, 117, 117); display: table; min-height: 10px;
+                    span{font-size: 16px; padding-left: 15px; display: table-cell; vertical-align: middle;}
+                    i{ display: table-cell; vertical-align:  middle;}
+                }
+
+                &:first-child{padding-top: 20px; }
+                &:last-child{border-top:2px solid #efefef; padding-bottom: 20px; }
+                &:before{display: none;}
+                &:hover{background-color:#00AEC3;
+                    a{color: white;}
+                }
+            }
+
+        }
+
+    }
+    .active-drop {
+        .convert{ transform: rotate(90deg); background-color: #efefef; color: #767676; }
+        //.hide-hipe{width: auto; height: auto;}
+    }
 }

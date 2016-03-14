@@ -7,6 +7,16 @@ try{
             var smart1 = $('.drop-soc-block');
             var smart2 = $('.drop-share-block');
             var animDelay = 300;
+            var thisOne;
+
+            if ($('.drop').is(event.target)) {
+                thisOne =$(event.target) ;
+            }
+
+            if ($('.drop .convert').is(event.target) || $('.drop i').is(event.target) ) {
+                thisOne = $(event.target).closest('.drop');
+            }
+
             if (redFlag === true) {
 
                 redFlag = false;
@@ -22,8 +32,8 @@ try{
                         smart1.children('.hide-hipe').hide(animDelay);
                     }
                     else{
-                        smart1.addClass('active-drop');
-                        smart1.children('.hide-hipe').show(animDelay);
+                        thisOne.addClass('active-drop');
+                        thisOne.children('.hide-hipe').show(animDelay);
                     }
 
                 };
@@ -42,15 +52,12 @@ try{
                     }
 
                     else{
-                        smart2.addClass('active-drop');
-                        smart2.children('.hide-hipe').show(animDelay);
+                        thisOne.addClass('active-drop');
+                        thisOne.children('.hide-hipe').show(animDelay);
                     }
 
                 };
-
                 setTimeout(function() { redFlag = true;}, animDelay);
-
-
             }
 /*
             else

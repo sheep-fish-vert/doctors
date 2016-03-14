@@ -98,3 +98,25 @@
     }
 
 /* /header */
+
+/* error-page */
+
+    .error-page{text-align: center;
+        .container{display: flex;justify-content:center;align-items:center;padding-top: 30px;padding-bottom: 30px;}
+        .error-page-wrap{max-width: 570px;width: 100%;
+            .error-img{
+                img{margin-bottom: 20px;}
+            }
+            .title{font-size: 24px;color:#757575;margin-bottom: 15px;}
+            .text{font-size: 16px;color:#757575;line-height: 22px;
+                a{color:#00acc1;position: relative;text-decoration: none;
+                    &:after{content:'';display: block;position: absolute;left:0;top: 100%;background-color:#00acc1;height: 1px;width: 0;transition:width 300ms ease;}
+                    &:hover{
+                        &:after{width: 100%;}
+                    }
+                }
+            }
+        }
+    }
+
+/* /error-page */
