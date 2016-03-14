@@ -25,7 +25,20 @@
     /*/about*/
 }
 @media screen and (max-width: 767px){
-
+    /*chat*/
+    .chat-book{
+        .container{}
+        .main-chat{padding-left: 0;padding-top: 15px;margin-bottom: 15px;
+            .chat-person{}
+            .chat-person-img{
+                img{}
+            }
+            .chat-form{
+                textarea{max-height: 100px;}
+            }
+        }
+    }
+    /*/chat*/
 }
 @media screen and (max-width: 666px){
 

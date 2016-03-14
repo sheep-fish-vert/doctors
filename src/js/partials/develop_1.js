@@ -1,5 +1,7 @@
 try{
 
+    //sendwich for header
+
     function headerSendwich(){
 
         $(document).on('click', '.header-sedwich', function(){
@@ -22,11 +24,49 @@ try{
 
         });
 
-    }
+    };
+
+    // /sendwich for header
+
+    function errorPageMinHeight(){
+
+        if($('.error-page').length){
+
+            function whatHeight(){
+
+                var windowHeight = $(window).height();
+                var headerHeight = $('.header').height();
+                var footerHeight = $('.footer').height();
+                var mainTopHeight = $('.main .main-top').height();
+
+                var errorPageHeight = windowHeight - headerHeight - footerHeight - mainTopHeight;
+
+                $('.error-page .container').css({'min-height':errorPageHeight+'px'});
+            };
+
+            whatHeight();
+
+            $(window).load(function(){
+
+                whatHeight();
+
+            });
+
+            $(window).resize(function(){
+
+                whatHeight();
+
+            });
+
+        }
+
+    };
+
 
     $(document).ready(function(){
 
         headerSendwich();
+        errorPageMinHeight();
 
     });
 
