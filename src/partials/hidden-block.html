@@ -1,5 +1,45 @@
 <div class="hidden-block">
+    <div id="call-back">
+        <div class="call-back-wrap">
+            <div class="pop-title"><span>Обратная связь</span></div>
+            <div class="pop-subtitle">
+                <p>Мероприятия.</p>
+                <p>Перспективный план активного отдыха и дней здоровья</p>
+            </div>
+            <form action="ajax.php" name="" class="call-back-form">
+                <div class="pop-mbox">
 
+                    <div class="form_row">
+                        <div class="form_input">
+                            <input type="text" name="contact_name" required="required" value="" placeholder="ФИО*">
+                        </div>
+                    </div>
+                    <div class="form_row">
+                        <div class="form_input">
+                            <input type="email" name="email" placeholder="Ваш e-mail*" required="required" />
+                        </div>
+                    </div>
+                    <div class="form_row">
+                        <div class="form_input">
+                            <input type="text" name="contact_tel" value="" required="required" placeholder="Телефон" class="tel-mask">
+                        </div>
+                    </div>
+                    <div class="form_row txt">
+                        <p>в случае, если укажите Ваш номер телефона, с Вами оперативно свяжется автор и Вы сможете быстро обсудить все вопросы по рзмещенному материалу</p>
+                    </div>
+                </div>
+                <div class="all-we-need-is-love"><p>*Обязательные поля</p></div>
+                <div class="pop-mbox buttons-row">
+                    <button class="contact-submit">
+                        <span>Отмена</span>
+                    </button>
+                    <button type="submit" class="contact-submit">
+                        <span>Отправить</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
     <div id="call_success">
         <div class="call-success">
              <div class="call_success">
