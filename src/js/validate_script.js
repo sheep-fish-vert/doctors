@@ -47,7 +47,7 @@ function validate(form, options){
                 if( typeof(setings.submitFunction) === 'function' ) {
                     setings.submitFunction(form);
                 } else {
-                    $form.submit();
+                    $form[0].submit();
                 }
             }
         });
@@ -222,7 +222,11 @@ function fancyCallback(){
   })
 }
 $(document).ready(function(){
+
    validate('#call-popup .contact-form', {submitFunction:validationCall});
+
+   validate('.search-form');
+
    Maskedinput();
    fancyboxForm();
    fancyCallback();
