@@ -32,12 +32,22 @@
         }
     }
 
+
+
 }
 @media screen and (max-width: 666px){
 
 
 }
 @media screen and (max-width: 479px){
+    .doc-list-wrap .doc-list .doc-list-items li { display: block; padding: 10px;
+        .naming{width: 100%; max-width: 100%;}
+        .block-button{display: flex;justify-content: flex-end; min-height: auto;
+            .drop .soc-blok { right: -90px;width: 280px; height: auto;}
+           .drop .share-block {right: -10px;}
+        }
+    }
+
     .main-top .content-block .doctor-naming {padding-left: 0;}
     .description-doc .ctext{
         p{font-size: 14px;}
