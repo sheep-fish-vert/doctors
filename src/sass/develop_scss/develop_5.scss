@@ -1,3 +1,7 @@
+@mixin box-shadow {
+    box-shadow: 0px 4px 6px 0px rgba(66, 69, 72, 0.2);
+}
+
 /*three block on main*/
     .items{padding: 30px 0 5px;
         .item{ text-align: center;

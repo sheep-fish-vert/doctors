@@ -1,3 +1,7 @@
+@mixin box-shadow {
+    box-shadow: 0px 4px 6px 0px rgba(66, 69, 72, 0.2);
+}
+
 .wrap-content{background-attachment: fixed;background-image: url(../images/childrens.jpg); position: relative;z-index: 4; padding: 57px 0 33px;
     .content-box{background-color: white;  border-radius: 3px;background-color: rgb(255, 255, 255);   box-shadow: 0px 4px 6px 0px rgba(66, 69, 72, 0.2);  padding-top: 73px;
         .face-place-doc{ text-align: center; padding-left: 20px;
