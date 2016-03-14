@@ -91,24 +91,33 @@
 .doc-list-wrap{padding-top: 50px;
     .doc-list{
         .list-block{padding: 0;}
-        .doc-list-items{ width: 100%; background-color: #ffffff; @include box-shadow; border-radius: 3px;
-
-            li{ border-bottom:2px solid #efefef; display: flex; align-items: center; justify-content: space-between; padding-left: 50px; padding-right: 15px;position: relative;
-                &:before{content: ''; position: absolute; bottom: 0; left: 0; width: 5px; top: 100%; background-color: #ff7474; transition: all 0.5s; }
-                &:hover{
-                    &:before{top: 0;}
+    }
+}
+.doc-list-items, .doctor-row{ width: 100%; background-color: #ffffff; @include box-shadow; border-radius: 3px;
+    li{ border-bottom:2px solid #efefef; display: flex; align-items: center; justify-content: space-between; padding-left: 50px; padding-right: 15px;position: relative;
+        &:before{content: ''; position: absolute; bottom: 0; left: 0; width: 5px; top: 100%; background-color: #ff7474; transition: all 0.5s; }
+        &:hover{
+            &:before{top: 0;}
+        }
+        .doctoring{display: table; min-height: 70px; max-width: calc(100% - 125px);
+            .face-doc{display: table-cell; vertical-align: top; min-width: 36px;}
+            .name-item{padding-left: 15px;
+                h4{}
+                b{
+                    span{}
                 }
-                .naming{display: table; min-height: 70px; max-width: calc(100% - 125px);
-                    .type-item{display: table-cell; vertical-align: middle; min-width: 36px;}
-                    .name-item{display: table-cell; vertical-align: middle; padding-left: 15px;font-family: 'Roboto', sans-serif; font-weight: 300; line-height: 20px;
-                        h5{ color: black; font-size: 16px;}
-                        p{color: #999999; font-size: 12px;}
-                    }
-                }
+                p{}
             }
-            li:last-child{ border-bottom:0px solid #efefef; }
+        }
+        .naming{display: table; min-height: 70px; max-width: calc(100% - 125px);
+            .type-item{display: table-cell; vertical-align: middle; min-width: 36px;}
+            .name-item{display: table-cell; vertical-align: middle; padding-left: 15px;font-family: 'Roboto', sans-serif; font-weight: 300; line-height: 20px;
+                h5{ color: black; font-size: 16px;}
+                p{color: #999999; font-size: 12px;}
+            }
         }
     }
+    li:last-child{ border-bottom:0px solid #efefef; }
 }
 
 .block-button{ display: table; min-height: 70px;
