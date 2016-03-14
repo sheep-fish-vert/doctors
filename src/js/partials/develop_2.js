@@ -59,17 +59,6 @@ try{
                 };
                 setTimeout(function() { redFlag = true;}, animDelay);
             }
-/*
-            else
-            {
-                if ($(this).hasClass('active-drop')) {
-                    $(this).removeClass('active-drop');
-                }
-                else{
-                    $(this).addClass('active-drop');
-                }
-            }
-*/
         });
 
     });
