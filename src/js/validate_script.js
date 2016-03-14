@@ -209,9 +209,21 @@ function fancyboxForm(){
     padding:'0'
   })
 }
-
+function fancyCallback(){
+  $('.fancy-callback').fancybox({
+    openEffect  : 'fade',
+    closeEffect : 'fade',
+    autoResize:false,
+    autoSize:false,
+    'closeBtn' : true,
+    fitToView:true,
+    padding:'0',
+    maxWidth:'690'
+  })
+}
 $(document).ready(function(){
    validate('#call-popup .contact-form', {submitFunction:validationCall});
    Maskedinput();
    fancyboxForm();
+   fancyCallback();
 });

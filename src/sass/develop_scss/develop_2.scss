@@ -1,13 +1,19 @@
+@mixin box-shadow {
+    box-shadow: 0px 4px 6px 0px rgba(66, 69, 72, 0.2);
+}
+
 .soc{width: 46px; height: 46px; border-radius: 50%; border: 1px solid #767676; cursor: pointer; display: flex;align-items: center;justify-content: center; overflow: hidden; background-color: white; transition: all 0.5s; font-size: 16px; font-family: "FontAwesome"; color: rgb(117, 117, 117); text-decoration: none; }
 .soc:hover{ color: white; text-decoration: none;}
-.fb:hover{background-color: #23599b; border: 1px solid #23599b; box-shadow: 0px 4px 6px 0px rgba(66, 69, 72, 0.2);}
-.ok:hover{background-color: #da8f0f; border: 1px solid #da8f0f; box-shadow: 0px 4px 6px 0px rgba(66, 69, 72, 0.2);}
-.vk:hover{background-color: #0078b9; border: 1px solid #0078b9; box-shadow: 0px 4px 6px 0px rgba(66, 69, 72, 0.2);}
-.tw:hover{background-color: #00aef1; border: 1px solid #00aef1; box-shadow: 0px 4px 6px 0px rgba(66, 69, 72, 0.2);}
-.gp:hover{background-color: #d94d3c; border: 1px solid #d94d3c; box-shadow: 0px 4px 6px 0px rgba(66, 69, 72, 0.2);}
+.fb:hover{background-color: #23599b; border: 1px solid #23599b; @include box-shadow;}
+.ok:hover{background-color: #da8f0f; border: 1px solid #da8f0f; @include box-shadow;}
+.vk:hover{background-color: #0078b9; border: 1px solid #0078b9; @include box-shadow;}
+.tw:hover{background-color: #00aef1; border: 1px solid #00aef1; @include box-shadow;}
+.gp:hover{background-color: #d94d3c; border: 1px solid #d94d3c; @include box-shadow;}
+
+
 
 .wrap-content{background-attachment: fixed;background-image: url(../images/childrens.jpg); position: relative;z-index: 4; padding: 57px 0 33px;
-    .content-box{background-color: white;  border-radius: 3px;background-color: rgb(255, 255, 255);   box-shadow: 0px 4px 6px 0px rgba(66, 69, 72, 0.2);  padding-top: 73px;
+    .content-box{background-color: white;  border-radius: 3px;background-color: rgb(255, 255, 255);   @include box-shadow;  padding-top: 73px;
         .face-place-doc{ text-align: center; padding-left: 20px;
             .convert-foto{width:408px;  height: 408px; border-radius: 50%; overflow: hidden; position: relative; margin: 0 auto;
                 img{position: absolute; left:0px; top: 0px;right: 0px;}
@@ -57,7 +63,7 @@
 }
 
 .footer-tab{ height: 80px;
-    .classic-box{background-color: rgb(255, 255, 255); box-shadow: 0px 4px 6px 0px rgba(66, 69, 72, 0.2); border-radius: 3px;}
+    .classic-box{background-color: rgb(255, 255, 255); @include box-shadow; border-radius: 3px;}
     a{display: block; text-decoration: none; font-size: 16px; font-family: "Roboto", sans-serif; color: rgb(0, 0, 0);line-height: 80px; text-align: center;
         span{position: relative;
             &:after{content: ''; position: absolute;  bottom: 0; left: 0; right: 100%; background-color:rgb(117, 117, 117); transition: all 0.5s;}
@@ -84,7 +90,7 @@
 
 .doc-list-wrap{padding-top: 50px;
     .doc-list{
-        .doc-list-items{ width: 100%; background-color: #ffffff; box-shadow: 0px 4px 6px 0px rgba(66, 69, 72, 0.2); border-radius: 3px;
+        .doc-list-items{ width: 100%; background-color: #ffffff; @include box-shadow; border-radius: 3px;
             li{ border-bottom:2px solid #efefef; display: flex; justify-content: space-between; padding-left: 50px; padding-right: 15px;position: relative;
                 &:before{content: ''; position: absolute; bottom: 0; left: 0; width: 5px; top: 100%; background-color: #ff7474; transition: all 0.5s; }
                 &:hover{
@@ -106,7 +112,7 @@
                         .hide-hipe{display: none; position: absolute; background-color: white; right: 0; z-index: 10;}
 
 
-                        .soc-blok{ width: 350px; height: 110px; border-style: solid; border-width: 1px;  border-color: rgb(240, 240, 240); background-color: rgb(255, 255, 255);   box-shadow: 0px 4px 6px 0px rgba(66, 69, 72, 0.2);  padding: 20px;
+                        .soc-blok{ width: 350px; height: 110px; border-style: solid; border-width: 1px;  border-color: rgb(240, 240, 240); background-color: rgb(255, 255, 255);   @include box-shadow;  padding: 20px;
                             .title-soc{font-size: 16px; font-family: "Roboto", sans-serif; color: rgb(0, 0, 0); text-align: center; font-weight: 300;  text-transform: uppercase;  line-height: 1.2;  padding-bottom: 10px; }
                             ul{display: flex; justify-content: space-around; width: 100%;
                                 li {border-bottom: none;padding: 0;
@@ -117,7 +123,7 @@
                             }
                         }
 
-                        .share-block{ width:285px; border-style: solid; border-width: 1px; border-color: rgb(240, 240, 240); background-color: rgb(255, 255, 255); box-shadow: 0px 4px 6px 0px rgba(66, 69, 72, 0.2);
+                        .share-block{ width:285px; border-style: solid; border-width: 1px; border-color: rgb(240, 240, 240); background-color: rgb(255, 255, 255); @include box-shadow;
                             ul li{font-size: 20px; color: rgb(117, 117, 117); padding: 10px 20px; border: none; transition: all 0.2s;
                                 a{text-decoration: none; display: block; color: rgb(117, 117, 117); display: table; min-height: 10px;
                                     span{font-size: 16px; padding-left: 15px; display: table-cell; vertical-align: middle;}
