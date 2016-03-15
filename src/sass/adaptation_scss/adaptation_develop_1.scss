@@ -77,6 +77,17 @@
 
     /* /header */
 
+    /* search-row */
+
+        .search-row{
+            .search-input{
+                input{padding:0 108px 0 28px;}
+            }
+            .search-submit{width: 90px;}
+        }
+
+    /* /search-row */
+
 }
 @media screen and (max-width: 320px){
 
