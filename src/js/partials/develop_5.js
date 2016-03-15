@@ -7,12 +7,12 @@ try{
 
             if($(window).scrollTop() > ($(window).height()/2)){
 
-                $('.button-up').addClass('show');
+                $('.button-up, .button-plus').addClass('show');
 
             }
             else{
 
-                $('.button-up').removeClass('show');
+                $('.button-up, .button-plus').removeClass('show');
 
             }
 
