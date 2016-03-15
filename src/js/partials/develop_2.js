@@ -15,7 +15,8 @@ try{
 
             if ($('.drop .convert').is(event.target) || $('.drop i').is(event.target) ) {
                 thisOne = $(event.target).closest('.drop');
-            }
+            }          
+            
 
             if (redFlag === true) {
 
@@ -59,7 +60,24 @@ try{
                 };
                 setTimeout(function() { redFlag = true;}, animDelay);
             }
+            
+            // обработка кликов на пункты меню
+            
+            var thisTwo;
+            
+            if ($('.doctor-row').is(event.target)) {
+                thisTwo =$(event.target) ;
+                console.log('green');
+            }
+            
+            if ($(event.target).closest('.doctor-row').length) {
+                console.log('red');
+                thisTwo = $(event.target).closest('.doctor-row');
+            }
+            
         });
+        
+        console.log($('.collegs-wrap-doc').length);
 
     });
 
