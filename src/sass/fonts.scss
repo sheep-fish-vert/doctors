@@ -17,6 +17,8 @@
 /* fonts */
 //  example -> @include font-face('PFDinTextPro', 'PFDinTextPro-Bold', 700, italic);
 
+@include font-face('Helvetica', 'HelveticaRegular', 400);
+@include font-face('Helvetica', 'HelveticaBold', 700);
 @include font-face('slick');
 
 
