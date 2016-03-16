@@ -8,16 +8,21 @@
 
 }
 @media screen and (max-width: 1280px){
-
+    .collegs-wrap-doc{
+        .row{margin-left: -15px; margin-right: -15px;}
+    }
+    .lister-page{padding: 0 30px;}
 }
 @media screen and (max-width: 1024px){
     .footer-tab a { line-height: 50px;}
+    
 }
 @media screen and (max-width: 992px){
     .description-doc{padding: 15px; max-width: 550px; margin: 0 auto;
         .ctext p, .ctext h2 {text-align: center;}
     }
-
+    
+ 
 
 }
 @media screen and (max-width: 767px){
@@ -40,13 +45,16 @@
 
 }
 @media screen and (max-width: 479px){
-    .doc-list-wrap .doc-list .doc-list-items li { display: block; padding: 10px;
-        .naming{width: 100%; max-width: 100%;}
+    .dstranger-list .list-document{width: 100%; max-width: 100%;}
+    .universal-list li { display: block;padding-left: 15px;
+        li:fist-child, li:last-child{padding: 10px;}
+        .convers{width: 100%; max-width: 100%;}
         .block-button{display: flex;justify-content: flex-end; min-height: auto;
             .drop .soc-blok { right: -90px;width: 280px; height: auto;}
            .drop .share-block {right: -10px;}
         }
     }
+    .openAll li{padding: 10px;}
 
     .main-top .content-block .doctor-naming {padding-left: 0;}
     .description-doc .ctext{

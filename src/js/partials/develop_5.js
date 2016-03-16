@@ -1,18 +1,17 @@
 try{
-     function scrollTopButton(){
+
+    function scrollTopButton(){
 
         function showHideScrollButton(){
 
-
-
             if($(window).scrollTop() > ($(window).height()/2)){
 
-                $('.button-up').addClass('show');
+                $('.button-up, .button-plus').addClass('show');
 
             }
             else{
 
-                $('.button-up').removeClass('show');
+                $('.button-up, .button-plus').removeClass('show');
 
             }
 
@@ -40,8 +39,34 @@ try{
         });
 
     }
+
+    function plusButtonHover(){
+
+        $(document).on('mouseenter', '.button-plus.show', function(){
+
+            var item = $(this).find('.button-plus-list');
+
+            item.stop().slideDown(300, function(){
+                item.addClass('active');
+            });
+
+        });
+        $(document).on('mouseleave', '.button-plus', function(){
+
+            var item = $(this).find('.button-plus-list');
+
+            item.removeClass('active')
+
+            item.stop().slideUp(300);
+
+        });
+
+    }
+
+
     $(document).ready(function(){
             scrollTopButton();
+            plusButtonHover();
     });
 
     $(window).load(function(){
