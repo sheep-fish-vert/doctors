@@ -6,12 +6,12 @@ try{
 
             if($(window).scrollTop() > ($(window).height()/2)){
 
-                $('.button-up, .button-plus').addClass('show');
+                $('.button-up').addClass('show');
 
             }
             else{
 
-                $('.button-up, .button-plus').removeClass('show');
+                $('.button-up').removeClass('show');
 
             }
 
@@ -42,7 +42,7 @@ try{
 
     function plusButtonHover(){
 
-        $(document).on('mouseenter', '.button-plus.show', function(){
+        $(document).on('mouseenter', '.button-plus', function(){
 
             var item = $(this).find('.button-plus-list');
 
