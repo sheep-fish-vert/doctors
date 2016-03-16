@@ -271,15 +271,12 @@ function chat(){
         event.preventDefault();
         var form = $(this);
         var parentForm = $(this).parent();
-        console.log(namePerson.length);
 
 
         var id =13;
         var personImg = parentForm.find('.chat-person-img img').attr('src');
         var personName = parentForm.find('.chat-person-name').text();
         var message = parentForm.find('.chat-form textarea').val();
-        console.log('message ' , message.length);
-
 
 
         var date = new Date;
