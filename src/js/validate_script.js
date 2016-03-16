@@ -19,6 +19,7 @@ function validate(form, options){
             errorClass : 'errorText',
             focusCleanup : true,
             focusInvalid : false,
+            debug: true,
             invalidHandler: function(event, validator) {
                 if(typeof(setings.errorFunction) === 'function'){
                     setings.errorFunction(form);
@@ -91,6 +92,15 @@ function validate(form, options){
                 });
             }
         })
+
+        if($('textarea',$form).length) {
+            $('textarea',$form).rules( "add",
+            {
+                messages:{
+                    required:"Введите сообщение"
+                }
+            });
+        }
     }
 }
 
@@ -221,11 +231,90 @@ function fancyCallback(){
     maxWidth:'690'
   })
 }
+
+function chat(){
+    /*clone main Chat*/
+    var cloneChat = null;
+    function clonedChat(){
+        cloneChat = $('.cloned-chat').clone();
+        cloneChat.find('textarea').val(" ");
+
+    }
+
+
+
+    /* click on reply */
+    function clickOnreply(){
+        $(document).on('click', '.reply-post', function(event) {
+            event.preventDefault();
+
+            /* remove all cloned chats*/
+            $('.chat-item-wrap .cloned-chat').remove();
+
+            clonedChat();
+
+            var namePerson = $(this).parents('.chat-person-detail ').find('.chat-person-name span').text();
+
+            $(this).closest('.chat-item').find('>.text').after(cloneChat).next('.cloned-chat').slideDown(function(){
+                $(this).find('textarea').val(namePerson+", ").focus();
+                validate('.chat-item-wrap .cloned-chat form');
+            });
+
+        });
+    }
+    clickOnreply();
+}
+
+function mainChatSubmit(/*level*/){
+
+    var id =13;
+    var personImg = $('.main-chat .chat-person-img img').attr('src');
+    var personName = $('.main-chat .chat-person-name').text();
+    var message = $('.main-chat .chat-form textarea').val();
+
+    var date = new Date;
+    var minutes = date.getMinutes();
+    var hour = date.getHours();
+    var year = date.getFullYear();
+    var month = date.getMonth();
+    var day = date.getDate();
+
+
+
+    var wraper = '<div class="chat-item" data-id="'+id+'"><div class="chat-person cfix"><div class="chat-person-img"><img src="'+personImg+'" alt=""></div><div class="chat-person-detail "><div class="chat-person-name">'+personName+'</div><div class="chat-person-date"><i class="fa fa-calendar"></i><span>'+day+'.'+month+'.'+year+'</span><i class="fa fa-clock-o"></i><span>'+hour+'.'+minutes+'</span></div></div></div> <div class="text">'+message+'</div> <div class="block-button"><div class="drop drop-share-block"><div class="convert"><i class="material-icons">more_vert</i></div><div class="hide-hipe share-block"><ul><li><a href="#" class="reply-post"><i class="material-icons">reply</i><span>Ответить</span></a></li><li><a href="#" class="block-post"><i class="material-icons">block</i><span>Заблокировать</span></a></li></ul></div></div></div></div>';
+
+
+    $.ajax({
+        url: ajaxUrl,
+        type: "POST",
+        contentType:false,
+        processData:false,
+        cache:false,
+        success: function() {
+            console.log('success');
+            /*if(level == true){*/
+                /*$('.chat-item-wrap').find('.cloned-chat').closest('.chat-item').before(wraper);*/
+            /*}*/
+            /*if(level == false){*/
+                /*console.log(level);*/
+                $('.chat-item-wrap').prepend(wraper);
+            /*}*/
+           $('form').trigger("reset");
+        }
+    });
+
+
+}
+
+
 $(document).ready(function(){
+    chat();
 
    validate('#call-popup .contact-form', {submitFunction:validationCall});
 
-   validate('.search-form');
+    validate('.search-form');
+    validate('.main-chat:not(.cloned-chat) form',{submitFunction:mainChatSubmit});
+    //validate('.cloned-chat form',{submitFunction:mainChatSubmit()});
 
    Maskedinput();
    fancyboxForm();
