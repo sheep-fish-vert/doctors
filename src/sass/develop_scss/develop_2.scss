@@ -118,13 +118,13 @@
             .convert{border-radius: 50%; overflow: hidden;}
         }
         .name-item{padding-left: 15px; display: table-cell; vertical-align: middle;
-            .convert{display: flex; align-items: flex-start; margin-bottom: 15px;
+            .convert{display: flex; align-items: flex-start;
                 span{display: block; padding: 3px 7px ; color: white; background-color: #ff7474; margin-left: 10px; font-size: 12px; font-weight: 400;}
                 h4{font-family: 'Roboto', sans-serif; font-weight:700; font-size: 16px; color:black;}
                 h4:before{content: counter(plan-numbered)". ";}
             }                
-            h6{color: #545454; font-size: 12px; font-weight: 300; font-family: "Roboto", sans-serif; }
-            p{font-size: 12px; color:#757575; font-family: 'Roboto', sans-serif;  padding-top: 10px;font-weight:300; }
+            h6{color: #545454; font-size: 12px; font-weight: 300; font-family: "Roboto", sans-serif; padding-top: 15px; }
+            p{font-size: 12px; color:#757575; font-family: 'Roboto', sans-serif;  padding-top: 10px;font-weight:300;  }
         }
     }
 }
@@ -140,16 +140,21 @@
             .convert{border-radius: 50%; overflow: hidden;}
         }
         .name-item{padding-left: 15px; display: table-cell; vertical-align: middle;
-            .convert{display: flex; align-items: flex-start; justify-content: flex-start; margin-bottom: 15px;
+            .convert{display: flex; align-items: flex-start; justify-content: flex-start; 
                 strong{display: block; padding: 3px 7px ; color: white; background-color: #ff7474; margin-left: 10px; font-size: 12px; font-weight: 400;}
                 h4{font-family: 'Roboto', sans-serif; font-weight:400; font-size: 16px; color:#00aec3;
                     span{background-color: white; padding: 0; margin: 0; display: inline;}
                 }
             } 
-                          
-            b{ font-size: 12px; color: #000000; font-family: 'Roboto', sans-serif; font-weight:300; display: block; 
-                span{color: #00aec3;}
+            
+            .frack{padding-top: 15px;
+                b{ font-size: 12px; color: #000000; font-family: 'Roboto', sans-serif; font-weight:300; display: block;                 
+                    span{color: #00aec3;}
+                }
             }
+                          
+            
+            
             p{font-size: 12px; color:#757575; font-family: 'Roboto', sans-serif;  padding-top: 10px;font-weight:300; }
         }       
    } 
