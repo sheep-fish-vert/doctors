@@ -31,15 +31,15 @@ try{
                     }
                 else{
 
-                    if (thisOne.hasClass('active-drop')){ 
+                    if ($(thisOne).hasClass('active-drop')){ 
                             smart1.removeClass('active-drop');                      
                             smart1.children('.hide-hipe').hide(animDelay);
                         }  
                     else{
                         smart1.removeClass('active-drop'); 
                         smart1.children('.hide-hipe').hide(animDelay);
-                        thisOne.addClass('active-drop');
-                        thisOne.children('.hide-hipe').show(animDelay);
+                        $(thisOne).addClass('active-drop');
+                        $(thisOne).children('.hide-hipe').show(animDelay);
                     };
 
                 };
@@ -51,15 +51,15 @@ try{
                     }
 
                 else{
-                    if (thisOne.hasClass('active-drop')){ 
+                    if ( $(thisOne).hasClass('active-drop')){ 
                             smart2.removeClass('active-drop');                      
                             smart2.children('.hide-hipe').hide(animDelay);
                         }  
                     else{
                         smart2.removeClass('active-drop'); 
                         smart2.children('.hide-hipe').hide(animDelay);
-                        thisOne.addClass('active-drop');
-                        thisOne.children('.hide-hipe').show(animDelay);
+                        $(thisOne).addClass('active-drop');
+                        $(thisOne).children('.hide-hipe').show(animDelay);
                     };
                     
 
@@ -128,6 +128,13 @@ try{
             $(this).find('.name-item>.convert>h4>span').html('('+ counter + ')');
             $(this).find('.spec-c>.open-more').html(counter);
         });
+        
+        $(".tab-title").each(function(index) {
+            var fff = index ;
+            var counter =  $('.tabs-conteiner').eq(fff).find('.item').length;
+            $(this).find('span').html('('+ counter + ')');
+        });
+        
         
         
 

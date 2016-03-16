@@ -163,8 +163,11 @@ function headeButer(menuMobile,toggleMenu){
 
 /* DOCUMENT READY  */
 $(document).ready(function() {
+
     oneHeightItems();
     $('.footer_placeholder').height($('.footer').outerHeight());
+
+    cutText();
 
     //goTo();
     //animationBlock($('.setion-animate'));

@@ -21,11 +21,13 @@
     .description-doc{padding: 15px; max-width: 550px; margin: 0 auto;
         .ctext p, .ctext h2 {text-align: center;}
     }
+    .content-tabs .tabs-conteiner .item-list .item {width: 33%;}
     
  
 
 }
 @media screen and (max-width: 767px){
+    .wrap-texter .container .text-block .title-text-desc {display: block;}
     .wrap-content .content-box { padding-top: 35px;
         .face-place-doc{ padding-left: 0;
             .convert-foto { width: 250px; height: 250px;
@@ -36,15 +38,24 @@
             .button-row { padding: 20px 0 20px;}
         }
     }
-
+    .content-tabs .tabs-conteiner .item-list .item {width: 50%;}
+    
 
 
 }
 @media screen and (max-width: 666px){
-
+    .content-tabs .korpus input[type="radio"]:checked + label {  font-weight: 700; font-size: 12px;}
+    .content-tabs .korpus label {font-size: 12px;}
 
 }
 @media screen and (max-width: 479px){
+    
+    .content-tabs .korpus label { width: 50%;}
+    .wrap-texter .container .text-block { padding: 30px 10px 0;}
+    .wrap-texter .container .text-block .foot-text .soc-row {text-align: center;
+        p { width: 100%; padding-bottom: 20px; text-align: center;}
+    }
+    
     .dstranger-list .list-document{width: 100%; max-width: 100%;}
     .universal-list li { display: block;padding-left: 15px;
         li:fist-child, li:last-child{padding: 10px;}
