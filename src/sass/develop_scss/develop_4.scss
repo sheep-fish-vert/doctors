@@ -41,7 +41,7 @@
         }
     }
     .middle-block{padding-bottom: 35px;}
-    .cloned-chat{display: none;padding-left: 0;margin-bottom: 10px;padding-top: 10px;
+    .cloned-chat{display: none;padding-left: 0;margin-bottom: 0px;padding-top: 10px;padding-bottom: 10px;
         form{display: flex;align-items: flex-start;}
         .chat-person{width: 49px;justify-content: flex-start;}
         .chat-form{width: calc(100% - 49px);max-width: 620px;}
@@ -82,6 +82,6 @@
     .text{padding-left: 46px;padding-top: 10px;max-width: 90%;padding-bottom: 24px;
         span{font-weight: bold;}
     }
-    .block-button{position: absolute;top: 0;right: 0;}
+    .block-button{position: absolute;top: 0;right: 15px;}
 }
 /*/chat*/
