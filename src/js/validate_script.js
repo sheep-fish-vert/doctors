@@ -260,7 +260,6 @@ function chat(){
                 $(this).find('textarea').val(namePerson+", ").focus();
             });
 
-            console.log(namePerson);
         });
     }
     clickOnreply();
@@ -277,6 +276,7 @@ function chat(){
         var personLastName = $('.main-chat .chat-person-name span').last().text();
         var message = parentForm.find('.chat-form textarea').val();         //MESSEGE
         var messageTag = null;
+        var otherButton = "";
 
         if(parentForm.hasClass('main-chat')){
             namePerson = 0;
@@ -301,9 +301,11 @@ function chat(){
         var month = date.getMonth();
         var day = date.getDate();
 
-        var wraper = '<div class="chat-item"><div class="chat-person cfix"><div class="chat-person-img"><img src="'+personImg+'" alt=""></div><div class="chat-person-detail "><div class="chat-person-name"><span>'+personName+'</span> '+'<span>'+personLastName+'</span></div><div class="chat-person-date"><i class="fa fa-calendar"></i><span>'+day+'.'+month+'.'+year+'</span><i class="fa fa-clock-o"></i><span>'+hour+'.'+minutes+'</span><span class="reply-post"><i class="material-icons">reply</i><span>Ответить</span></span></div></div></div> <div class="text">'+messageTag+'</div> <div class="block-button"><div class="drop drop-share-block"><div class="convert"><i class="material-icons">more_vert</i></div><div class="hide-hipe share-block"><ul><li><a href="#" class="reply-post"><i class="material-icons">reply</i><span>Ответить</span></a></li><li><a href="#" class="block-post"><i class="material-icons">block</i><span>Заблокировать</span></a></li></ul></div></div></div></div>';
+        if(parentForm.hasClass('main-chat')){
+            otherButton = '<div class="block-button"><div class="drop drop-share-block"><div class="convert"><i class="material-icons">more_vert</i></div><div class="hide-hipe share-block"><ul><li><a href="#" class="reply-post"><i class="material-icons">reply</i><span>Ответить</span></a></li><li><a href="#" class="block-post"><i class="material-icons">block</i><span>Заблокировать</span></a></li></ul></div></div></div>';
+        }
+        var wraper = '<div class="chat-item"><div class="chat-person cfix"><div class="chat-person-img"><img src="'+personImg+'" alt=""></div><div class="chat-person-detail "><div class="chat-person-name"><span>'+personName+'</span> '+'<span>'+personLastName+'</span></div><div class="chat-person-date"><i class="fa fa-calendar"></i><span>'+day+'.'+month+'.'+year+'</span><i class="fa fa-clock-o"></i><span>'+hour+'.'+minutes+'</span><span class="reply-post"><i class="material-icons">reply</i><span>Ответить</span></span></div></div></div> <div class="text">'+messageTag+'</div>'+otherButton+'</div>';
 
-        console.log("submit"+namePerson);
         $.ajax({
             url: ajaxUrl,
             type: "POST",
