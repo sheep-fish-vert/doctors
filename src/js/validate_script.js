@@ -234,7 +234,8 @@ function fancyCallback(){
 
 function chat(){
     /*clone main Chat*/
-    var cloneChat = null;
+    var cloneChat = null,
+        namePerson = null;
     function clonedChat(){
         cloneChat = $('.cloned-chat').clone();
         cloneChat.find('textarea').val(" ");
@@ -253,70 +254,84 @@ function chat(){
 
             clonedChat();
 
-            var namePerson = $(this).parents('.chat-person-detail ').find('.chat-person-name span').text();
+            namePerson = $(this).closest('.chat-item').find('>.chat-person .chat-person-name span').text();
 
             $(this).closest('.chat-item').find('>.text').after(cloneChat).next('.cloned-chat').slideDown(function(){
                 $(this).find('textarea').val(namePerson+", ").focus();
-                validate('.chat-item-wrap .cloned-chat form');
+                /*validate('.chat-item-wrap .cloned-chat form');*/
             });
 
         });
     }
     clickOnreply();
+
+    function mainChatSubmit(){
+
+        $(document).on('submit', '.form-chat-main', function(event) {
+        event.preventDefault();
+        var form = $(this);
+        var parentForm = $(this).parent();
+
+
+        var id =13;
+        var personImg = parentForm.find('.chat-person-img img').attr('src');
+        var personName = parentForm.find('.chat-person-name').text();
+        var message = parentForm.find('.chat-form textarea').val();
+
+
+        var date = new Date;
+        var minutes = date.getMinutes();
+        var hour = date.getHours();
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var day = date.getDate();
+
+        var wraper = '<div class="chat-item" data-id="'+id+'"><div class="chat-person cfix"><div class="chat-person-img"><img src="'+personImg+'" alt=""></div><div class="chat-person-detail "><div class="chat-person-name">'+personName+'</div><div class="chat-person-date"><i class="fa fa-calendar"></i><span>'+day+'.'+month+'.'+year+'</span><i class="fa fa-clock-o"></i><span>'+hour+'.'+minutes+'</span></div></div></div> <div class="text">'+message+'</div> <div class="block-button"><div class="drop drop-share-block"><div class="convert"><i class="material-icons">more_vert</i></div><div class="hide-hipe share-block"><ul><li><a href="#" class="reply-post"><i class="material-icons">reply</i><span>Ответить</span></a></li><li><a href="#" class="block-post"><i class="material-icons">block</i><span>Заблокировать</span></a></li></ul></div></div></div></div>';
+
+
+        $.ajax({
+            url: ajaxUrl,
+            type: "POST",
+            contentType:false,
+            processData:false,
+            cache:false,
+            success: function() {
+                console.log('success');
+                if(message.length+2 > namePerson.length){
+                    console.log('false');
+                    return false;
+                }else{
+                    $('.chat-item-wrap').prepend(wraper);
+                }
+                /*if(level == true){*/
+                    /*$('.chat-item-wrap').find('.cloned-chat').closest('.chat-item').before(wraper);*/
+                /*}*/
+                /*if(level == false){*/
+                    /*console.log(level);*/
+
+                /*}*/
+               //$('form').trigger("reset");
+            }
+        });
+
+        });
+    }
+    mainChatSubmit();
 }
 
-function mainChatSubmit(/*level*/){
 
-    var id =13;
-    var personImg = $('.main-chat .chat-person-img img').attr('src');
-    var personName = $('.main-chat .chat-person-name').text();
-    var message = $('.main-chat .chat-form textarea').val();
-
-    var date = new Date;
-    var minutes = date.getMinutes();
-    var hour = date.getHours();
-    var year = date.getFullYear();
-    var month = date.getMonth();
-    var day = date.getDate();
-
-
-
-    var wraper = '<div class="chat-item" data-id="'+id+'"><div class="chat-person cfix"><div class="chat-person-img"><img src="'+personImg+'" alt=""></div><div class="chat-person-detail "><div class="chat-person-name">'+personName+'</div><div class="chat-person-date"><i class="fa fa-calendar"></i><span>'+day+'.'+month+'.'+year+'</span><i class="fa fa-clock-o"></i><span>'+hour+'.'+minutes+'</span></div></div></div> <div class="text">'+message+'</div> <div class="block-button"><div class="drop drop-share-block"><div class="convert"><i class="material-icons">more_vert</i></div><div class="hide-hipe share-block"><ul><li><a href="#" class="reply-post"><i class="material-icons">reply</i><span>Ответить</span></a></li><li><a href="#" class="block-post"><i class="material-icons">block</i><span>Заблокировать</span></a></li></ul></div></div></div></div>';
-
-
-    $.ajax({
-        url: ajaxUrl,
-        type: "POST",
-        contentType:false,
-        processData:false,
-        cache:false,
-        success: function() {
-            console.log('success');
-            /*if(level == true){*/
-                /*$('.chat-item-wrap').find('.cloned-chat').closest('.chat-item').before(wraper);*/
-            /*}*/
-            /*if(level == false){*/
-                /*console.log(level);*/
-                $('.chat-item-wrap').prepend(wraper);
-            /*}*/
-           $('form').trigger("reset");
-        }
-    });
-
-
-}
 
 
 $(document).ready(function(){
     chat();
 
-   validate('#call-popup .contact-form', {submitFunction:validationCall});
+    validate('#call-popup .contact-form', {submitFunction:validationCall});
 
     validate('.search-form');
-    validate('.main-chat:not(.cloned-chat) form',{submitFunction:mainChatSubmit});
+    //validate('.main-chat:not(.cloned-chat) form',{submitFunction:mainChatSubmit});
     //validate('.cloned-chat form',{submitFunction:mainChatSubmit()});
 
-   Maskedinput();
-   fancyboxForm();
-   fancyCallback();
+    Maskedinput();
+    fancyboxForm();
+    fancyCallback();
 });
