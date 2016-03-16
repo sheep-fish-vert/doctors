@@ -16,6 +16,27 @@
     /* /search-row */
 
 }
+@media screen and (max-width: 1200px){
+
+    /* fotogallery */
+
+        .fotoblock{
+
+            .fotogallery-item{
+                .content{
+                    .text-top{flex-wrap:wrap;justify-content:flex-start;
+                        span{display: block;width: 100%;margin-bottom: 5px;
+                            &.images-value{margin-bottom: 0;}
+                        }
+                    }
+                }
+            }
+
+        }
+
+    /* /fotogallery */
+
+}
 @media screen and (max-width: 1024px){
 
 }
@@ -52,12 +73,61 @@
 
     /* /header */
 
+    /* fotogallery */
+
+        .fotoblock{
+            .fotogallery-container{justify-content:space-between;
+                .fotogallery-item{width: calc(50% - 10px);
+                    &:nth-child(3n-1){margin: 0;}
+                    .content{
+                        .text-top{flex-wrap:nowrap;justify-content:space-between;
+                            span{display: inline-block;margin-bottom: 0px;width: auto;}
+                        }
+                    }
+                }
+            }
+        }
+
+    /* /fotogallery */
+
 
 }
 @media screen and (max-width: 767px){
 
+    /* fotogallery */
+
+        .fotoblock{padding: 57px 15px 0 15px;
+            .fotogallery-title{text-align: center;}
+            .fotogallery-container{margin-bottom: 40px;
+                .fotogallery-item{margin-bottom: 30px;
+                    .content{
+                        .text-top{flex-wrap:wrap;justify-content:flex-start;
+                            span{width: 100%;margin-bottom: 5px;}
+                        }
+                        .text-bottom{font-size: 16px;line-height: 22px;}
+                    }
+                }
+            }
+        }
+
+    /* /fotogallery */
+
 }
 @media screen and (max-width: 666px){
+
+    /* fotogallery */
+
+        .fotoblock{
+            .fotogallery-container{display: block;
+                .fotogallery-item, .fotogallery-item:nth-child(3n-1){max-width: 400px;width: 100%;margin: 0 auto 20px auto;
+                    .content{
+                        .text-bottom{min-height: 55px;}
+                    }
+                }
+            }
+        }
+
+    /* /fotogallery */
 
 }
 @media screen and (max-width: 479px){
