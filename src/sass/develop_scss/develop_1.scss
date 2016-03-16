@@ -144,6 +144,7 @@
 
     .search-row{padding-top: 57px;
         .search-row-wrap{position: relative;}
+        form{position: relative;}
         .search-input{
             input{width: 100%;padding:0 168px 0 28px;height: 50px;line-height: 50px;font-size: 16px;color:#000;border:2px solid transparent;@include box-shadow;transition:box-shadow 300ms ease, border-color 300ms ease;
                 &::-webkit-input-placeholder {font-family: sans-serif;font-size: 16px;color:#000;}
@@ -193,3 +194,63 @@
     }
 
 /* /fotogallery */
+
+/* single-items */
+
+    .single-items{padding-top: 40px;
+        .single-items-wrap{display: flex;flex-wrap:wrap;
+            .single-item-wrap{width: calc(33.33% - 14px);margin-bottom: 30px;
+                a{text-decoration: none;}
+                &:nth-child(3n-1){margin: 0 21px 30px 21px;}
+                .img{height: 320px;position: relative;overflow: hidden;border-radius: 4px 4px 0 0;background-color: #fff;
+                    img{max-width: none;min-width:100%;min-height: 100%;position: absolute;left: 50%;top: 50%;transform:translate(-50%, -50%) scale(1);transition:transform 300ms ease;}
+                }
+                .text{background-color: #fff;@include box-shadow;transition:box-shadow 300ms ease;
+                    .text-body{padding: 15px 20px 20px 25px;border-bottom: 1px solid #efefef;
+                        .text-top{font-family: 'Helvetica', sans-serif;color:#000;font-weight: 700;font-size: 16px;line-height:22px;position: relative;padding-right: 30px;margin-bottom: 25px;
+                            &:after{content:'';display: block;position: absolute;right:0;top:0;background-image:url(../images/single-item-img.png);background-repeat:no-repeat;width: 21px;height: 20px;}
+                        }
+                        .text-main{color:#000;font-family:'Helvetica', sans-serif;font-size: 17px;line-height: 23px;}
+                    }
+                    .text-bottom{display: flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding: 12px 15px 10px 12px;
+                        .user{display: block;display: flex;align-items:center;color:#00acc1;font-size: 14px;line-height:20px;margin-bottom: 5px;
+                            .user-img{display: inline-block;width: 20px;height: 20px;border-radius: 50%;overflow: hidden;margin-right: 5px;}
+                        }
+                        .singularity{font-size: 14px;color:#bababa;margin-bottom: 5px;
+                            .date{margin-right: 15px;
+                                &:before{content:'';display: inline-block;width: 10px;height: 10px;background-image:url(../images/calendar-img.png);background-repeat: no-repeat;vertical-align: middle;margin-right: 3px;}
+                            }
+                            .time{
+                                &:before{content:'';display: inline-block;width: 10px;height: 10px;background-image:url(../images/clock-img.png);background-repeat: no-repeat;vertical-align: middle;margin-right: 3px;}
+                            }
+                        }
+                    }
+                }
+                &:hover{
+                    .img{
+                        img{transform:translate(-50%, -50%) scale(1.03);}
+                    }
+                    .text{box-shadow:0 4px 6px 0px rgba(0, 0, 0, .5);}
+                }
+            }
+        }
+    }
+
+/* /single-items */
+
+/* tags */
+
+    .tags{padding-top: 40px;
+        .tags-title, .tags-links{display: inline-block;vertical-align: top;}
+        .tags-title{font-family: "Helvetica", sans-serif;font-weight: 700;font-size: 16px;color:#000;}
+        .tags-links{font-size: 16px;color:#545454;max-width: calc(100% - 130px);
+            a{color:#545454;position: relative;text-decoration: none;display: inline-block;
+                &:after{content:'';display: block;position:absolute;left:0;bottom:0;height: 1px;width:0;background-color: #545454;transition:width 300ms ease;}
+                &:hover{
+                    &:after{width: 100%;}
+                }
+            }
+        }
+    }
+
+/* /tags */

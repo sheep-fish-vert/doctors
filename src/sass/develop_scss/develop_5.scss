@@ -54,7 +54,7 @@
             .material-icons{position: absolute;left:calc(50% - 12px);top: calc(50% - 12px);opacity:0;transition:opacity 300ms ease;}
 
         }
-        .button-plus-list{position: absolute;bottom:100%;left:7px;z-index: 0;display: none;width: 220px;
+        .button-plus-list{position: absolute;bottom:calc(100% - 10px);left:7px;z-index: 0;display: none;width: 220px;
             &.active{
                 a{
                     li{
