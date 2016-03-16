@@ -26,6 +26,7 @@
 
 }
 @media screen and (max-width: 767px){
+    .wrap-texter .container .text-block .title-text-desc {display: block;}
     .wrap-content .content-box { padding-top: 35px;
         .face-place-doc{ padding-left: 0;
             .convert-foto { width: 250px; height: 250px;
@@ -45,6 +46,11 @@
 
 }
 @media screen and (max-width: 479px){
+    .wrap-texter .container .text-block { padding: 30px 10px 0;}
+    .wrap-texter .container .text-block .foot-text .soc-row {text-align: center;
+        p { width: 100%; padding-bottom: 20px; text-align: center;}
+    }
+    
     .dstranger-list .list-document{width: 100%; max-width: 100%;}
     .universal-list li { display: block;padding-left: 15px;
         li:fist-child, li:last-child{padding: 10px;}
