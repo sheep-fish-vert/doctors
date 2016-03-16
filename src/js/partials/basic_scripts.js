@@ -37,10 +37,42 @@ function oneHeightItems(){
 
     oneHeight($('.oneHeight'));
 
+    if($(window).width()>666){
+        $('.fotogallery-container').each(function(index, el) {
+            oneHeight($(this).find('.text-bottom'));
+        });
+    }
+
     if($(window).width()>992){
         oneHeight($('.about-item .about-item-wrap'));
     }
+
+    $(window).load(function(){
+
+        if($(window).width()>666){
+            $('.fotogallery-container').each(function(index, el) {
+                oneHeight($(this).find('.text-bottom'));
+            });
+        }
+
+        if($(window).width()>992){
+            oneHeight($('.about-item .about-item-wrap'));
+        }
+
+    });
+
     $(window).resize(function() {
+
+        if($(window).width()>666){
+            $('.fotogallery-container').each(function(index, el) {
+                oneHeight($(this).find('.text-bottom'));
+            });
+        }else{
+           $('.fotogallery-container').each(function(index, el) {
+               $(this).find('.text-bottom').removeAttr('style');
+           });
+        }
+
         if($(window).width()>992){
             oneHeight($('.about-item .about-item-wrap'));
         }else{
