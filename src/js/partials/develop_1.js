@@ -132,9 +132,10 @@ try{
                 afterShow:function(){
                     $('.slider-body-main').on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
                             var i = (currentSlide ? currentSlide : 0) + 1;
-                            console.log($('.slider-body-main .slick-current').data('name'));
-                            $('.slider-num').text(i + '/' + slick.slideCount);
+
+                            $('.slider-num').text(i + ' из ' + slick.slideCount);
                             $('.slider-name-wrap').text($('.slider-body-main .slick-current').data('name')+'.'+$('.slider-body-main .slick-current').data('type'));
+
                         });
 
                     $('.slider-body-main').slick({
@@ -148,12 +149,29 @@ try{
                         slidesToShow:10,
                         slidesToScroll:1,
                         infinite:false,
-                        asNavFor:'.slider-bottom'
+                        asNavFor:'.slider-body-main',
+                        focusOnSelect:true
                     });
                 }
             });
 
+            $(document).on('click', function(e){
+                e.preventDefault();
+                if($(e.target).is('.toggle-small-slider') || $(e.target).parent().is('.toggle-small-slider') || $(e.target).is('.slider-bottom') || $(e.target).parents('.slider-bottom').length){
+                    if(!$('.slider-bottom').is('.active')){
+                        $('.slider-bottom').addClass('active');
+                        $('.slider-body').addClass('active');
+                    }
+                    if(($(e.target).is('.toggle-small-slider') || $(e.target).parent().is('.toggle-small-slider')) && $('.slider-bottom').is('active')){
+                        $('.slider-bottom').removeClass('active');
+                        $('.slider-body').removeClass('active');
+                    }
 
+                }else{
+                    $('.slider-bottom').removeClass('active');
+                    $('.slider-body').removeClass('active');
+                }
+            });
 
         }
 
