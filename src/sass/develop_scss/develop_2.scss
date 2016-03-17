@@ -475,7 +475,7 @@
         .hide-placeholder{display: none;}
         .jq-selectbox__select-text{width: 100% !important; cursor: pointer; font-size: 12px; font-family: "Roboto", sans-serif;  color: rgb(0, 0, 0); line-height: 2;}
         .jq-selectbox__dropdown{right: 0;  @include box-shadow; border-radius: 3px;
-            ul{ max-height: 120px !important; background-color: white; border: 1px solid #00adc3; z-index: 102;
+            ul{ max-height: 120px !important; background-color: white; border: 1px solid #00adc3; z-index: 102;border-top: 2px solid #00adc3;
                 li{cursor: pointer; font-size: 12px; font-family: "Roboto", sans-serif;  color: rgb(84, 84, 84); line-height: 2; transition: all 0.5s;padding: 0 10px;
                     &:hover{background-color: #00adc3; color: white;}
                 }
