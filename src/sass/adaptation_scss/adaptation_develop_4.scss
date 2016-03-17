@@ -84,7 +84,17 @@
 
     /*post-list statt*/
     .post-list-statt{
-        .dstranger-list .list-document{}
+        .dstranger-list .list-document{display: block;position: relative;min-height: 110px;
+            .face-doc{position: absolute;top: 15px;left: 0;}
+            .face-img{display: block;padding-bottom: 10px;
+                .face-img-wrap{margin:0 auto;}
+            }
+            .name-item{padding-left: 40px;}
+        }
+        .dstranger-list li > .block-button{position: absolute;top: 0;right: 10px;margin-top: 0 !important;margin-bottom: 0 !important;
+            .drop .soc-blok{right: 0px;}
+        }
+        .comments-wrap{margin-left: -10px;}
     }
     /*/post-list statt*/
 }
