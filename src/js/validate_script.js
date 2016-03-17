@@ -236,13 +236,12 @@ function chat(){
     /*clone main Chat*/
     var cloneChat = null,
         namePerson = null;
+
     function clonedChat(){
         cloneChat = $('.cloned-chat').clone();
         cloneChat.find('textarea').val(" ");
 
     }
-
-
 
     /* click on reply */
     function clickOnreply(){
@@ -311,25 +310,57 @@ function chat(){
             type: "POST",
             contentType:false,
             success: function() {
-                console.log(parentForm.hasClass('cloned-chat'));
                 if( parentForm.hasClass('cloned-chat') ){
                     if(messageLength <= personLength){ //mini validation
                         console.log('false submit');
                         return false;
                     }else{
                         parentForm.after(wraper);
+                        chatCountNumber();
                         $('.chat-item .cloned-chat').slideUp(function(){
                             $(this).remove();
                         })
                     }
                 }else if( parentForm.hasClass('main-chat') ){
-                    $('.chat-item-wrap').prepend(wraper);
+                    parentForm.parent().parent().parent().find('.chat-item-wrap').prepend(wraper);
+                    $('.main-chat textarea').val("");
+                    chatCountNumber();
                 }
             }
         });
     });
     }
     mainChatSubmit();
+
+    /*if many chat-items end page "КОПИЛКА"*/
+    function chatCountNumber(){
+        if($('.post-list-statt .comments-wrap').length > 0 ){
+            var showMore = '<div class="show-more-post"><span>Показать все комментарии</span></div>';
+            $('.post-list-statt .comments-wrap').each(function(index, el) {
+                var chatItem = $(this).find('.chat-item-wrap>.chat-item');
+                var chatWrapper = chatItem.parent();
+
+                /*count coments*/
+                $(this).parent().find('.list-chat-comment span').text(chatItem.length);
+
+                /*if coments > 2*/
+                if (chatItem.length > 2) {
+                    chatWrapper.addClass('hide-other');
+                    /*add button show more*/
+                    if( $(this).children('.show-more-post').length == 0){
+                        $(this).append(showMore);
+                    }
+                }
+            });
+
+            /*click on button show more*/
+            $('.show-more-post').on('click', function(event) {
+                $(this).parent().find('.chat-item-wrap').removeClass('hide-other').addClass('show-other');
+                $(this).hide();
+            });
+        }
+    }
+    chatCountNumber();
 }
 
 
@@ -341,9 +372,7 @@ $(document).ready(function(){
     validate('#call-popup .contact-form', {submitFunction:validationCall});
 
     validate('.search-form');
-    //validate('.main-chat:not(.cloned-chat) form',{submitFunction:mainChatSubmit});
-    //validate('.cloned-chat form',{submitFunction:mainChatSubmit()});
-    
+
     validate('#predlog-zalog .predlog-wrap',{submitFunction:validationCall});
     validate('#predlog .predlog-wrap',{submitFunction:validationCall});
     
