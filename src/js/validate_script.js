@@ -213,7 +213,7 @@ function fancyboxForm(){
     openEffect  : 'fade',
     closeEffect : 'fade',
     autoResize:true,
-    wrapCSS:'fancybox-form',
+    wrapCSS:'fancybox-form-wrap',
     'closeBtn' : true,
     fitToView:true,
     padding:'0'

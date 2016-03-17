@@ -394,7 +394,7 @@
 }
 .modal-body{padding: 40px 60px 0;}
 .modal-footer {border-top: 1px solid #767676; height: 110px;}
-.fancybox-form .fancybox-close{ top: 27px; right:27px; background-image: none; width: 16px; height: 16px;
+.fancybox-form-wrap .fancybox-close{ top: 27px; right:27px; background-image: none; width: 16px; height: 16px;
     &:before{content: ''; position: absolute; width: 18px; height: 1px; background-color: #9a9a9a; transform: rotate(45deg); top: 8px;  }
     &:after{content: '';position: absolute; width: 18px; height: 1px; background-color: #9a9a9a; transform: rotate(-45deg); top: 8px;}
 }
@@ -410,7 +410,7 @@
                     a{color:#00aec3; text-decoration: none; }
                 }
             }
-            .title-login{display:table; min-height: 5px; 
+            .title-login{display:table; min-height: 5px; text-decoration: none;
                 .conteiner{display: table-cell; vertical-align: middle;
                     .convert{width: 36px; height: 36px; overflow: hidden; border-radius: 50%; }
                     .name-person{padding-left: 10px; font-size: 14px; font-family: "Roboto", sans-serif;  color: rgb(0, 0, 0);}
