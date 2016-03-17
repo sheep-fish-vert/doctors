@@ -84,32 +84,39 @@
     
     <div id="predlog">
         <form action="ajax.php" name="predlog" class="predlog-wrap">
-            <div class="contact-form-title">
+            <div class="contact-form-title modal-title">
                 <h5>Предложение в гостевую книгу</h5>
             </div>
-            <div class="contact-form-row cfix">
+            <div class="contact-form-row cfix modal-body">
                 <div class="contact-form-item">
                     <div class="contact-form-item-input form_row">
                         <div class="title-row">
                             <p>Комментарии:</p>
                             <b>Чтобы оставить комментарий, <a href="">авторизируйтесь</a> или <a href="">зарегистрируйте</a></b>
                         </div>
+                        
                         <div class="form_input">
                             <textarea name="predlog-text" placeholder="Написать комментарий..."></textarea>
                             <p>*Обязательные поля</p>
+                            <div class="error-field"> 
+                                <i class="material-icons">error</i> 
+                                <span class="error-massage">Здесь будет блок ошибки</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="contact-form-row cfix">
+            <div class="contact-form-row-button cfix modal-footer">
                 <div class="contact-form-item">
                     <div  class="contact-submit">
-                        <span>Отмена</span>
+                        <a href="">
+                            <span>Отмена</span>
+                        </a>                        
                     </div>
                 </div>
                 <div class="contact-form-item">
                     <button type="submit" class="contact-submit">
-                        <span>Отправить заявку</span>
+                        <span>Опубликовать</span>
                     </button>
                 </div>                
             </div>
