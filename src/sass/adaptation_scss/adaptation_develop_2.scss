@@ -31,6 +31,14 @@
 
 }
 @media screen and (max-width: 767px){
+    /* fancy ado */
+    .fancybox-form-wrap {max-width: 460px;}
+    .modal-body { padding: 40px 20px 0;}
+    .modal-footer {padding: 0 20px 0;}
+    
+    /* fancy ado */
+    
+    #predlog .predlog-wrap .contact-form-row .title-row, #predlog-zalog .predlog-wrap .contact-form-row .title-row { display: block}
 
     .wrap-texter .container .text-block .title-text-desc {display: block;}
     .wrap-content .content-box { padding-top: 35px;
@@ -53,6 +61,16 @@
 
 }
 @media screen and (max-width: 666px){
+    /* fancy ado */
+    .fancybox-form-wrap {max-width: 300px;}
+    .modal-body { padding: 40px 10px 0;}
+    .modal-footer {padding: 0 10px 0;}
+    .modal-title {  line-height: 40px;}
+    
+    /* fancy ado */
+    
+    #predlog .predlog-wrap .contact-form-row-button .contact-form-item .contact-submit, #predlog-zalog .predlog-wrap .contact-form-row-button .contact-form-item .contact-submit { width: 100%;}
+    #predlog .predlog-wrap .contact-form-row-button .contact-form-item, #predlog-zalog .predlog-wrap .contact-form-row-button .contact-form-item {width: 50%;}
 
     .content-tabs .korpus input[type="radio"]:checked + label {  font-weight: 700; font-size: 12px;}
     .content-tabs .korpus label {font-size: 12px;}
