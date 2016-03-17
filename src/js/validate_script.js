@@ -343,6 +343,9 @@ $(document).ready(function(){
     validate('.search-form');
     //validate('.main-chat:not(.cloned-chat) form',{submitFunction:mainChatSubmit});
     //validate('.cloned-chat form',{submitFunction:mainChatSubmit()});
+    
+    validate('#predlog-zalog .predlog-wrap',{submitFunction:validationCall});
+    validate('#predlog .predlog-wrap',{submitFunction:validationCall});
 
     Maskedinput();
     fancyboxForm();
