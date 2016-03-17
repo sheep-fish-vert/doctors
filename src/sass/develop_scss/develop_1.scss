@@ -267,7 +267,7 @@
             .svg{width: 210px;height: 210px;}
             .info{width: calc(100% - 210px);padding-left:20px;
                 .info-wrap{max-width: 310px;width: 100%;
-                    .row{display: flex;flex-wrap:wrap;align-items:center;border-bottom: 1px solid #a7a7a7;padding: 10px 15px 15px 20px;font-weight: 300;font-size: 16px;
+                    .info-row{display: flex;flex-wrap:wrap;align-items:center;border-bottom: 1px solid #a7a7a7;padding: 10px 15px 15px 20px;font-weight: 300;font-size: 16px;
                         .info-color{width: 20px;
                             span{width: 10px;height: 10px;border-radius: 50%;display: block;}
                         }
