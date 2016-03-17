@@ -316,8 +316,8 @@
                 }
             }
 
-            .slider-item{display: flex;align-items:center;
-                img{max-height: 100%;margin:0 auto;}
+            .slider-item{display: flex;align-items:center;justify-content:center;
+                img{max-height: 100%;display: inline-block;}
             }
             .slider-body{height: calc(100% - 60px);padding-top: 15px;transition:height 300ms ease;
                 &.active{height: calc(100% - 165px);}
@@ -329,12 +329,12 @@
                         &:hover{background-color: #3ceedf;}
                     }
                     .slick-prev{left: 10px;
-                        &:before, &:after{transform-origin:2px 1px;}
+                        &:before, &:after{transform-origin:1px 1px;}
                         &:before{transform:rotate(40deg);}
                         &:after{transform:rotate(-40deg);}
                     }
                     .slick-next{right: 10px;
-                        &:before, &:after{transform-origin:18px 1px;}
+                        &:before, &:after{transform-origin:19px 1px;}
                         &:before{transform:rotate(40deg);}
                         &:after{transform:rotate(-40deg);}
                     }

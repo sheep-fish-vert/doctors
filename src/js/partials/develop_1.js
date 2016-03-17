@@ -132,7 +132,7 @@ try{
                 afterShow:function(){
                     $('.slider-body-main').on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
                             var i = (currentSlide ? currentSlide : 0) + 1;
-
+                            $('.slider-bottom .slider-item').eq(i-1).click();
                             $('.slider-num').text(i + ' из ' + slick.slideCount);
                             $('.slider-name-wrap').text($('.slider-body-main .slick-current').data('name')+'.'+$('.slider-body-main .slick-current').data('type'));
 
@@ -142,7 +142,8 @@ try{
                         slidesToShow: 1,
                         slidesToScroll: 1,
                         infinite:false,
-                        asNavFor:'.slider-bottom'
+                        asNavFor:'.slider-bottom',
+                        focusOnSelect:true
                     });
 
                     $('.slider-bottom').slick({
@@ -157,12 +158,15 @@ try{
 
             $(document).on('click', function(e){
                 e.preventDefault();
-                if($(e.target).is('.toggle-small-slider') || $(e.target).parent().is('.toggle-small-slider') || $(e.target).is('.slider-bottom') || $(e.target).parents('.slider-bottom').length){
-                    if(!$('.slider-bottom').is('.active')){
+                if($(e.target).is('.toggle-small-slider') || $(e.target).parent().is('.toggle-small-slider') || $(e.target).is('.slider-bottom') || $(e.target).parents('.slider-bottom').length || $(e.target).is('.slick-arrow')){
+
+                    if(($(e.target).is('.toggle-small-slider') || $(e.target).parent().is('.toggle-small-slider')) && !$('.slider-bottom').is('.active')){
+
                         $('.slider-bottom').addClass('active');
                         $('.slider-body').addClass('active');
                     }
-                    if(($(e.target).is('.toggle-small-slider') || $(e.target).parent().is('.toggle-small-slider')) && $('.slider-bottom').is('active')){
+                    else if(($(e.target).is('.toggle-small-slider') || $(e.target).parent().is('.toggle-small-slider')) && $('.slider-bottom').is('.active')){
+
                         $('.slider-bottom').removeClass('active');
                         $('.slider-body').removeClass('active');
                     }
