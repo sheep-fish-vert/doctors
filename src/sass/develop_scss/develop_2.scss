@@ -390,8 +390,12 @@
 }
 .modal-body{padding: 40px 60px 0;}
 .modal-footer {border-top: 1px solid #767676; height: 110px;}
+.fancybox-form .fancybox-close{ top: 27px; right:27px; background-image: none; width: 16px; height: 16px;
+    &:before{content: ''; position: absolute; width: 18px; height: 1px; background-color: #9a9a9a; transform: rotate(45deg); top: 8px;  }
+    &:after{content: '';position: absolute; width: 18px; height: 1px; background-color: #9a9a9a; transform: rotate(-45deg); top: 8px;}
+}
 
-#predlog{ width: 690px; background-color: white;
+#predlog, #predlog-zalog { width: 690px; background-color: white;
     .predlog-wrap{
         .contact-form-title{
         }
@@ -402,6 +406,13 @@
                     a{color:#00aec3; text-decoration: none; }
                 }
             }
+            .title-login{display:table; min-height: 5px; 
+                .conteiner{display: table-cell; vertical-align: middle;
+                    .convert{width: 36px; height: 36px; overflow: hidden; border-radius: 50%; }
+                    .name-person{padding-left: 10px; font-size: 14px; font-family: "Roboto", sans-serif;  color: rgb(0, 0, 0);}
+                }
+            }
+            
             .form_input{width: 100%; padding-top: 10px;
                 textarea{width: 100%; height: 145px; border: 2px solid #dddddd; resize: none;font-size: 12px;   font-family: "Roboto", sans-serif; color: #585454;  line-height: 1.2; padding: 10px;} 
                 ::-webkit-input-placeholder {color:rgb(190, 190, 190);;}
@@ -430,4 +441,17 @@
 }
 
 
+.Анна_Сидорова {
+  font-size: 14px;
+  font-family: "Roboto";
+  color: rgb(0, 0, 0);
+  line-height: 1.714;
+  -moz-transform: matrix( 1.00000015454,0,0,0.99967458062596,0,0);
+  -webkit-transform: matrix( 1.00000015454,0,0,0.99967458062596,0,0);
+  -ms-transform: matrix( 1.00000015454,0,0,0.99967458062596,0,0);
+  position: absolute;
+  left: 729.37px;
+  top: 289.299px;
+  z-index: 60;
+}
 
