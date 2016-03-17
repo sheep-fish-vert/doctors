@@ -151,7 +151,15 @@ try{
                         slidesToScroll:1,
                         infinite:false,
                         asNavFor:'.slider-body-main',
-                        focusOnSelect:true
+                        focusOnSelect:true,
+                        responsive: [
+                           {
+                                breakpoint: 992,
+                                settings: {
+                                    slidesToShow:5
+                                }
+                            }
+                        ]
                     });
                 }
             });

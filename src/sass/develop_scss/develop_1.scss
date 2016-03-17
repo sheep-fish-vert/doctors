@@ -316,8 +316,8 @@
                 }
             }
 
-            .slider-item{display: flex;align-items:center;justify-content:center;
-                img{max-height: 100%;display: inline-block;}
+            .slider-item{display: flex;align-items:center;justify-content:center;padding: 0 10px;
+                img{max-height: 100%;display: inline;}
             }
             .slider-body{height: calc(100% - 60px);padding-top: 15px;transition:height 300ms ease;
                 &.active{height: calc(100% - 165px);}
@@ -346,12 +346,27 @@
                     span{display: block;color:#fff;font-size: 16px;margin-bottom: -4px;}
                 }
             }
-            .slider-bottom{margin-bottom: 0;position: fixed;top:100%;width: 100%;padding:5px 0;background-color:#121212;transition:top 300ms ease;
+            .slider-bottom{margin-bottom: 0;position: fixed;top:100%;width: 100%;padding:5px 30px;background-color:#121212;transition:top 300ms ease;
                 &.active{top:calc(100% - 100px);}
                 .slick-track{height: 90px;
                     .slider-item{border:2px solid transparent;border-radius: 2px;transition:border-color 300ms ease;
                         &.slick-current{border-color: #fff;}
                     }
+                }
+                .slick-arrow{width: 20px;height: 20px;border-radius:50%;background-color: orange;transition:background-color 300ms ease;
+                    &:hover{background-color: #3ceedf;}
+                    &:before, &:after{content:'';display: block;position: absolute;left:calc(50% - 4px);top:calc(50% - 1px);width: 8px;height: 2px;background-color: #fff;opacity: 1;}
+                    &.slick-prev{left:5px;
+                        &:before, &:after{transform-origin:1px 1px;}
+                        &:before{transform:rotate(45deg);}
+                        &:after{transform:rotate(-45deg);}
+                    }
+                    &.slick-next{right: 5px;
+                        &:before, &:after{transform-origin:7px 1px;}
+                        &:before{transform:rotate(45deg);}
+                        &:after{transform:rotate(-45deg);}
+                    }
+                    &.slick-disabled{display: none!important;}
                 }
             }
         }
