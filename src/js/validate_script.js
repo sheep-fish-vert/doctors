@@ -254,11 +254,10 @@ function chat(){
 
             clonedChat();
 
-            namePerson = $(this).closest('.chat-item').find('>.chat-person .chat-person-name span').text();
+            namePerson = $(this).closest('.chat-item').find('>.chat-person .chat-person-name span').first().text();
 
             $(this).closest('.chat-item').find('>.text').after(cloneChat).next('.cloned-chat').slideDown(function(){
                 $(this).find('textarea').val(namePerson+", ").focus();
-                /*validate('.chat-item-wrap .cloned-chat form');*/
             });
 
         });
@@ -272,12 +271,28 @@ function chat(){
         var form = $(this);
         var parentForm = $(this).parent();
 
+        var personImg = $('.main-chat .chat-person-img img').attr('src');
+        var personName = $('.main-chat .chat-person-name span').first().text();
+        var personLastName = $('.main-chat .chat-person-name span').last().text();
+        var message = parentForm.find('.chat-form textarea').val();         //MESSEGE
+        var messageTag = null;
+        var otherButton = "";
 
-        var id =13;
-        var personImg = parentForm.find('.chat-person-img img').attr('src');
-        var personName = parentForm.find('.chat-person-name').text();
-        var message = parentForm.find('.chat-form textarea').val();
+        if(parentForm.hasClass('main-chat')){
+            namePerson = 0;
+            if( message.length === 0){
+                return false;
+            }
+            messageTag = message;
+        }
 
+        if(parentForm.hasClass('cloned-chat')){
+            var clearMessage = message.replace(namePerson+", " ,"");
+            messageTag = '<span>'+namePerson+', '+'</span>'+' '+clearMessage;
+        }
+
+        var messageLength = parseInt(message.length);
+        var personLength = parseInt(namePerson.length) + 2;
 
         var date = new Date;
         var minutes = date.getMinutes();
@@ -286,35 +301,33 @@ function chat(){
         var month = date.getMonth();
         var day = date.getDate();
 
-        var wraper = '<div class="chat-item" data-id="'+id+'"><div class="chat-person cfix"><div class="chat-person-img"><img src="'+personImg+'" alt=""></div><div class="chat-person-detail "><div class="chat-person-name">'+personName+'</div><div class="chat-person-date"><i class="fa fa-calendar"></i><span>'+day+'.'+month+'.'+year+'</span><i class="fa fa-clock-o"></i><span>'+hour+'.'+minutes+'</span></div></div></div> <div class="text">'+message+'</div> <div class="block-button"><div class="drop drop-share-block"><div class="convert"><i class="material-icons">more_vert</i></div><div class="hide-hipe share-block"><ul><li><a href="#" class="reply-post"><i class="material-icons">reply</i><span>Ответить</span></a></li><li><a href="#" class="block-post"><i class="material-icons">block</i><span>Заблокировать</span></a></li></ul></div></div></div></div>';
-
+        if(parentForm.hasClass('main-chat')){
+            otherButton = '<div class="block-button"><div class="drop drop-share-block"><div class="convert"><i class="material-icons">more_vert</i></div><div class="hide-hipe share-block"><ul><li><a href="#" class="reply-post"><i class="material-icons">reply</i><span>Ответить</span></a></li><li><a href="#" class="block-post"><i class="material-icons">block</i><span>Заблокировать</span></a></li></ul></div></div></div>';
+        }
+        var wraper = '<div class="chat-item"><div class="chat-person cfix"><div class="chat-person-img"><img src="'+personImg+'" alt=""></div><div class="chat-person-detail "><div class="chat-person-name"><span>'+personName+'</span> '+'<span>'+personLastName+'</span></div><div class="chat-person-date"><i class="fa fa-calendar"></i><span>'+day+'.'+month+'.'+year+'</span><i class="fa fa-clock-o"></i><span>'+hour+'.'+minutes+'</span><span class="reply-post"><i class="material-icons">reply</i><span>Ответить</span></span></div></div></div> <div class="text">'+messageTag+'</div>'+otherButton+'</div>';
 
         $.ajax({
             url: ajaxUrl,
             type: "POST",
             contentType:false,
-            processData:false,
-            cache:false,
             success: function() {
-                console.log('success');
-                if(message.length+2 > namePerson.length){
-                    console.log('false');
-                    return false;
-                }else{
+                console.log(parentForm.hasClass('cloned-chat'));
+                if( parentForm.hasClass('cloned-chat') ){
+                    if(messageLength <= personLength){ //mini validation
+                        console.log('false submit');
+                        return false;
+                    }else{
+                        parentForm.after(wraper);
+                        $('.chat-item .cloned-chat').slideUp(function(){
+                            $(this).remove();
+                        })
+                    }
+                }else if( parentForm.hasClass('main-chat') ){
                     $('.chat-item-wrap').prepend(wraper);
                 }
-                /*if(level == true){*/
-                    /*$('.chat-item-wrap').find('.cloned-chat').closest('.chat-item').before(wraper);*/
-                /*}*/
-                /*if(level == false){*/
-                    /*console.log(level);*/
-
-                /*}*/
-               //$('form').trigger("reset");
             }
         });
-
-        });
+    });
     }
     mainChatSubmit();
 }
