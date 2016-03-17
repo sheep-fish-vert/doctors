@@ -55,7 +55,7 @@
 
     /* popup */
 
-        .fancybox-form{width: calc(100% - 40px)!important;}
+        .fancybox-form-wrap{width: calc(100% - 40px)!important;}
 
     /* /popup */
 
@@ -64,14 +64,17 @@
     /* fancy ado */
     .fancybox-form-wrap {max-width: 300px;}
     .modal-body { padding: 40px 10px 0;}
-    .modal-footer {padding: 0 10px 0;}
-    .modal-title {  line-height: 40px;}
+    .modal-footer {padding: 0 10px 0; justify-content: center;
+        .contact-form-item {width: 50%;
+            .contact-submit { width: 100%;}
+        } 
+    }
+    .modal-title {  line-height: 30px; display: flex; align-items: center;}
     
     /* fancy ado */
     
-    #predlog .predlog-wrap .contact-form-row-button .contact-form-item .contact-submit, #predlog-zalog .predlog-wrap .contact-form-row-button .contact-form-item .contact-submit { width: 100%;}
-    #predlog .predlog-wrap .contact-form-row-button .contact-form-item, #predlog-zalog .predlog-wrap .contact-form-row-button .contact-form-item {width: 50%;}
-
+    #add-material .conteiner-list ul li a {  padding: 0px 0 0 20px;}
+    
     .content-tabs .korpus input[type="radio"]:checked + label {  font-weight: 700; font-size: 12px;}
     .content-tabs .korpus label {font-size: 12px;}
 

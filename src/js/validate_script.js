@@ -375,6 +375,8 @@ $(document).ready(function(){
 
     validate('#predlog-zalog .predlog-wrap',{submitFunction:validationCall});
     validate('#predlog .predlog-wrap',{submitFunction:validationCall});
+    
+    validate('.add-new-document',{submitFunction:validationCall});
 
     Maskedinput();
     fancyboxForm();
