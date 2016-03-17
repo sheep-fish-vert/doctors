@@ -99,12 +99,12 @@
 
 /* universal list for butifull */
 
-.universal-list{ width: 100%; background-color: #ffffff; @include box-shadow; border-radius: 3px;   
+.universal-list{ width: 100%; background-color: #ffffff; @include box-shadow; border-radius: 3px;
     li{ border-bottom:2px solid #efefef; display: flex; align-items: center; justify-content: space-between; padding-left: 50px; padding-right: 15px;position: relative; counter-increment: plan-numbered;
         &:before{content: ''; position: absolute; bottom: 0; left: 0; width: 5px; top: 100%; background-color: #ff7474; transition: all 0.5s; }
         &:hover{
             &:before{top: 0;}
-        }    
+        }
     }
     li:last-child{ border-bottom:0px solid #efefef; }
 }
@@ -122,7 +122,7 @@
                 span{display: block; padding: 3px 7px ; color: white; background-color: #ff7474; margin-left: 10px; font-size: 12px; font-weight: 400;}
                 h4{font-family: 'Roboto', sans-serif; font-weight:700; font-size: 16px; color:black;}
                 h4:before{content: counter(plan-numbered)". ";}
-            }                
+            }
             h6{color: #545454; font-size: 12px; font-weight: 300; font-family: "Roboto", sans-serif; padding-top: 15px; }
             p{font-size: 12px; color:#757575; font-family: 'Roboto', sans-serif;  padding-top: 10px;font-weight:300;  }
         }
@@ -140,24 +140,24 @@
             .convert{border-radius: 50%; overflow: hidden;}
         }
         .name-item{padding-left: 15px; display: table-cell; vertical-align: middle;
-            .convert{display: flex; align-items: flex-start; justify-content: flex-start; 
+            .convert{display: flex; align-items: flex-start; justify-content: flex-start;
                 strong{display: block; padding: 3px 7px ; color: white; background-color: #ff7474; margin-left: 10px; font-size: 12px; font-weight: 400;}
                 h4{font-family: 'Roboto', sans-serif; font-weight:400; font-size: 16px; color:#00aec3;
                     span{background-color: white; padding: 0; margin: 0; display: inline;}
                 }
-            } 
-            
+            }
+
             .frack{padding-top: 15px;
-                b{ font-size: 12px; color: #000000; font-family: 'Roboto', sans-serif; font-weight:300; display: block;                 
+                b{ font-size: 12px; color: #000000; font-family: 'Roboto', sans-serif; font-weight:300; display: block;
                     span{color: #00aec3;}
                 }
             }
-                          
-            
-            
+
+
+
             p{font-size: 12px; color:#757575; font-family: 'Roboto', sans-serif;  padding-top: 10px;font-weight:300; }
-        }       
-   } 
+        }
+   }
 }
 
 /* /single user plans */
@@ -165,7 +165,7 @@
 /* curator special row */
 .chief-row{ margin: 0 -30px; width: calc(100% + 60px);transition: all 0.3s;
     .convers{display: table; min-height: 70px; max-width: calc(100% - 125px); padding: 15px 0;
-        .face-doc{display: table-cell; vertical-align: top; min-width: 36px; 
+        .face-doc{display: table-cell; vertical-align: top; min-width: 36px;
             .convert{border-radius: 50%; overflow: hidden;}
         }
         .name-item{padding-left: 15px; display: table-cell; vertical-align: middle;
@@ -174,8 +174,8 @@
                 h4{font-family: 'Roboto', sans-serif; font-weight:700; font-size: 16px; color:#00aec3;
                     span{background-color: white; padding: 0; margin: 0; display: inline;}
                 }
-            }                
-            b{ font-size: 12px; color: #000000; font-family: 'Roboto', sans-serif; font-weight:300; display: block; 
+            }
+            b{ font-size: 12px; color: #000000; font-family: 'Roboto', sans-serif; font-weight:300; display: block;
                 span{color: #00aec3;}
             }
             p{font-size: 12px; color:#757575; font-family: 'Roboto', sans-serif;  padding-top: 10px;font-weight:300; }
@@ -200,7 +200,7 @@
 }
 
 /* /documents blocks */
-        
+
 /* buttons block */
 
 .block-button{ display: table; min-height: 70px;
@@ -251,7 +251,7 @@
 /* site map */
 
 .superlist{padding-top: 50px;}
-.mapper{ 
+.mapper{
     li{
         a{display: block; width: 100%;line-height: 55px; font-size: 16px; font-family: "Roboto", sans-serif; color: rgb(0, 174, 195); text-decoration: none; transition: all 0.5s;
             &:hover{text-decoration: underline;}
@@ -261,24 +261,24 @@
 
 /* /site map */
 
-.lister-page{display: block; 
+.lister-page{display: block;
     .single{padding: 0px 0; transition: all 0.5s;  border-bottom: 2px solid #efefef;
         .universal-list{@include box-shadow;}
         .vsplivander{display: none; position: relative;
-            .spec-c{position: absolute;  z-index: 9; top: calc(50% - 1px); padding: 3px; border-top: 1px solid #efefef; border-bottom: 1px solid #efefef; left: -30px; right: -30px;background-color: white; cursor: pointer; transition: all 0.5s;     
-                .open-more{position: absolute;  z-index: 9; top: calc(50% - 10px); left: 50px;  border: 1px solid #898989;; width: 20px; height: 20px; text-align: center; line-height: 18px; border-radius: 50%; background-color: white;font-weight: bold;font-size: 12px;font-family: "Roboto", sans-serif; transition: all 0.5s; } 
+            .spec-c{position: absolute;  z-index: 9; top: calc(50% - 1px); padding: 3px; border-top: 1px solid #efefef; border-bottom: 1px solid #efefef; left: -30px; right: -30px;background-color: white; cursor: pointer; transition: all 0.5s;
+                .open-more{position: absolute;  z-index: 9; top: calc(50% - 10px); left: 50px;  border: 1px solid #898989;; width: 20px; height: 20px; text-align: center; line-height: 18px; border-radius: 50%; background-color: white;font-weight: bold;font-size: 12px;font-family: "Roboto", sans-serif; transition: all 0.5s; }
                 &:hover{border-top: 1px solid #00aec3; border-bottom: 1px solid #00aec3; box-shadow: 0 0 6px 0 rgba(0, 172, 193, 0.5);
                     .open-more{border: 1px solid #00aec3; box-shadow: 0 0 6px 0 rgba(0, 172, 193, 0.5);}
                 }
             }
-                      
+
         }
         &:last-child {border-bottom: 0px solid #efefef;}
         .doctor-row{ border-radius: 0px; transition: all 0.5s;
             li:last-child {border-bottom: 0px solid #efefef;}
         }
     }
-    
+
     .activate{padding: 20px 0; box-shadow: none;
         .universal-list{@include box-shadow;}
         .doctor-row{ border-radius: 3px;
@@ -287,29 +287,29 @@
         .vsplivander{ display: block;
             .universal-list li { border-bottom: 0px solid #efefef;}
             .dstranger-list{  margin: 0 -30px; width: -webkit-calc(100% + 60px);
-            
+
                 li{height: 0; overflow: hidden; visibility: hidden;
                     .block-button li {height: auto; overflow: visible;  visibility: visible; border-top: 0;
                         &:last-child {border-top: 2px solid #efefef;}
                     }
                 }
                 li:nth-child(1),  li:last-child{height: auto; overflow: visible;  visibility: visible;}
-            
+
                 li{border-top:2px solid #efefef;}
             }
-            
+
             .openAll{
                 .spec-c{display: none;}
                 li{ height: auto; overflow: visible; visibility: visible;}
             }
-        }        
+        }
     }
 }
 
 .wrap-texter{padding-top: 60px; margin-bottom: -50px;
     .container{background-color: white; @include box-shadow;
         .text-block{padding: 50px 45px 0;
-            .title-text-desc{ display: flex; justify-content: space-between; 
+            .title-text-desc{ display: flex; justify-content: space-between;
                 .content{font-size: 16px;  font-family: "Roboto", sans-serif; color: rgb(84, 84, 84);   line-height: 1.5;
                     p{display: inline-block; padding-right: 12px; }
                     i{padding: 0 3px; font-size: 14px;}
@@ -323,39 +323,39 @@
                         &:hover{color: rgb(0, 174, 195); text-shadow: 0px 4px 6px rgba(66, 69, 72, 0.2); }
                     }
                 }
-                
+
             }
             .ctext{ padding: 15px 0 0;font-family: "Roboto", sans-serif;color: rgb(0, 0, 0);
-                div{ width: 100%; 
+                div{ width: 100%;
                     p{font-size: 14px; color: rgb(0, 0, 2); text-transform: uppercase;  line-height: 1.714; text-align: center;font-weight: 400;    padding-top: 14px;}
                 }
                 h5{ font-weight: 700; font-size:24px; padding: 5px 0 20px;}
                 p{font-weight: 300; font-size:16px; text-align: justify; padding-bottom: 50px;
                     a{color: #00adc3;}
                 }
-                
+
                 blockquote{display: block;padding:26px 0 28px; position: relative; font-weight: 300; font-size:16px; text-align: justify; border-top: 1px solid #000000;border-bottom: 1px solid #000000; margin-bottom: 46px;
                    span{ position: absolute; top: 10px; left: calc(9% - 25px); font-size: 50px;   font-family: "Roboto", sans-serif;   line-height: 1.2; font-weight: 400;}
                    i{display: block; max-width: 82%; margin: 0 auto; line-height: 24px;}
                 }
-                
-                
+
+
             }
         }
     }
 }
 
 
-.content-tabs{ margin: 0 -15px; padding-top: 60px; 
+.content-tabs{ margin: 0 -15px; padding-top: 60px;
     .korpus > div, .korpus > input { display: none; }
 
-    .korpus { width: 100%; background-color: white;@include box-shadow; border-radius: 3px; 
+    .korpus { width: 100%; background-color: white;@include box-shadow; border-radius: 3px;
         label{ text-align: center; line-height: 80px; cursor: pointer; position: relative; background: #fff; width: 25%; display: inline-block; float: left; border: none; border-bottom: 2px solid #f4f4f4;position: relative;font-size: 16px; font-family: "Roboto", sans-serif;  color: rgb(0, 0, 0);text-transform: uppercase; font-weight: 300;
             &:before{content:' '; position: absolute; left: 0; right: 100%; height: 6px; bottom: -2px; transition: all 0.5s; background-color: #00aec3; }
             &:hover{
                 &:before{right: 0;}
             }
-        } 
+        }
     }
 
     .korpus input[type="radio"]:checked + label{ font-weight: 700;font-size: 16px; font-family: "Roboto", sans-serif;  color: rgb(0, 0, 0);text-transform: uppercase;
@@ -366,14 +366,14 @@
     .korpus > input:nth-of-type(2):checked ~ div:nth-of-type(2),
     .korpus > input:nth-of-type(3):checked ~ div:nth-of-type(3),
     .korpus > input:nth-of-type(4):checked ~ div:nth-of-type(4) {  display: block; padding-top: 82px;}
-    
+
     .tabs-conteiner .item-list{ display: block; padding: 40px; width: 100%;
         .item{  float: left; width: 20%; text-align: center; padding-top: 25px; padding-bottom: 25px;
             .zipper{position: relative;
                 a{display: block;}
                 i{position: absolute; top: calc(50% - 12px); left: calc(50% - 12px); opacity: 0; transition: all 0.5s;}
                 img{opacity: 1; transition: all 0.5s;}
-                &:hover{ 
+                &:hover{
                     img{opacity: 0.4;}
                     i{opacity: 1;}
                 }
@@ -383,10 +383,14 @@
 }
 
 
-/* popup*/ 
+/* popup*/
+
+.fancybox-form{width: 100%!important;max-width: 690px;left:50%!important;transform:translate(-50%, 0);
+    .fancybox-inner{width: 100%!important;}
+}
 
 .modal-title{line-height: 70px; border-bottom: 1px solid #767676; width: 100%;  padding-left: 30px;font-size: 24px; font-family: "Roboto", sans-serif; color: rgb(0, 0, 0); font-weight: 300; position: relative;
-    &:after{content: ''; position: absolute; bottom: -3px; left: 0; right: 20%; height: 2px; background-color: #00aec3;}    
+    &:after{content: ''; position: absolute; bottom: -3px; left: 0; right: 20%; height: 2px; background-color: #00aec3;}
 }
 .modal-body{padding: 40px 60px 0;}
 .modal-footer {border-top: 1px solid #767676; height: 110px;}
@@ -414,16 +418,16 @@
             }
             
             .form_input{width: 100%; padding-top: 10px;
-                textarea{width: 100%; height: 145px; border: 2px solid #dddddd; resize: none;font-size: 12px;   font-family: "Roboto", sans-serif; color: #585454;  line-height: 1.2; padding: 10px;} 
+                textarea{width: 100%; height: 145px; border: 2px solid #dddddd; resize: none;font-size: 12px;   font-family: "Roboto", sans-serif; color: #585454;  line-height: 1.2; padding: 10px;}
                 ::-webkit-input-placeholder {color:rgb(190, 190, 190);;}
                 ::-moz-placeholder          {color:rgb(190, 190, 190);;}/* Firefox 19+ */
                 :-moz-placeholder           {color:rgb(190, 190, 190);;}/* Firefox 18- */
-                :-ms-input-placeholder      {color:rgb(190, 190, 190);;}  
-                p{font-size: 16px; font-family: "Roboto", sans-serif;color: rgb(84, 84, 84);  line-height: 1.5; font-weight: 300; padding-bottom: 30px;}  
+                :-ms-input-placeholder      {color:rgb(190, 190, 190);;}
+                p{font-size: 16px; font-family: "Roboto", sans-serif;color: rgb(84, 84, 84);  line-height: 1.5; font-weight: 300; padding-bottom: 30px;}
                 .error-field{font-size: 12px; font-family: "Roboto", sans-serif; padding-bottom: 10px; color: rgb(255, 117, 119);  line-height: 2; display: table; min-height: 12px;
                     i{font-size: 12px; display: table-cell; vertical-align: middle; padding-right: 5px;}
                     span{display: table-cell; vertical-align: middle;}
-                }           
+                }
             }
         }
         .contact-form-row-button{display: flex; justify-content: flex-end; padding: 0 60px; align-items: center;
@@ -431,13 +435,13 @@
                 .contact-submit{width: 150px; line-height: 50px;}
                 a{text-decoration: none; text-align: center;display: block; transition: all 0.5s; font-size: 16px; font-family: "Roboto", sans-serif; color: rgb(255, 116, 116);
                     &:hover{ color: rgb(84, 84, 84); }
-                }                
+                }
                 button{  border: none; outline: none;font-size: 16px; font-family: "Roboto",sans-serif;  color: rgb(255, 255, 255); background-color: rgba(0, 174, 195,0.4); transition: all 0.5s;
                     &:hover{background-color: #00aec3;}
                 }
-            }          
+            }
         }
-    }    
+    }
 }
 
 
