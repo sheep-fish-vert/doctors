@@ -213,7 +213,7 @@ function fancyboxForm(){
     openEffect  : 'fade',
     closeEffect : 'fade',
     autoResize:true,
-    wrapCSS:'fancybox-form',
+    wrapCSS:'fancybox-form-wrap',
     'closeBtn' : true,
     fitToView:true,
     padding:'0'
@@ -343,6 +343,9 @@ $(document).ready(function(){
     validate('.search-form');
     //validate('.main-chat:not(.cloned-chat) form',{submitFunction:mainChatSubmit});
     //validate('.cloned-chat form',{submitFunction:mainChatSubmit()});
+    
+    validate('#predlog-zalog .predlog-wrap',{submitFunction:validationCall});
+    validate('#predlog .predlog-wrap',{submitFunction:validationCall});
 
     Maskedinput();
     fancyboxForm();
