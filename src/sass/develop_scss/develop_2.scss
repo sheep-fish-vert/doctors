@@ -288,7 +288,7 @@
             .universal-list li { border-bottom: 0px solid #efefef;}
             .dstranger-list{  margin: 0 -30px; width: -webkit-calc(100% + 60px);
 
-                li{height: 0; overflow: hidden; visibility: hidden;
+                li{height: 0; overflow: hidden; visibility: hidden;border-top: 0 !important;
                     .block-button li {height: auto; overflow: visible;  visibility: visible; border-top: 0;
                         &:last-child {border-top: 2px solid #efefef;}
                     }
@@ -417,7 +417,7 @@
                     .name-person{padding-left: 10px; font-size: 14px; font-family: "Roboto", sans-serif;  color: rgb(0, 0, 0);}
                 }
             }
-            
+
             .form_input{width: 100%; padding-top: 10px;
                 textarea{width: 100%; height: 145px; border: 2px solid #dddddd; resize: none;font-size: 12px;   font-family: "Roboto", sans-serif; color: #585454;  line-height: 1.2; padding: 10px;}
                 ::-webkit-input-placeholder {color:rgb(190, 190, 190);;}
