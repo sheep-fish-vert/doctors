@@ -37,7 +37,7 @@
     /*chat*/
     .chat-book{
         .container{}
-        .main-chat{padding-left: 0;padding-top: 15px;margin-bottom: 15px;
+        .main-chat,.not-logged-chat{padding-left: 0;padding-top: 15px;margin-bottom: 15px;
             .chat-person{}
             .chat-person-img{
                 img{}
@@ -64,10 +64,22 @@
 }
 @media screen and (max-width: 380px){
     /*chat*/
-    .chat-item{padding-left: 10px;
+    .chat-item{padding-left: 10px;padding-bottom: 10px;
         &:after{display: none;}
-        .chat-person{max-width: 85%;}
+        .chat-person{max-width: 85%;padding-top: 10px;
+            .chat-person-name{margin-bottom: 5px}
+            .chat-person-img{margin-right: 8px;}
+        }
         .text{max-width: 100%;}
+        .text{padding-top: 5px;padding-bottom: 5px;font-size: 13px;max-width: 90%;}
+        .block-button{right: 20px;min-height: 50px;}
+
+        .chat-item{margin-left: calc(10px + 1.5%);padding-left: 10px;
+            .chat-person{max-width: 95%;}
+            .chat-person-detail{width: calc(100% - 45px);}
+            .chat-person-date span.reply-post{display: block;}
+            .text{padding-top: 7px;padding-bottom: 5px;}
+        }
     }
     .cloned-chat{padding-right: 20px;}
     /*/chat*/

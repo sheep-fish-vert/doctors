@@ -104,3 +104,25 @@
     .btn-sub{max-width: 200px;}
 }
 /*/chat*/
+
+/*post-list statt*/
+.post-list-statt{
+    .doctor-row .convers .name-item p{padding-top: 5px;font-weight: 400;}
+    .doctor-row .convers .name-item .convert h4 span{padding-left: 2px;}
+    .doctor-row .convers .name-item .convert h4{color: #000000;}
+    .lister-page .single .vsplivander .spec-c{top: calc(100% - 1px);left: 0px;right: 0px;}
+    .face-img{display: table-cell;vertical-align: top;
+        .face-img-wrap{margin-left: 20px;width: 140px;height: 100px;position: relative;}
+        img{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);min-width: none;}
+    }
+    .dstranger-list .list-document .face-img + .name-item{padding-left: 30px;vertical-align: top;position: relative;}
+    .list-chat-comment{font-size: 12px;color: #00acc1;margin-top: 10px;display: inline-block;margin-bottom: 15px;}
+    .comments-wrap{display: none;}
+    .comments-wrap .not-logged-chat{padding-left: 0;padding-top: 5px;position: relative;
+        &:after{position: absolute;top: 0;left: 0;height: 2px;width: 100%;content: '';background-color: #efefef;}
+    }
+    .chief-row .block-button{opacity: 0;transition:all ease .2s;}
+    .lister-page .activate .vsplivander .dstranger-list li .block-button{align-self:flex-start;margin-top: 15px;margin-bottom: 15px;}
+}
+
+/*/post-list statt*/
