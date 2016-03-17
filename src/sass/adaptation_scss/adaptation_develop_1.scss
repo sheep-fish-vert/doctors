@@ -166,6 +166,21 @@
 
     /* /single-items */
 
+    /* statistic */
+
+        .statistic{
+            .modal-body{display: block;padding:20px 10px 0 10px;
+                .svg{margin:0 auto 0px auto;}
+                .info{width: 100%;padding-left: 0;
+                    .info-wrap{max-width: 100%;display: flex;flex-wrap:wrap;justify-content:center;align-items:flex-end;
+                        .info-row{width: calc(50% - 20px);padding: 15px 15px 15px 15px;margin: 0 10px;font-size: 14px;}
+                    }
+                }
+            }
+        }
+
+    /* /statistic */
+
 }
 @media screen and (max-width: 479px){
 
@@ -209,6 +224,20 @@
         }
 
     /* /tags */
+
+    /* statistic */
+
+        .statistic{
+            .modal-body{
+                .info{
+                    .info-wrap{display: block;
+                        .info-row{width: 100%;margin:0;}
+                    }
+                }
+            }
+        }
+
+    /* /statistic */
 
 }
 @media screen and (max-width: 320px){

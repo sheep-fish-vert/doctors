@@ -63,11 +63,69 @@ try{
 
     };
 
+    // draw svg statistic
+
+    function drawSvgStatistic(){
+
+        var circleDeg = 0;
+        var svgItem = Snap('.svg svg');
+
+        $('.info-row').each(function(index, el) {
+
+            var lineColor = $(this).find('.info-color span').data('color');
+
+            $(this).find('.info-color span').css('background-color', lineColor);
+
+            var percValue = $(this).find('.info-value').data('value');
+            var circleRadius = 142*Math.PI;
+            var lineRadius = ((percValue * circleRadius)/100)+1;
+            var circleWidth = lineRadius+' '+circleRadius;
+
+            var circle = svgItem.circle(105, 105, 71);
+
+            circle.attr({
+                fill:"none",
+                stroke:lineColor,
+                strokeWidth:34,
+                "stroke-dasharray":circleWidth,
+                'data-value':percValue
+            });
+
+            $('.svg circle').eq(index).css({'transform':'rotate('+circleDeg+'deg)'});
+
+            circleDeg = circleDeg + ((lineRadius-1)*360)/circleRadius;
+
+        });
+
+        var itemText = svgItem.text('');
+        itemText.attr({
+            "text-anchor":"middle",
+            'x':'52%',
+            'y':'54%'
+        });
+
+        $('.svg svg circle').hover(
+            function(){
+                var textVal = $(this).data('value');
+                $(this).css({'stroke-width':'40'});
+                $('.svg text').html(textVal+'%');
+            },
+            function(){
+                $(this).css({'stroke-width':'34'});
+                $('.svg text').html('');
+            }
+        );
+
+    }
+
+    // /draw svg statistic
+
 
     $(document).ready(function(){
 
         headerSendwich();
         errorPageMinHeight();
+        drawSvgStatistic();
 
     });
 
