@@ -31,7 +31,16 @@
     .cloned-chat{padding-right: 20px;}
     /*/chat*/
 
-
+    /*post-list statt*/
+    .post-list-statt{
+        .universal-list li{padding-left: 15px;}
+        .face-img .face-img-wrap{margin-left: 15px;}
+        .dstranger-list .list-document .face-img + .name-item{padding-left: 15px;}
+        .comments-wrap{margin-right: -120px;margin-left: -191px;}
+        .main-chat .chat-form textarea,.not-logged-chat .chat-form textarea{margin-bottom: 10px;}
+        .main-chat, .cloned-chat, .not-logged-chat{margin-bottom: 10px;}
+    }
+    /*/post-list statt*/
 }
 @media screen and (max-width: 767px){
     /*chat*/
@@ -52,6 +61,17 @@
 @media screen and (max-width: 666px){
 
 }
+@media screen and (max-width: 620px){
+    /*post-list statt*/
+    .post-list-statt{
+        .dstranger-list li>.block-button{display: block;
+            .drop{display: block;}
+        }
+        .dstranger-list .list-document{max-width: calc(100% - 50px);}
+        .comments-wrap{margin-right: -40px;}
+    }
+    /*/post-list statt*/
+}
 @media screen and (max-width: 479px){
     /*about*/
     .about{
@@ -61,6 +81,12 @@
         .text{line-height: 18px;font-size: 14px;}
     }
     /*/about*/
+
+    /*post-list statt*/
+    .post-list-statt{
+        .dstranger-list .list-document{}
+    }
+    /*/post-list statt*/
 }
 @media screen and (max-width: 380px){
     /*chat*/
