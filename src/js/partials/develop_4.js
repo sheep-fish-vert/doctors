@@ -1,9 +1,14 @@
 try{
-
+    function stattCommentButtontoggle(){
+        $(document).on('click', '.list-chat-comment', function(event) {
+            event.preventDefault();
+            $(this).parent().find('.comments-wrap').slideToggle(400);
+        });
+    }
 
 
     $(document).ready(function(){
-
+        stattCommentButtontoggle();
     });
 
     $(window).load(function(){

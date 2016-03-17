@@ -133,10 +133,11 @@ try{
             var fff = index ;
             var counter =  $('.tabs-conteiner').eq(fff).find('.item').length;
             $(this).find('span').html('('+ counter + ')');
-        });
+        });  
         
-        
-        
+        $('.close-fancybox-please').click(function(){
+            $('.fancybox-close').click();
+        })
 
     });
 
