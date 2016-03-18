@@ -158,6 +158,13 @@ try{
                                 settings: {
                                     slidesToShow:5
                                 }
+
+                            },
+                            {
+                                breakpoint: 666,
+                                settings: {
+                                    slidesToShow:3
+                                }
                             }
                         ]
                     });
@@ -165,7 +172,7 @@ try{
             });
 
             $(document).on('click', function(e){
-                e.preventDefault();
+
                 if($(e.target).is('.toggle-small-slider') || $(e.target).parent().is('.toggle-small-slider') || $(e.target).is('.slider-bottom') || $(e.target).parents('.slider-bottom').length || $(e.target).is('.slick-arrow')){
 
                     if(($(e.target).is('.toggle-small-slider') || $(e.target).parent().is('.toggle-small-slider')) && !$('.slider-bottom').is('.active')){
