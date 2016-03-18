@@ -198,7 +198,8 @@ try{
                     });
                 },
                 afterClose:function(){
-                    $('.slider-body-main, .slider-bottom').slick('unslick');
+                    $('.slider-body-main').slick('unslick');
+                    $('.slider-bottom').slick('unslick');
                 }
             });
 
