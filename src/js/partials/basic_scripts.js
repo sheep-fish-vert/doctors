@@ -173,6 +173,12 @@ $(document).ready(function() {
     //animationBlock($('.setion-animate'));
 });
 
+$(window).load(function(){
+
+    $('.footer_placeholder').height($('.footer').outerHeight());
+
+});
+
 $(window).resize(function() {
 
     $('.footer_placeholder').height($('.footer').outerHeight());

@@ -216,7 +216,13 @@ function fancyboxForm(){
     wrapCSS:'fancybox-form-wrap',
     'closeBtn' : true,
     fitToView:true,
-    padding:'0'
+    padding:'0',
+    afterShow:function(){
+        $('.modal-title').addClass('active');
+    },
+    afterClose:function(){
+        $('.modal-title').removeClass('active');
+    }
   })
 }
 function fancyCallback(){
