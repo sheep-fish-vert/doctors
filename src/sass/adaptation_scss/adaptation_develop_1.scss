@@ -148,9 +148,15 @@
                 }
                 .slider-body{height: calc(100% - 120px);
                     &.active{height: calc(100% - 225px);}
-                    .slider-body-main{
+                    .slider-body-main{padding: 0 40px;
                         .slick-arrow{width: 26px;
                             &:before, &:after{width: 16px;left:calc(50% - 8px);}
+                            &.slick-next{
+                                &:before, &:after{transform-origin:95% 50%;}
+                            }
+                            &.slick-prev{
+                                &:before, &:after{transform-origin:5% 50%;}
+                            }
                         }
                     }
                 }
