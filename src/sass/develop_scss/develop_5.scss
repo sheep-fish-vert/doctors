@@ -54,7 +54,7 @@
             .material-icons{position: absolute;left:calc(50% - 12px);top: calc(50% - 12px);opacity:0;transition:opacity 300ms ease;}
 
         }
-        .button-plus-list{position: absolute;bottom:calc(100% - 10px);left:7px;z-index: 0;display: none;width: 220px;
+        .button-plus-list{position: absolute;bottom: 100%;right: 7px;z-index: 0;display: none;width: 220px;
             &.active{
                 a{
                     li{
@@ -75,11 +75,11 @@
                         }
                     }
                     .button-list-text{
-                        span{left:0px;}
+                        span{right: 0px;}
                     }
                 }
             }
-            li{padding-bottom: 25px;
+            li{padding-bottom: 5px;
                 &:nth-child(1){
                     .button-list-text{
                         span{transition:left 300ms ease 100ms, right 300ms ease 100ms;}
@@ -104,8 +104,8 @@
                     &.green-background{background-color: #67be38;}
                     &.purple-background{background-color:#512da7;}
                 }
-                .button-list-text{padding-left: 20px;overflow: hidden;width: 170px;
-                    span{display: block;color:#fff;min-height:25px;line-height:25px;max-width: 150px;width: 100%;background-color: #616161;font-size:12px;position: relative;left: -175px;text-align: center;}
+                .button-list-text{padding-right: 20px;overflow: hidden;width: 170px;
+                    span{display: block;color:#fff;min-height:25px;line-height:25px;max-width: 150px;width: 100%;background-color: #616161;font-size:12px;position: relative;right: -175px;text-align: center;}
                 }
                 &:hover{
                     .list-img{
