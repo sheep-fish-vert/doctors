@@ -234,6 +234,7 @@ function fancyCallback(){
 
 function chat(){
     /*clone main Chat*/
+
     var cloneChat = null,
         namePerson = null;
 
@@ -265,9 +266,10 @@ function chat(){
     function mainChatSubmit(){
 
         $(document).on('submit', '.form-chat-main', function(event) {
+            console.log('mainChatSubmit()');
         event.preventDefault();
         var form = $(this);
-        console.log('form ' , form);
+
         var parentForm = $(this).parent();
 
         var personImg = $('.main-chat .chat-person-img img').attr('src');

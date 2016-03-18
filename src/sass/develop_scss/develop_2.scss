@@ -306,7 +306,8 @@
     }
 }
 
-.wrap-texter{padding-top: 60px; margin-bottom: -50px;
+.wrap-texter{padding-top: 60px;;
+    &+.chat-book{padding-top: 0px;}
     .container{background-color: white; @include box-shadow;
         .text-block{padding: 50px 45px 0;
             .title-text-desc{ display: flex; justify-content: space-between;
@@ -396,7 +397,7 @@
 .modal-footer {border-top: 1px solid #767676; height: 110px;padding: 0 60px; display: flex; justify-content: flex-end;  align-items: center;
     .contact-form-item{margin-left: 5px;
         .contact-submit{width: 150px; line-height: 50px; cursor: pointer;}
-        .close-fancybox-please{text-decoration: none; text-align: center;display: block; transition: all 0.5s; font-size: 16px; font-family: "Roboto", sans-serif;color: rgb(84, 84, 84); 
+        .close-fancybox-please{text-decoration: none; text-align: center;display: block; transition: all 0.5s; font-size: 16px; font-family: "Roboto", sans-serif;color: rgb(84, 84, 84);
             &:hover{ color: rgb(255, 116, 116);   }
         }
         button{  border: none; outline: none;font-size: 16px; font-family: "Roboto",sans-serif;  color: rgb(255, 255, 255); background-color: rgba(0, 174, 195,0.4); transition: all 0.5s;
@@ -452,12 +453,12 @@
     .give-me-border{border: 2px solid #767676;
         &:hover{border: 2px solid rgb(255, 116, 116);}
     }
-    .conteiner-list{padding: 0; 
+    .conteiner-list{padding: 0;
         .title-check{font-size: 16px; font-family: "Roboto", sans-serif;  color: rgb(0, 0, 0);   font-weight: bold; line-height: 75px; padding-left: 30px; }
         ul {
             li {width: 100%; border-bottom: 2px solid #efefef; transition: all 0.5s;
                 a {padding: 0 0 0 60px; text-decoration: none; display: flex;  justify-content: flex-start; align-items: center; width: 100%; min-height: 56px;
-                    p{ padding-left: 20px; font-size: 16px;  font-family: "Roboto", sans-serif; color: rgb(0, 0, 0); font-weight: 300;} 
+                    p{ padding-left: 20px; font-size: 16px;  font-family: "Roboto", sans-serif; color: rgb(0, 0, 0); font-weight: 300;}
                 }
                 &:first-child{border-top: 2px solid #efefef;}
                 &:hover{background-color:#00aec3; }
@@ -471,7 +472,7 @@
         .contact-form-item{padding: 15px 0 0;}
     }
     select{width: 0; height: 0; opacity: 0; overflow: hidden;}
-    .pop-choose{width: 100%; font-weight: 300; border-bottom: 1px solid #a9a9a9; line-height: 30px; padding-left: 10px; position: relative; 
+    .pop-choose{width: 100%; font-weight: 300; border-bottom: 1px solid #a9a9a9; line-height: 30px; padding-left: 10px; position: relative;
         .hide-placeholder{display: none;}
         .jq-selectbox__select-text{width: 100% !important; cursor: pointer; font-size: 12px; font-family: "Roboto", sans-serif;  color: rgb(0, 0, 0); line-height: 2;}
         .jq-selectbox__dropdown{right: 0;  @include box-shadow; border-radius: 3px;
@@ -489,7 +490,7 @@
         }
     }
     .opened {z-index: 105 !important;
-        .jq-selectbox__trigger .jq-selectbox__trigger-arrow{transform: rotate(90deg); 
+        .jq-selectbox__trigger .jq-selectbox__trigger-arrow{transform: rotate(90deg);
             &:before{ left: 5px;top: 0px; width: 6px;  transform: rotate(45deg);}
             &:after{right: -5px;top: 0px;  transform: rotate(-45deg);}
         }
@@ -502,29 +503,29 @@
                     i{font-size: 14px;}
                 }
             }
-            
+
             input[type=text] {width: 100%; font-weight: 300; border: none; outline: none; border-bottom: 1px solid #a9a9a9; line-height: 30px; padding-left: 10px; font-size: 12px;   font-family: "Roboto", sans-serif;  color: rgb(84, 84, 84);  line-height: 2; }
-           
+
             textarea{width: 100%; height: 90px; border: 1px solid #a9a9a9; resize: none;font-size: 12px;   font-family: "Roboto", sans-serif; color: #585454;  line-height: 1.2; padding: 10px;}
             ::-webkit-input-placeholder {color:rgb(84, 84, 84);}
             ::-moz-placeholder          {color:rgb(84, 84, 84);}/* Firefox 19+ */
             :-moz-placeholder           {color:rgb(84, 84, 84);}/* Firefox 18- */
             :-ms-input-placeholder      {color:rgb(84, 84, 84);}
-            
+
             p{font-size: 16px; font-family: "Roboto", sans-serif;color: rgb(84, 84, 84);  line-height: 1.5; font-weight: 300; padding-bottom: 5px;}
             label{display: none !important;}
             .error-field{font-size: 12px; font-family: "Roboto", sans-serif; padding-bottom: 10px; color: rgb(255, 117, 119);  line-height: 2; display: table; min-height: 12px;display: none;
                 i{font-size: 12px; display: table-cell; vertical-align: middle; padding-right: 5px;}
                 span{display: table-cell; vertical-align: middle;}
             }
-        }  
-        .spec-padd{padding-top: 40px;}      
+        }
+        .spec-padd{padding-top: 40px;}
     }
     .error{
         .form_input .error-field{display: block !important;}
     }
     .rover.error{ position: relative;
-        &:before{content: ''; position: absolute; bottom: 0; left: 0; right: 0; background-color: red; height: 1px; z-index: 101;}        
+        &:before{content: ''; position: absolute; bottom: 0; left: 0; right: 0; background-color: red; height: 1px; z-index: 101;}
     }
 }
 
