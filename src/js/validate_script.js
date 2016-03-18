@@ -240,7 +240,6 @@ function chat(){
     function clonedChat(){
         cloneChat = $('.cloned-chat').clone();
         cloneChat.find('textarea').val(" ");
-
     }
 
     /* click on reply */
@@ -268,6 +267,7 @@ function chat(){
         $(document).on('submit', '.form-chat-main', function(event) {
         event.preventDefault();
         var form = $(this);
+        console.log('form ' , form);
         var parentForm = $(this).parent();
 
         var personImg = $('.main-chat .chat-person-img img').attr('src');
@@ -315,6 +315,7 @@ function chat(){
                         console.log('false submit');
                         return false;
                     }else{
+                        console.log('submit go');
                         parentForm.after(wraper);
                         chatCountNumber();
                         $('.chat-item .cloned-chat').slideUp(function(){
@@ -375,7 +376,7 @@ $(document).ready(function(){
 
     validate('#predlog-zalog .predlog-wrap',{submitFunction:validationCall});
     validate('#predlog .predlog-wrap',{submitFunction:validationCall});
-    
+
     validate('.add-new-document',{submitFunction:validationCall});
 
     Maskedinput();
