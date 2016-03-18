@@ -116,6 +116,18 @@ try{
                 }
             );
 
+            $('.info-row').hover(
+                function(){
+                    var textVal = $(this).find('.info-value').data('value');
+                    $('.svg [data-value='+textVal+']').css({'stroke-width':'40'});
+                    $('.svg text').html(textVal+'%');
+                },
+                function(){
+                    $('.svg circle').css({'stroke-width':'34'});
+                    $('.svg text').html('');
+                }
+            );
+
         }
 
     // /draw svg statistic
@@ -196,6 +208,38 @@ try{
 
     // /fancybox slider
 
+    // title load line
+
+        function titleLoadLine(){
+
+            if($('.title-page').length){
+                $('.title-page').addClass('active');
+            }
+
+        }
+
+    // /title load line
+
+    // tags links click
+
+        function tagsLinksClick(){
+
+            $('.tags-links a').on('click', function(e){
+
+                e.preventDefault();
+
+                var tagText = $(this).text();
+                console.log(tagText);
+
+                $('.search-form input').val(tagText);
+                $('.search-form').submit();
+
+            });
+
+        }
+
+    // /tags links click
+
 
     $(document).ready(function(){
 
@@ -203,10 +247,13 @@ try{
         errorPageMinHeight();
         drawSvgStatistic();
         fancyboxSlider();
+        tagsLinksClick();
 
     });
 
     $(window).load(function(){
+
+        titleLoadLine();
 
     });
 

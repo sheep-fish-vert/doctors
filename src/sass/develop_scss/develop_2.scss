@@ -54,7 +54,6 @@
     }
 }
 
-.footer {position: static;}
 .text-block{ max-width: 1000px; margin: 0 auto; padding: 15px;
     p{font-size: 16px; font-family: "Roboto", sans-serif; font-weight: 300; color: rgb(0, 0, 0);line-height: 1.5;
         span{font-weight: 500;}
@@ -120,7 +119,11 @@
         .name-item{padding-left: 15px; display: table-cell; vertical-align: middle;
             .convert{display: flex; align-items: flex-start;
                 span{display: block; padding: 3px 7px ; color: white; background-color: #ff7474; margin-left: 10px; font-size: 12px; font-weight: 400;}
-                h4{font-family: 'Roboto', sans-serif; font-weight:700; font-size: 16px; color:black;}
+                h4{font-family: 'Roboto', sans-serif; font-weight:700; font-size: 16px; color:black; 
+                    a{text-decoration: none;
+                        &:hover{text-decoration: none;}
+                    }
+                }
                 h4:before{content: counter(plan-numbered)". ";}
             }
             h6{color: #545454; font-size: 12px; font-weight: 300; font-family: "Roboto", sans-serif; padding-top: 15px; }
@@ -128,7 +131,6 @@
         }
     }
 }
-
 /* /documents list by single user */
 
 /* single user plans */
@@ -143,13 +145,19 @@
             .convert{display: flex; align-items: flex-start; justify-content: flex-start;
                 strong{display: block; padding: 3px 7px ; color: white; background-color: #ff7474; margin-left: 10px; font-size: 12px; font-weight: 400;}
                 h4{font-family: 'Roboto', sans-serif; font-weight:400; font-size: 16px; color:#00aec3;
+                    a{text-decoration: none; font-weight:400; font-size: 16px; color:#00aec3;
+                        &:hover{text-decoration: none;}
+                    }
+                
                     span{background-color: white; padding: 0; margin: 0; display: inline;}
                 }
             }
 
             .frack{padding-top: 15px;
                 b{ font-size: 12px; color: #000000; font-family: 'Roboto', sans-serif; font-weight:300; display: block;
-                    span{color: #00aec3;}
+                    span{color: #00aec3;
+                        a{text-decoration: none; color: #00aec3; }
+                    }
                 }
             }
 
@@ -266,7 +274,7 @@
         .universal-list{@include box-shadow;}
         .vsplivander{display: none; position: relative;
             .spec-c{position: absolute;  z-index: 9; top: calc(50% - 1px); padding: 3px; border-top: 1px solid #efefef; border-bottom: 1px solid #efefef; left: -30px; right: -30px;background-color: white; cursor: pointer; transition: all 0.5s;
-                .open-more{position: absolute;  z-index: 9; top: calc(50% - 10px); left: 50px;  border: 1px solid #898989;; width: 20px; height: 20px; text-align: center; line-height: 18px; border-radius: 50%; background-color: white;font-weight: bold;font-size: 12px;font-family: "Roboto", sans-serif; transition: all 0.5s; }
+                .open-more{position: absolute;  z-index: 9; top: calc(50% - 20px); left: 10px;  border: 1px solid #efefef;; width: 40px; height: 40px; text-align: center; line-height: 38px; border-radius: 50%; background-color: white;font-weight: bold;font-size: 12px;font-family: "Roboto", sans-serif; transition: all 0.5s; }
                 &:hover{border-top: 1px solid #00aec3; border-bottom: 1px solid #00aec3; box-shadow: 0 0 6px 0 rgba(0, 172, 193, 0.5);
                     .open-more{border: 1px solid #00aec3; box-shadow: 0 0 6px 0 rgba(0, 172, 193, 0.5);}
                 }
@@ -316,7 +324,7 @@
                     i{padding: 0 3px; font-size: 14px;}
                 }
             }
-            .foot-text{ padding-bottom: 54px; border-bottom: 2px solid #efefef; width: 100%;
+            .foot-text{ padding-bottom: 54px;  width: 100%;
                 .ask-row{font-size: 16px; font-family: "Roboto", sans-serif; color: rgb(0, 0, 0);   font-weight: bold;  line-height: 1.2; padding-bottom: 25px;}
                 .soc-row{
                     p{display: inline-block; font-size: 16px; font-family: "Roboto", sans-serif;  color: rgb(143, 143, 143);  line-height: 1.2;}
@@ -385,13 +393,20 @@
 
 
 /* popup*/
+.fancybox-lock{
+    .global-wrapper, .button-up, .button-plus{filter:blur(5px);}
+}
+.fancybox-overlay{background-image:none;background-color: rgba(0, 0, 0, .75);}
 
 .fancybox-form-wrap{width: 100%!important;max-width: 690px;left:50%!important;transform:translate(-50%, 0);
     .fancybox-inner{width: 100%!important;}
 }
 
 .modal-title{line-height: 70px; border-bottom: 1px solid #767676; width: 100%;  padding-left: 30px;font-size: 24px; font-family: "Roboto", sans-serif; color: rgb(0, 0, 0); font-weight: 300; position: relative; min-height: 70px; padding-right: 40px;
-    &:after{content: ''; position: absolute; bottom: -2px; left: 0; right: 20%; height: 2px; background-color: #00aec3;}
+    &:after{content: ''; position: absolute; bottom: -2px; left: 0; right: 100%; height: 2px; background-color: #00aec3;transition:right 2500ms ease;}
+    &.active{
+        &:after{right: 0%;}
+    }
 }
 .modal-body{padding: 40px 60px 0;}
 .modal-footer {border-top: 1px solid #767676; height: 110px;padding: 0 60px; display: flex; justify-content: flex-end;  align-items: center;
@@ -528,4 +543,7 @@
         &:before{content: ''; position: absolute; bottom: 0; left: 0; right: 0; background-color: red; height: 1px; z-index: 101;}
     }
 }
+
+.lister-page .single .vsplivander .spec-c {    top: calc(100% - -1px);  left: 0px; right: 0px; }
+.dstranger-list .list-document .face-doc { vertical-align: middle;}
 
