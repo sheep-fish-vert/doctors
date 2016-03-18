@@ -136,6 +136,22 @@ try{
 
         function fancyboxSlider(){
 
+            var group = null;
+            var numImg = null;
+
+            $(document).on('click','.fancybox-slider', function(e){
+
+                e.preventDefault();
+
+                group = $(this).data('group');
+                numImg = $(this).data('imgnum');
+
+                imagesGroups[group].forEach(function(item, i){
+                    $('.slider-body-main, .slider-bottom').append('<div class="slider-item" data-type="'+item.type+'" data-name='+item.name+'><img src="'+item.src+'" alt=""></div>');
+                });
+
+            });
+
             $('.fancybox-slider').fancybox({
                 fitToView:true,
                 autoSize:true,
@@ -143,12 +159,12 @@ try{
                 wrapCSS:'fancybox-slider-wrap',
                 afterShow:function(){
                     $('.slider-body-main').on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
-                            var i = (currentSlide ? currentSlide : 0) + 1;
-                            $('.slider-bottom .slider-item').eq(i-1).click();
-                            $('.slider-num').text(i + ' из ' + slick.slideCount);
-                            $('.slider-name-wrap').text($('.slider-body-main .slick-current').data('name')+'.'+$('.slider-body-main .slick-current').data('type'));
+                        var i = (currentSlide ? currentSlide : 0) + 1;
+                        $('.slider-bottom .slider-item').eq(i-1).click();
+                        $('.slider-num').text(i + ' из ' + slick.slideCount);
+                        $('.slider-name-wrap').text($('.slider-body-main .slick-current').data('name')+'.'+$('.slider-body-main .slick-current').data('type'));
 
-                        });
+                    });
 
                     $('.slider-body-main').slick({
                         slidesToShow: 1,
@@ -180,6 +196,9 @@ try{
                             }
                         ]
                     });
+                },
+                afterClose:function(){
+                    $('.slider-body-main, .slider-bottom').slick('unslick');
                 }
             });
 
