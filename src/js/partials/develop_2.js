@@ -19,12 +19,12 @@ try{
             }          
             
 
-            if (redFlag === true) {
+            if ((redFlag === true)  ) {
 
                 redFlag = false;             
                 
                 
-                if (!smart1.is(event.target) && (smart1.has(event.target).length === 0 ))
+                if (!smart1.is(event.target) && (smart1.has(event.target).length === 0 ) )
                     {
                         smart1.removeClass('active-drop');
                         smart1.children('.hide-hipe').hide(animDelay);
@@ -94,7 +94,7 @@ try{
                       
             // $('.dstranger-list').removeClass('openAll');
             
-            if (greenFlag){
+            if (greenFlag && (!$('.drop .convert').is(event.target)) && (!$('.drop i').is(event.target))){
                 
                 greenFlag = false ;
                 
