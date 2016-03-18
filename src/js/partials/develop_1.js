@@ -196,10 +196,13 @@ try{
                             }
                         ]
                     });
+
+                    $('.slider-body-main .slider-item').eq(numImg).click();
+
                 },
                 afterClose:function(){
-                    $('.slider-body-main').slick('unslick');
-                    $('.slider-bottom').slick('unslick');
+                    $('.slider-body-main, .slider-bottom').slick('unslick');
+                    $('.modals-slider .slider-item').remove();
                 }
             });
 
