@@ -306,7 +306,7 @@
     }
 }
 
-.wrap-texter{padding-top: 60px;;
+.wrap-texter{padding-top: 60px;
     &+.chat-book{padding-top: 0px;}
     .container{background-color: white; @include box-shadow;
         .text-block{padding: 50px 45px 0;

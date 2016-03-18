@@ -266,7 +266,7 @@ function chat(){
     function mainChatSubmit(){
 
         $(document).on('submit', '.form-chat-main', function(event) {
-            console.log('mainChatSubmit()');
+
         event.preventDefault();
         var form = $(this);
 
@@ -317,7 +317,6 @@ function chat(){
                         console.log('false submit');
                         return false;
                     }else{
-                        console.log('submit go');
                         parentForm.after(wraper);
                         chatCountNumber();
                         $('.chat-item .cloned-chat').slideUp(function(){
