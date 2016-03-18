@@ -21,7 +21,10 @@
 
 /*chat*/
 .btn-sub{width: 100%;max-width: 130px;border:1px solid #7e7e7e;border-radius: 0px;background-color:transparent;color: #757575;font-size: 12px;transition:all ease .2s;
-    &:hover{color: white;background-color: #7e7e7e;}
+    &:hover{color: white;background-color: #00acc1;border-color:#00acc1; }
+    &[disabled]{
+        &:hover{color: inherit;background-color: inherit;border-color: inherit;}
+    }
 }
 .chat-book{padding-top: 50px;
     .container{@include box-shadow;background-color: #fff;}
@@ -149,3 +152,19 @@
 }
 
 /*/post-list statt*/
+
+/*text-block width chat*/
+.text-block{
+    .chat-book{padding-top: 0;max-width: 645px;
+        .top-block .col-sm-10{width: 100%;}
+        &>.row{margin-left: 0;margin-right: 0;
+            &>div{padding-left: 0;padding-right: 0;}
+        }
+        .main-chat{padding-left: 0;}
+        .chat-item{padding-left: 0;
+            &:after{display: none;}
+            .chat-item{padding-left: 20px;}
+        }
+    }
+}
+/*/text-block width chat*/
