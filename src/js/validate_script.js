@@ -239,14 +239,24 @@ function fancyCallback(){
 }
 
 function chat(){
-    /*clone main Chat*/
+    function isTexrareaEmpty(){
+        $('.main-chat textarea,.not-logged-chat textarea').on('keyup change',function(event) {
+            if( !$(this).val() == ''){
+                $(this).parent().find('button[type=submit]').removeAttr('disabled');
+            }else{
+                $(this).parent().find('button[type=submit]').attr('disabled', true);
+            }
+        });
+    }
+    isTexrareaEmpty();
 
+    /*clone main Chat*/
     var cloneChat = null,
         namePerson = null;
 
     function clonedChat(){
         cloneChat = $('.cloned-chat').clone();
-        cloneChat.find('textarea').val(" ");
+        cloneChat.find('textarea').val("");
     }
 
     /* click on reply */
@@ -331,8 +341,9 @@ function chat(){
                     }
                 }else if( parentForm.hasClass('main-chat') ){
                     parentForm.parent().parent().parent().find('.chat-item-wrap').prepend(wraper);
-                    $('.main-chat textarea').val("");
+                    $('.main-chat textarea').val('');
                     chatCountNumber();
+                    parentForm.find('button[type=submit]').attr('disabled', true);
                 }
             }
         });
@@ -366,9 +377,10 @@ function chat(){
                 $(this).parent().find('.chat-item-wrap').removeClass('hide-other').addClass('show-other');
                 $(this).hide();
             });
-        }
-    }
+        }}
     chatCountNumber();
+
+
 }
 
 
