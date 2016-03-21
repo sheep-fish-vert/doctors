@@ -115,3 +115,16 @@
 @media screen and (max-width: 320px){
 
 }
+
+@media screen and (max-height: 770px){
+    #add-material{
+        .modal-title{ width: calc(100% - 17px);}
+        .modal-footer{ width: calc(100% - 17px);}
+    }
+    .mobile{
+        #add-material{
+            .modal-title{ width: calc(100% );}
+            .modal-footer{ width: calc(100%);}
+        }
+    }
+}

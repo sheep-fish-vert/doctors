@@ -128,7 +128,9 @@ function validationCall(form){
 }
 
 /* Отправка формы с файлом */
-function validationCallDocument(form){
+function validationCallDocument(form) {
+    
+    $('button[type="submit"]').attr('disabled', 'disabled');
     $('.save-planet').removeClass('valid');
 
     var thisForm = $(form);
@@ -393,6 +395,7 @@ function AddSomeActive(form) {
     {
 
         $(form).find('button[type="submit"]').addClass('active-submit');
+        $(form).find('button[type="submit"]').removeAttr('disabled');
 
     }
 }
