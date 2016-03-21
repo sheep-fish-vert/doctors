@@ -251,7 +251,7 @@
 
         <div class="contact-form-row-button cfix modal-footer">
             <div class="contact-form-item">
-                <div class="contact-submit">
+                <div class="contact-submit ">
                     <div class="close-fancybox-please give-me-border">
                         <span>Отмена</span>
                     </div>
@@ -287,7 +287,7 @@
                         </div>
                     </div>
                     <div class="contact-form-item">
-                        <div class="contact-form-item-input rover form_row">
+                        <div class="contact-form-item-input rover-clone form_row">
                             <div class="form_input">
                                 <input type="text" name="zagolovok" required="required" value="" placeholder="Введите заголовок*">
                             </div>
@@ -297,6 +297,75 @@
                         <div class="contact-form-item-input form_row">
                             <div class="form_input spec-padd">
                                 <textarea name="predlog-text" placeholder="Введите описание*" required></textarea>
+                                <p>*Обязательные поля</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-item">
+                        <div class="contact-form-item-input form_row">
+                            <div class="form_input">
+                                <label for="file-load" class="save-planet">
+                                    <input type="file" id="file-load" required name="file-load">
+                                    <p>
+                                        <i class="material-icons">attach_file</i>
+                                        <span>Загрузить файл</span>
+                                    </p>
+                                    <div class="error-field">
+                                        <i class="material-icons">error</i>
+                                        <span class="error-massage">Здесь будет блок ошибки</span>
+                                    </div>
+                                    
+                                </label>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-row-button cfix modal-footer">
+                <div class="contact-form-item">
+                    <div class="contact-submit">
+                        <div class="close-fancybox-please">
+                            <span>Отмена</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-item">
+                    <button type="submit" class="contact-submit">
+                        <span>Опубликовать</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    
+    <div id="change-document">
+        <form action="ajax.php" name="change-document" class="change-document">
+            <div class="contact-form-title modal-title modal-with-active">
+                <h5>Добавить документ <b>в ФГОС ДО</b></h5>
+                <div class="status-link">
+                    <div class="save">Опубликовано</div>
+                    <div class="chernovik">Черновик</div>
+                    <div class="publick">Сохранено</div>
+                </div>
+            </div>
+            
+            <div class="modal-body east-contact-form">
+                <div class="contact-form-row cfix">
+                    <div class="contact-form-item">
+                        <div class="contact-form-item-input rover form_row">
+                            <label for="tromb" class="placeholder-simplify" >Введите заголовок <span> Документа 2*</span> </label>
+                            <div class="form_input">
+                                <input type="text" class="tromb" name="zagolovok" required="required" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-item text-area-block">
+                        <div class="contact-form-item-input rover form_row">
+                            <label for="tromb" class="placeholder-simplify" >Введите описание <span> Документа 2*</span> </label>
+                            <div class="form_input">
+                                <textarea name="predlog-text" class="tromb" required></textarea>
                                 <p>*Обязательные поля</p>
                                 <div class="error-field">
                                     <i class="material-icons">error</i>
@@ -323,6 +392,66 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                
+                <div class="slider-row">
+                    <div class="sliding-shift">
+                        <div class="item active-item">
+                            <div class="close-button-item"></div>
+                            <div class="convert">
+                                <div class="doc-type">
+                                    <img src="images/typer1.jpg" alt="">
+                                </div>
+                                <div class="description-file">
+                                    <div class="name"> Документ </div>
+                                    <div class="size"> 2 158 Мб </div>
+                                </div>
+                            </div>
+                            <div class="checker">
+                                <label>
+                                    <input type='checkbox'> Текст
+                                </label>                                
+                            </div>
+                            <div class="progress-line"></div>
+                        </div>
+
+                        <div class="item">
+                            <div class="convert">
+                                <div class="doc-type">
+                                    <img src="images/typer1.jpg" alt="">
+                                </div>
+                                <div class="description-file">
+                                    <div class="name"> Документ </div>
+                                    <div class="size"> 2 158 Мб </div>
+                                </div>
+                            </div>
+                            <div class="checker"></div>
+                        </div>
+                        <div class="item">
+                            <div class="convert">
+                                <div class="doc-type">
+                                    <img src="images/typer1.jpg" alt="">
+                                </div>
+                                <div class="description-file">
+                                    <div class="name"> Документ </div>
+                                    <div class="size"> 2 158 Мб </div>
+                                </div>
+                            </div>
+                            <div class="checker"></div>
+                        </div>
+                        <div class="item">
+                            <div class="convert">
+                                <div class="doc-type">
+                                    <img src="images/typer1.jpg" alt="">
+                                </div>
+                                <div class="description-file">
+                                    <div class="name"> Документ </div>
+                                    <div class="size"> 2 158 Мб </div>
+                                </div>
+                            </div>
+                            <div class="checker"></div>
+                        </div>
+                    </div>                        
                 </div>
             </div>
             

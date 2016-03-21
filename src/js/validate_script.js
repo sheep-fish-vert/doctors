@@ -18,7 +18,7 @@ function validate(form, options){
         $form.validate({
             errorClass : 'errorText',
             focusCleanup : true,
-            focusInvalid : false,
+            focusInvalid : true,
             debug: true,
             invalidHandler: function(event, validator) {
                 if(typeof(setings.errorFunction) === 'function'){
@@ -129,6 +129,7 @@ function validationCall(form){
 
 /* Отправка формы с файлом */
 function validationCallDocument(form){
+    $('.save-planet').removeClass('valid');
 
     var thisForm = $(form);
     var formData = new FormData($(form)[0]);
@@ -385,6 +386,15 @@ function chat(){
 
 
 
+function AddSomeActive(form) {
+
+    if (($(form).find('textarea').val() != '') && ($(form).find('.save-planet').hasClass('valid')) && ($(form).find('select').val() != '') && ($(form).find('input[type=text]').val() != ''))
+    {
+
+        $(form).find('button[type="submit"]').addClass('active-submit');
+
+    }
+}
 
 $(document).ready(function(){
     chat();
@@ -396,7 +406,7 @@ $(document).ready(function(){
     validate('#predlog-zalog .predlog-wrap',{submitFunction:validationCall});
     validate('#predlog .predlog-wrap',{submitFunction:validationCall});
 
-    validate('.add-new-document',{submitFunction:validationCall});
+    validate('.add-new-document',{submitFunction:validationCallDocument, unhighlightFunction:AddSomeActive});
 
     Maskedinput();
     fancyboxForm();
