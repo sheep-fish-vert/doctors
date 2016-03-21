@@ -275,9 +275,10 @@
         .vsplivander{display: none; position: relative;
             .spec-c{position: absolute;  z-index: 9; top: calc(50% - 1px); padding: 3px; border-top: 1px solid #efefef; border-bottom: 1px solid #efefef; left: -30px; right: -30px;background-color: white; cursor: pointer; transition: all 0.5s;
                 .open-more{position: absolute;  z-index: 9; top: calc(50% - 20px); left: 10px;  border: 1px solid #efefef;; width: 40px; height: 40px; text-align: center; line-height: 38px; border-radius: 50%; background-color: white;font-weight: bold;font-size: 12px;font-family: "Roboto", sans-serif; transition: all 0.5s; }
-                &:hover{border-top: 1px solid #00aec3; border-bottom: 1px solid #00aec3; box-shadow: 0 0 6px 0 rgba(0, 172, 193, 0.5);
+               /* &:hover{border-top: 1px solid #00aec3; border-bottom: 1px solid #00aec3; box-shadow: 0 0 6px 0 rgba(0, 172, 193, 0.5);
                     .open-more{border: 1px solid #00aec3; box-shadow: 0 0 6px 0 rgba(0, 172, 193, 0.5);}
                 }
+                */
             }
 
         }
