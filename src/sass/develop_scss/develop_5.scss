@@ -50,6 +50,7 @@
     .button-plus{width: 64px;height: 64px;border-radius:50%;cursor:pointer;bottom:10%;right:180px;position:fixed;z-index:100;box-shadow:0 4px 6px 0 rgba(69, 71, 73, .20);display: flex;justify-content:center;align-items:center;transition:background-color 500ms ease;
         &:before{content:'';display: block;position: absolute;z-index: 1;width: 100%;height: 100%;border-radius:50%;background-color: #e57373;top:0;left:0;}
         .button-plus-img{position: relative;color:#fff;z-index: 2;
+            a{color:#fff;}
             img{opacity: 1;transition:opacity 300ms ease;}
             .material-icons{position: absolute;left:calc(50% - 12px);top: calc(50% - 12px);opacity:0;transition:opacity 300ms ease;}
 
@@ -105,8 +106,8 @@
                     &.green-background{background-color: #67be38;}
                     &.purple-background{background-color:#512da7;}
                 }
-                .button-list-text{padding-right: 20px;overflow: hidden;width: 170px;
-                    span{display: block;color:#fff;min-height:25px;line-height:25px;max-width: 150px;width: 100%;background-color: #616161;font-size:12px;position: relative;right: -175px;text-align: center;}
+                .button-list-text{padding-right: 13px;overflow: hidden;width: 163px;
+                    span{display: block;color:#fff;min-height:25px;line-height:25px;max-width: 150px;width: 100%;background-color: #616161;font-size:12px;position: relative;right: -168px;text-align: center;border-radius: 3px;}
                 }
                 &:hover{
                     .list-img{
