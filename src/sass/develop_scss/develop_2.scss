@@ -177,7 +177,7 @@
             .convert{border-radius: 50%; overflow: hidden;}
         }
         .name-item{padding-left: 15px; display: table-cell; vertical-align: middle;
-            .convert{display: flex; align-items: flex-start; justify-content: flex-start; margin-bottom: 15px;
+            .convert{display: flex; align-items: flex-start; justify-content: flex-start;
                 span{display: block; padding: 3px 7px ; color: white; background-color: #ff7474; margin-left: 10px; font-size: 12px; font-weight: 400;}
                 h4{font-family: 'Roboto', sans-serif; font-weight:700; font-size: 16px; color:#00aec3;
                     span{background-color: white; padding: 0; margin: 0; display: inline;}
@@ -295,7 +295,7 @@
             .universal-list li { border-bottom: 0px solid #efefef;}
             .dstranger-list{  margin: 0 -30px; width: -webkit-calc(100% + 60px);
 
-                li{height: 0; overflow: hidden; visibility: hidden;border-top: 0 !important;
+                li{height: 0; overflow: hidden; visibility: hidden;
                     .block-button li {height: auto; overflow: visible;  visibility: visible; border-top: 0;
                         &:last-child {border-top: 2px solid #efefef;}
                     }
@@ -420,8 +420,11 @@
 }
 
 .fancybox-form-wrap .fancybox-close{ top: 27px; right:27px; background-image: none; width: 16px; height: 16px;
-    &:before{content: ''; position: absolute; width: 18px; height: 1px; background-color: #9a9a9a; transform: rotate(45deg); top: 8px;  }
-    &:after{content: '';position: absolute; width: 18px; height: 1px; background-color: #9a9a9a; transform: rotate(-45deg); top: 8px;}
+    &:before{content: ''; position: absolute; width: 18px; height: 1px; background-color: #9a9a9a; transform: rotate(45deg); top: 8px; transition: all 0.5;  }
+    &:after{content: '';position: absolute; width: 18px; height: 1px; background-color: #9a9a9a; transform: rotate(-45deg); top: 8px; transition: all 0.5;}
+    &:hover{
+        &:before, &:after{background-color:#00aec3; }
+    }
 }
 
 #predlog, #predlog-zalog { background-color: white;
