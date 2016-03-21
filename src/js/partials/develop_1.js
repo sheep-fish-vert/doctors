@@ -171,6 +171,8 @@ try{
                         $('.slider-bottom .slider-item').eq(i-1).click();
                         $('.slider-num').text(i + ' из ' + slick.slideCount);
                         $('.slider-name-wrap').text($('.slider-body-main .slick-current').data('name')+'.'+$('.slider-body-main .slick-current').data('type'));
+                        $('.slider-right a').removeClass('active');
+                        $('.slider-item').removeClass('like-zoom');
 
                     });
 
@@ -272,6 +274,21 @@ try{
 
                 var imgSrc = $('.slider-body-main .slick-current img').attr('src');
                 $(this).attr('href', imgSrc);
+
+            });
+
+            // zoom img
+
+            $(document).on('click', '.slider-right a', function(e){
+
+                e.preventDefault();
+                if(!$(this).is('.active')){
+                    $(this).addClass('active');
+                    $('.slick-current').addClass('like-zoom');
+                }else{
+                    $(this).removeClass('active');
+                    $('.slick-current').removeClass('like-zoom');
+                }
 
             });
 
