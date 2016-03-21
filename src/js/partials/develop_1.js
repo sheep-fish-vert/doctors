@@ -138,6 +138,7 @@ try{
 
             var group = null;
             var numImg = null;
+            var timer = null;
 
             $(document).on('click','.fancybox-slider', function(e){
 
@@ -166,12 +167,19 @@ try{
 
                     });
 
+                    $('.slider-body-main').on('init', function(){
+                        timer = setTimeout(function(){
+                            $('.slider-body-main').addClass('no-opacity');
+                        },500);
+                    });
+
                     $('.slider-body-main').slick({
                         slidesToShow: 1,
                         slidesToScroll: 1,
                         infinite:false,
                         asNavFor:'.slider-bottom',
-                        focusOnSelect:true
+                        focusOnSelect:true,
+                        draggable:false
                     });
 
                     $('.slider-bottom').slick({
@@ -180,6 +188,7 @@ try{
                         infinite:false,
                         asNavFor:'.slider-body-main',
                         focusOnSelect:true,
+                        draggable:false,
                         responsive: [
                            {
                                 breakpoint: 992,
@@ -202,7 +211,9 @@ try{
                 },
                 afterClose:function(){
                     $('.slider-body-main, .slider-bottom').slick('unslick');
+                    $('.slider-body-main').removeClass('no-opacity');
                     $('.modals-slider .slider-item').remove();
+                    clearTimeout(timer);
                 }
             });
 
