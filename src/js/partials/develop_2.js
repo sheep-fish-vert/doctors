@@ -149,19 +149,25 @@ try{
             $('.save-planet').addClass('valid');
         });
 
-        $( ".tromb" ).focusin(function() {
-            $(this).closest('.rover').find('label').fadeOut( 300 );
+        
+        $( ".tromb" ).focusin(function() {           
+            $(this).closest('.rover').find('label').addClass('trans-plato');            
         });
 
         $(".tromb").focusout(function() {
-            if ($(".tromb").val().length == 0) {
-                $(this).closest('.rover').find('label').fadeIn(300);
+            if ($(this).val().length == 0) {               
+                $(this).closest('.rover').find('label').removeClass('trans-plato');
+            }
+        });    
+
+        $('#zapros input, #zapros textarea').on('change', function() {
+            console.log('da no net');
+            if (($(this).closest('form').find('textarea').val() != '') && ($(this).closest('form').find('input[type=text]').val() != '')  && ($(this).closest('form').find('input[type=email]').val() != '')) {
+                console.log('da');
+                $(this).closest('form').find('button[type="submit"]').addClass('active-submit');
+                $(this).closest('form').find('button[type="submit"]').removeAttr('disabled');
             }
         });
-
-        
-
-         
 
     });
 

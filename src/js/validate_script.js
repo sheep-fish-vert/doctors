@@ -150,7 +150,6 @@ function validationCallDocument(form) {
             popNext("#call_success", "call-popup");
         }
     });
-
 }
 
 /* Отправка формы с файлaми */
@@ -410,7 +409,9 @@ $(document).ready(function(){
     validate('#predlog-zalog .predlog-wrap',{submitFunction:validationCall});
     validate('#predlog .predlog-wrap',{submitFunction:validationCall});
 
-    validate('.add-new-document',{submitFunction:validationCallDocument, unhighlightFunction:AddSomeActive});
+    validate('.add-new-document', { submitFunction: validationCallDocument, unhighlightFunction: AddSomeActive });
+
+    validate('.zapros-send',{submitFunction:validationCall});    
 
     Maskedinput();
     fancyboxForm();
