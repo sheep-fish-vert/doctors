@@ -54,7 +54,8 @@
             .material-icons{position: absolute;left:calc(50% - 12px);top: calc(50% - 12px);opacity:0;transition:opacity 300ms ease;}
 
         }
-        .button-plus-list{position: absolute;bottom: 100%;right: 7px;z-index: 0;display: none;width: 220px;
+        .button-plus-list{position: absolute;bottom: 50%;right: 7px;z-index: 0;display: none;width: 220px;
+            ul{padding-bottom: 32px;}
             &.active{
                 a{
                     li{
@@ -96,7 +97,7 @@
                     }
                 }
             }
-            a{text-decoration: none;display: flex;justify-content:flex-start;align-items:center;
+            a{text-decoration: none;display: flex;justify-content:flex-end;align-items:center;
                 .list-img{display: flex;justify-content:center;align-items:center;position: relative;width: 49px;height: 49px;border-radius: 50%;box-shadow: 0 4px 6px 0 rgba(69, 71, 73, .20);background-color: red;color:#fff;font-size: 10px;
                     img{opacity: 1;transition:opacity 300ms ease;}
                     .material-icons{font-size: 16px;position: absolute;left:calc(50% - 8px);top: calc(50% - 8px);opacity: 0;transition:opacity 300ms ease;}
