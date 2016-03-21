@@ -142,10 +142,21 @@ try{
             $('.pop-choose').styler();
         }, 100);
         
-        $('input[type="file"]').change(function() {
+        $('input[type="file"]').on('change', function() {
             var file = $(this)[0].files[0].name;
             $('.save-planet>p>span').text(file);
+            $('.save-planet').addClass('valid');
         });
+
+        $( ".tromb" ).focusin(function() {
+            $(this).closest('.rover').find('label').fadeOut( 300 );
+        });
+
+        $(".tromb").focusout(function() {
+            if ($(".tromb").val().length == 0) {
+                $(this).closest('.rover').find('label').fadeIn(300);
+            }
+        }); 
 
     });
 
