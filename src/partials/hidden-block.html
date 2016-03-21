@@ -172,7 +172,7 @@
         </form>
     </div>
 
-    <div id="add-material">
+    <div id="add-material" class="easy-popup-form">
 
         <div class="contact-form-title modal-title">
             <h5>Добавить материал</h5>
@@ -261,7 +261,7 @@
 
     </div>
 
-    <div id="add-document">
+    <div id="add-document" class="easy-popup-form">
         <form action="ajax.php" name="add-document" class="add-new-document">
             <div class="contact-form-title modal-title">
                 <h5>Добавить документ</h5>
@@ -340,7 +340,75 @@
 
     </div>
     
-    <div id="change-document">
+    
+    <div id="zapros" class="easy-popup-form">
+        <form action="ajax.php" name="zapros" class="zapros-send">
+            <div class="contact-form-title modal-title modal-with-active">
+                <h5>Запрос на авторство</h5>
+            </div>
+            
+            <div class="modal-body east-contact-form">
+                <div class="opis-row">
+                    <div class="convert">
+                        <img src="images/zapros.png" alt="">
+                    </div>
+                    <div class="opis">
+                        <b>Введите ваш вопрос</b> 
+                        <p>и преподаватель свяжется с вами в течение 24</p>
+                    </div>
+                </div>
+                <div class="contact-form-row cfix">
+                    <div class="contact-form-item">
+                        <div class="contact-form-item-input rover form_row">
+                            <label for="tromb" class="placeholder-simplify">ФИО*</label>
+                            <div class="form_input">
+                                <input type="text" class="tromb" name="zagolovok" required="required" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-item">
+                        <div class="contact-form-item-input rover form_row">
+                            <label for="tromb" class="placeholder-simplify">Ваш e-mail*</label>
+                            <div class="form_input">
+                                <input type="email" class="tromb" name="zagolovok" required="required" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-item text-area-block">
+                        <div class="contact-form-item-input rover form_row">
+                            <label for="tromb" class="placeholder-simplify " >Введите ваш вопрос</label>
+                            <div class="form_input">
+                                <textarea name="predlog-text" class="tromb" required></textarea>
+                                <p>*Обязательные поля</p>
+                                <div class="error-field">
+                                    <i class="material-icons">error</i>
+                                    <span class="error-massage">Здесь будет блок ошибки</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-row-button cfix modal-footer">
+                <div class="contact-form-item">
+                    <div class="contact-submit">
+                        <div class="close-fancybox-please">
+                            <span>Отмена</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-item">
+                    <button type="submit" class="contact-submit" >
+                        <span>Опубликовать</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    
+    <div id="change-document" class="easy-popup-form">
         <form action="ajax.php" name="change-document" class="change-document">
             <div class="contact-form-title modal-title modal-with-active">
                 <h5>Добавить документ <b>в ФГОС ДО</b></h5>
@@ -363,7 +431,7 @@
                     </div>
                     <div class="contact-form-item text-area-block">
                         <div class="contact-form-item-input rover form_row">
-                            <label for="tromb" class="placeholder-simplify" >Введите описание <span> Документа 2*</span> </label>
+                            <label for="tromb" class="placeholder-simplify placeholder-textarea " >Введите описание <span> Документа 2*</span> </label>
                             <div class="form_input">
                                 <textarea name="predlog-text" class="tromb" required></textarea>
                                 <p>*Обязательные поля</p>
