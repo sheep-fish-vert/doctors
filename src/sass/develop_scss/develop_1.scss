@@ -297,7 +297,8 @@
             }
             .info{width: calc(100% - 210px);padding-left:20px;
                 .info-wrap{max-width: 310px;width: 100%;padding: 20px 0 40px 0;
-                    .info-row{display: flex;flex-wrap:wrap;align-items:center;border-bottom: 1px solid #a7a7a7;padding: 10px 15px 15px 20px;font-weight: 300;font-size: 16px;
+                    .info-row{display: flex;flex-wrap:wrap;align-items:center;border-bottom: 1px solid #a7a7a7;padding: 10px 15px 15px 20px;font-weight: 300;font-size: 16px;transition:color 300ms ease;
+                        &.hover{color:#cccccc;}
                         .info-color{width: 20px;
                             span{width: 10px;height: 10px;border-radius: 50%;display: block;}
                         }

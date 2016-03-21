@@ -109,10 +109,13 @@ try{
                     var textVal = $(this).data('value');
                     $(this).css({'stroke-width':'40'});
                     $('.svg text').html(textVal+'%');
+                    $('.info-row').removeClass('hover');
+                    $('.info-value[data-value='+textVal+']').parents('.info-row').addClass('hover');
                 },
                 function(){
                     $(this).css({'stroke-width':'34'});
                     $('.svg text').html('');
+                    $('.info-row').removeClass('hover');
                 }
             );
 
@@ -121,10 +124,13 @@ try{
                     var textVal = $(this).find('.info-value').data('value');
                     $('.svg [data-value='+textVal+']').css({'stroke-width':'40'});
                     $('.svg text').html(textVal+'%');
+                    $('.info-row').removeClass('hover');
+                    $(this).addClass('hover');
                 },
                 function(){
                     $('.svg circle').css({'stroke-width':'34'});
                     $('.svg text').html('');
+                    $('.info-row').removeClass('hover');
                 }
             );
 
