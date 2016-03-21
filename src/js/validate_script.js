@@ -292,6 +292,7 @@ function chat(){
         var personImg = $('.main-chat .chat-person-img img').attr('src');
         var personName = $('.main-chat .chat-person-name span').first().text();
         var personLastName = $('.main-chat .chat-person-name span').last().text();
+        var personHref = $('.main-chat .chat-person').data('href');
         var message = parentForm.find('.chat-form textarea').val();         //MESSEGE
         var messageTag = null;
         var otherButton = "";
@@ -322,7 +323,7 @@ function chat(){
         if(parentForm.hasClass('main-chat')){
             otherButton = '<div class="block-button"><div class="drop drop-share-block"><div class="convert"><i class="material-icons">more_vert</i></div><div class="hide-hipe share-block"><ul><li><a href="#" class="reply-post"><i class="material-icons">reply</i><span>Ответить</span></a></li><li><a href="#" class="block-post"><i class="material-icons">block</i><span>Заблокировать</span></a></li></ul></div></div></div>';
         }
-        var wraper = '<div class="chat-item"><div class="chat-person cfix"><div class="chat-person-img"><img src="'+personImg+'" alt=""></div><div class="chat-person-detail "><div class="chat-person-name"><span>'+personName+'</span> '+'<span>'+personLastName+'</span></div><div class="chat-person-date"><i class="fa fa-calendar"></i><span>'+day+'.'+month+'.'+year+'</span><i class="fa fa-clock-o"></i><span>'+hour+'.'+minutes+'</span><span class="reply-post"><i class="material-icons">reply</i><span>Ответить</span></span></div></div></div> <div class="text">'+messageTag+'</div>'+otherButton+'</div>';
+        var wraper = '<div class="chat-item"><div class="chat-person cfix"><div class="chat-person-img"><img src="'+personImg+'" alt=""></div><div class="chat-person-detail "><div class="chat-person-name"><a href="'+personHref+'"><span>'+personName+'</span> '+'<span>'+personLastName+'</span></a></div><div class="chat-person-date"><i class="fa fa-calendar"></i><span>'+day+'.'+month+'.'+year+'</span><i class="fa fa-clock-o"></i><span>'+hour+'.'+minutes+'</span><span class="reply-post"><i class="material-icons">reply</i><span>Ответить</span></span></div></div></div> <div class="text">'+messageTag+'</div>'+otherButton+'</div>';
 
         $.ajax({
             url: ajaxUrl,
