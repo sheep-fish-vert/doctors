@@ -415,9 +415,8 @@
         .close-fancybox-please{text-decoration: none; text-align: center;display: block; transition: all 0.5s; font-size: 16px; font-family: "Roboto", sans-serif;color: rgb(84, 84, 84);
             &:hover{ color: rgb(255, 116, 116);   }
         }
-        button{  border: none; outline: none;font-size: 16px; font-family: "Roboto",sans-serif;  color: rgb(255, 255, 255); background-color: rgba(0, 174, 195,0.4); transition: all 0.5s;
-            &:hover{background-color: #00aec3;}
-        }
+        button{  border: none; outline: none;font-size: 16px; font-family: "Roboto",sans-serif;  color: rgb(255, 255, 255); background-color: rgba(0, 174, 195,0.4); transition: all 0.5s;        }
+        .active-submit{background-color: #00aec3;}
     }
 }
 
@@ -445,11 +444,15 @@
             }
 
             .form_input{width: 100%; padding-top: 10px;
-                textarea{width: 100%; height: 145px; border: 2px solid #dddddd; resize: none;font-size: 12px;   font-family: "Roboto", sans-serif; color: #585454;  line-height: 1.2; padding: 10px;}
-                ::-webkit-input-placeholder {color:rgb(190, 190, 190);;}
-                ::-moz-placeholder          {color:rgb(190, 190, 190);;}/* Firefox 19+ */
-                :-moz-placeholder           {color:rgb(190, 190, 190);;}/* Firefox 18- */
-                :-ms-input-placeholder      {color:rgb(190, 190, 190);;}
+                textarea{width: 100%; height: 145px; border: 2px solid #dddddd; resize: none;font-size: 12px;   font-family: "Roboto", sans-serif; color: #585454;  line-height: 1.2; padding: 10px;  font-weight: 400; }
+                textarea::-webkit-input-placeholder { color:rgb(84, 84, 84);}
+                textarea:-moz-placeholder { color:rgb(84, 84, 84) ;  font-weight: 300;}
+                ::-webkit-input-placeholder {color:rgb(84, 84, 84) ;  font-weight: 300;}
+                ::-moz-placeholder          {color:rgb(84, 84, 84) ;  font-weight: 300;}
+                :-moz-placeholder           {color:rgb(84, 84, 84) ;  font-weight: 300;}
+                :-ms-input-placeholder      {color:rgb(84, 84, 84) ;  font-weight: 300;}
+                
+                
                 p{font-size: 16px; font-family: "Roboto", sans-serif;color: rgb(84, 84, 84);  line-height: 1.5; font-weight: 300; padding-bottom: 30px;}
                 label{display: none !important;}
                 .error-field{font-size: 12px; font-family: "Roboto", sans-serif; padding-bottom: 10px; color: rgb(255, 117, 119);  line-height: 2; display: table; min-height: 12px;display: none;
@@ -464,7 +467,7 @@
     }
 }
 
-#add-material{background-color: white;
+#add-material {background-color: white;
     .give-me-border{border: 2px solid #767676;
         &:hover{border: 2px solid rgb(255, 116, 116);}
     }
@@ -482,14 +485,17 @@
     }
 }
 
-#add-document{background-color: white;
+
+
+#add-document, #change-document{background-color: white;
     .east-contact-form{padding-top: 0px;
         .contact-form-item{padding: 15px 0 0;}
+        .text-area-block{padding-top: 40px;}
     }
     select{width: 0; height: 0; opacity: 0; overflow: hidden;}
     .pop-choose{width: 100%; font-weight: 300; border-bottom: 1px solid #a9a9a9; line-height: 30px; padding-left: 10px; position: relative;
-        .hide-placeholder{display: none;}
-        .jq-selectbox__select-text{width: 100% !important; cursor: pointer; font-size: 12px; font-family: "Roboto", sans-serif;  color: rgb(0, 0, 0); line-height: 2;}
+        .hide-placeholder{display: none; }
+        .jq-selectbox__select-text{width: 100% !important; color: rgb(84, 84, 84);; cursor: pointer; font-size: 12px; font-family: "Roboto", sans-serif;   line-height: 2;}
         .jq-selectbox__dropdown{right: 0;  @include box-shadow; border-radius: 3px;
             ul{ max-height: 120px !important; background-color: white; border: 1px solid #00adc3; z-index: 102;border-top: 2px solid #00adc3;
                 li{cursor: pointer; font-size: 12px; font-family: "Roboto", sans-serif;  color: rgb(84, 84, 84); line-height: 2; transition: all 0.5s;padding: 0 10px;
@@ -502,8 +508,12 @@
                 &:before{ content: ''; position: absolute; left: 0;top: 10px; width: 6px; height: 1px; background-color: #737373; transform: rotate(45deg); transition: all 0.5s;}
                 &:after{content: ''; position: absolute; right: 0;top: 10px; width: 6px; height: 1px; background-color: #737373; transform: rotate(-45deg); transition: all 0.5s;}
             }
-        }
+        } 
     }
+    .changed{
+        .jq-selectbox__select-text{color: rgb(0, 0, 0);}
+    }
+    
     .opened {z-index: 105 !important;
         .jq-selectbox__trigger .jq-selectbox__trigger-arrow{transform: rotate(90deg);
             &:before{ left: 5px;top: 0px; width: 6px;  transform: rotate(45deg);}
@@ -519,13 +529,15 @@
                 }
             }
 
-            input[type=text] {width: 100%; font-weight: 300; border: none; outline: none; border-bottom: 1px solid #a9a9a9; line-height: 30px; padding-left: 10px; font-size: 12px;   font-family: "Roboto", sans-serif;  color: rgb(84, 84, 84);  line-height: 2; }
+            input[type=text] {width: 100%; font-weight: 300; border: none; outline: none; border-bottom: 1px solid #a9a9a9; line-height: 30px; padding-left: 10px; font-size: 12px;   font-family: "Roboto", sans-serif;  color: rgb(84, 84, 84);  line-height: 2; background-color: transparent; }
 
-            textarea{width: 100%; height: 90px; border: 1px solid #a9a9a9; resize: none;font-size: 12px;   font-family: "Roboto", sans-serif; color: #585454;  line-height: 1.2; padding: 10px;}
-            ::-webkit-input-placeholder {color:rgb(84, 84, 84);}
-            ::-moz-placeholder          {color:rgb(84, 84, 84);}/* Firefox 19+ */
-            :-moz-placeholder           {color:rgb(84, 84, 84);}/* Firefox 18- */
-            :-ms-input-placeholder      {color:rgb(84, 84, 84);}
+            textarea{width: 100%; height: 90px; border: 1px solid #a9a9a9; resize: none;font-size: 12px;   font-family: "Roboto", sans-serif; color: #585454;  line-height: 1.2; padding: 10px; background-color: transparent;}
+            textarea::-webkit-input-placeholder { color:rgb(84, 84, 84);}
+            textarea:-moz-placeholder { color:rgb(84, 84, 84) ;  font-weight: 300;}
+            ::-webkit-input-placeholder {color:rgb(84, 84, 84) ;  font-weight: 300;}
+            ::-moz-placeholder          {color:rgb(84, 84, 84) ;  font-weight: 300;}
+            :-moz-placeholder           {color:rgb(84, 84, 84) ;  font-weight: 300;}
+            :-ms-input-placeholder      {color:rgb(84, 84, 84) ;  font-weight: 300;}
 
             p{font-size: 16px; font-family: "Roboto", sans-serif;color: rgb(84, 84, 84);  line-height: 1.5; font-weight: 300; padding-bottom: 5px;}
             label{display: none !important;}
@@ -536,14 +548,51 @@
         }
         .spec-padd{padding-top: 40px;}
     }
+    
     .error{
         .form_input .error-field{display: block !important;}
     }
-    .rover.error{ position: relative;
-        &:before{content: ''; position: absolute; bottom: 0; left: 0; right: 0; background-color: red; height: 1px; z-index: 101;}
-    }
-}
+}   
+    
 
 .lister-page .single .vsplivander .spec-c {    top: calc(100% - -1px);  left: 0px; right: 0px; }
 .dstranger-list .list-document .face-doc { vertical-align: middle;}
 
+
+/* block for specials */
+.rover{ position: relative; padding-top: 10px;
+    .placeholder-simplify{position: absolute; top: 10px;font-size: 12px; font-family: "Roboto", sans-serif;  color: rgb(84, 84, 84);line-height: 2; left: 10px;z-index: 2; }
+    .form_input{position: relative; z-index: 5;}    
+}
+
+
+/* special popup*/
+
+.modal-with-active{
+    h5{display: inline-block;
+        b{font-weight: 700;}
+    }
+    .status-link{display: inline-block;font-size: 16px; font-family: "Roboto", sans-serif;
+        .save{display: none; color: rgb(0, 174, 195);}
+        .chernovik{display: none; color: rgb(255, 117, 119);}
+        .publick{ color: rgb(0, 193, 21);}
+    }
+}
+.slider-row{ height: 160px; border: 5px solid red; margin: 0 -60px;
+    .sliding-shift{ padding: 10px 0;
+        .item{ width: 100px;  margin: 0 8px; display: inline-block; vertical-align: middle; position: relative; cursor: pointer;
+            .close-button-item{position: absolute;top: 5px; right: 5px; width: 13px; height: 13px; overflow: hidden; z-index: 5;
+                &:before{content: ''; width: 13px; height: 1px; position: absolute; top: 5px; right: 0px; transform: rotate(45deg); background-color: white;}
+                &:after{content: ''; width: 13px; height: 1px; position: absolute; top: 5px; right: 0px; transform: rotate(-45deg); background-color: white;}
+            }
+            
+            .convert{ position: relative; border: 0px solid transparent;background-color: rgb(255, 255, 255); box-shadow: 0px 4px 6px 0px rgba(66, 69, 72, 0.2); transition: all 0.5s;
+                .progress-line{position: absolute; bottom: 1px; left: 0; right: 60%; height: 3px;  background-color: #00aec3; }   
+                &:hover{box-shadow: 0px 5px 10px 0px rgba(66, 69, 72, 0.5);}     
+            }
+        }
+        .active-item{            
+            .convert {border: 1px solid #aaacae; box-shadow: 0px 5px 10px 0px rgba(66, 69, 72, 0.5);}
+        }
+    }
+}
