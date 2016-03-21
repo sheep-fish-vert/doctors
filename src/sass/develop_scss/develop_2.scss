@@ -100,9 +100,9 @@
 
 .universal-list{ width: 100%; background-color: #ffffff; @include box-shadow; border-radius: 3px;
     li{ border-bottom:2px solid #efefef; display: flex; align-items: center; justify-content: space-between; padding-left: 50px; padding-right: 15px;position: relative; counter-increment: plan-numbered;
-        &:before{content: ''; position: absolute; bottom: 0; left: 0; width: 5px; top: 100%; background-color: #ff7474; transition: all 0.5s; }
+        &:before{content: ''; position: absolute;left: 0;width: 5px;background-color: #ff7474; transition: all 0.5s;top: 50%;transform: translateY(-50%);height: 0;}
         &:hover{
-            &:before{top: 0;}
+            &:before{height: 100%;}
         }
     }
     li:last-child{ border-bottom:0px solid #efefef; }
@@ -119,7 +119,7 @@
         .name-item{padding-left: 15px; display: table-cell; vertical-align: middle;
             .convert{display: flex; align-items: flex-start;
                 span{display: block; padding: 3px 7px ; color: white; background-color: #ff7474; margin-left: 10px; font-size: 12px; font-weight: 400;}
-                h4{font-family: 'Roboto', sans-serif; font-weight:700; font-size: 16px; color:black; 
+                h4{font-family: 'Roboto', sans-serif; font-weight:700; font-size: 16px; color:black;
                     a{text-decoration: none;
                         &:hover{text-decoration: none;}
                     }
@@ -148,7 +148,7 @@
                     a{text-decoration: none; font-weight:400; font-size: 16px; color:#00aec3;
                         &:hover{text-decoration: none;}
                     }
-                
+
                     span{background-color: white; padding: 0; margin: 0; display: inline;}
                 }
             }
@@ -241,8 +241,8 @@
                 &:first-child{padding-top: 20px; }
                 &:last-child{border-top:2px solid #efefef; padding-bottom: 20px; }
                 &:before{display: none;}
-                &:hover{background-color:#00AEC3;
-                    a{color: white;}
+                &:hover{/**background-color:#00AEC3;*/
+                    a{color: #00AEC3;}
                 }
             }
 

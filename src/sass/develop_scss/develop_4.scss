@@ -53,9 +53,9 @@
 
 .chat-item-wrap{padding-left: 0;padding-right: 0;}
 .chat-item{min-height: 110px;padding-left: 30px;position: relative;border-bottom: 2px solid #efefef;padding-bottom: 14px;
-    &:after{content: '';position: absolute;bottom: 0;left: 0px;width: 5px;top: 100%;background-color: #ff7474;transition: all 0.5s;}
+    &:after{content: '';position: absolute;left: 0px;width: 5px;top: 50%;background-color: #ff7474;transition: all 0.5s;transform: translateY(-50%);height: 0;}
     &:hover{
-        &:after{top: 0;}
+        &:after{height: 100%;}
     }
     .chat-item{margin-left: calc(30px + 1.5%);border-left: 2px solid #efefef;padding-left: 20px;min-height: 91px;border-top: none;border-bottom: 0;padding-bottom: 0;
         &:after{display: none;}
@@ -91,7 +91,7 @@
     }
     .block-button{position: absolute;top: 0;right: 15px;
         .reply-post{color: #757575;display: table;min-height: 10px;cursor: pointer;
-            &:hover{color: white;}
+            &:hover{color: #00AEC3;}
             i{display: table-cell;vertical-align: middle;}
             span{font-size: 16px;padding-left: 15px;display: table-cell;vertical-align: middle;}
         }
