@@ -122,6 +122,7 @@ try{
 
     $(document).ready(function(){
         clickanderMulti();
+        $('button[type="submit"]').attr('disabled', 'disabled');
         
         $(".single").each(function() {
             var counter =  $(this).find('.dstranger-list>ul>li').length;
@@ -156,7 +157,11 @@ try{
             if ($(".tromb").val().length == 0) {
                 $(this).closest('.rover').find('label').fadeIn(300);
             }
-        }); 
+        });
+
+        
+
+         
 
     });
 
@@ -165,7 +170,7 @@ try{
     });
 
     $(window).resize(function(){
-
+        console.log($(window).height());
     });
 
 }

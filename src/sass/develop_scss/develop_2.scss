@@ -275,12 +275,10 @@
         .vsplivander{display: none; position: relative;
             .spec-c{position: absolute;  z-index: 9; top: calc(50% - 1px); padding: 3px; border-top: 1px solid #efefef; border-bottom: 1px solid #efefef; left: -30px; right: -30px;background-color: white; cursor: pointer; transition: all 0.5s;
                 .open-more{position: absolute;  z-index: 9; top: calc(50% - 20px); left: 10px;  border: 1px solid #efefef;; width: 40px; height: 40px; text-align: center; line-height: 38px; border-radius: 50%; background-color: white;font-weight: bold;font-size: 12px;font-family: "Roboto", sans-serif; transition: all 0.5s; }
-               /* &:hover{border-top: 1px solid #00aec3; border-bottom: 1px solid #00aec3; box-shadow: 0 0 6px 0 rgba(0, 172, 193, 0.5);
+                &:hover{border-top: 1px solid #00aec3; border-bottom: 1px solid #00aec3; box-shadow: 0 0 6px 0 rgba(0, 172, 193, 0.5);
                     .open-more{border: 1px solid #00aec3; box-shadow: 0 0 6px 0 rgba(0, 172, 193, 0.5);}
                 }
-                */
             }
-
         }
         &:last-child {border-bottom: 0px solid #efefef;}
         .doctor-row{ border-radius: 0px; transition: all 0.5s;
@@ -361,10 +359,10 @@
 
     .korpus { width: 100%; background-color: white;@include box-shadow; border-radius: 3px;
         label{ text-align: center; line-height: 80px; cursor: pointer; position: relative; background: #fff; width: 25%; display: inline-block; float: left; border: none; border-bottom: 2px solid #f4f4f4;position: relative;font-size: 16px; font-family: "Roboto", sans-serif;  color: rgb(0, 0, 0);text-transform: uppercase; font-weight: 300;
-            &:before{content:' '; position: absolute; left: 0; right: 100%; height: 6px; bottom: -2px; transition: all 0.5s; background-color: #00aec3; }
-            &:hover{
+            &:before{content:' '; position: absolute; left: 50%; right: 50%; height: 6px; bottom: -2px; transition: all 0.5s; background-color: #00aec3; }
+            /*&:hover{
                 &:before{right: 0;}
-            }
+            }*/
         }
     }
 
@@ -468,11 +466,12 @@
     }
 }
 
-#add-material {background-color: white;
+#add-material {background-color: white; position: relative;
+    
     .give-me-border{border: 2px solid #767676;
         &:hover{border: 2px solid rgb(255, 116, 116);}
     }
-    .conteiner-list{padding: 0;
+    .conteiner-list{padding: 0; padding: 70px 0 110px;
         .title-check{font-size: 16px; font-family: "Roboto", sans-serif;  color: rgb(0, 0, 0);   font-weight: bold; line-height: 75px; padding-left: 30px; }
         ul {
             li {width: 100%; border-bottom: 2px solid #efefef; transition: all 0.5s;
@@ -484,6 +483,8 @@
             }
         }
     }
+    .modal-title{position: fixed; top: 0; background-color: white; z-index: 4;width: 100%; }
+    .modal-footer{position: fixed; bottom: 0; background-color: white; width: 100%;}
 }
 
 
