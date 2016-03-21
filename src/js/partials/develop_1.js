@@ -140,6 +140,8 @@ try{
             var numImg = null;
             var timer = null;
 
+            // load images from object when clicking on link (fancybox-slider)
+
             $(document).on('click','.fancybox-slider', function(e){
 
                 e.preventDefault();
@@ -153,25 +155,36 @@ try{
 
             });
 
+            //loading fancybox with images
+
             $('.fancybox-slider').fancybox({
                 fitToView:true,
                 autoSize:true,
                 padding:0,
                 wrapCSS:'fancybox-slider-wrap',
                 afterShow:function(){
+
+                    // func when slide changes
+
                     $('.slider-body-main').on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
                         var i = (currentSlide ? currentSlide : 0) + 1;
                         $('.slider-bottom .slider-item').eq(i-1).click();
                         $('.slider-num').text(i + ' из ' + slick.slideCount);
                         $('.slider-name-wrap').text($('.slider-body-main .slick-current').data('name')+'.'+$('.slider-body-main .slick-current').data('type'));
+                        $('.slider-right a').removeClass('active');
+                        $('.slider-item').removeClass('like-zoom');
 
                     });
+
+                    // prety show when slider-body-main init
 
                     $('.slider-body-main').on('init', function(){
                         timer = setTimeout(function(){
                             $('.slider-body-main').addClass('no-opacity');
                         },500);
                     });
+
+                    // calling init to sliders
 
                     $('.slider-body-main').slick({
                         slidesToShow: 1,
@@ -206,16 +219,23 @@ try{
                         ]
                     });
 
+                    // scrolling to current slide
+
                     $('.slider-body-main .slider-item').eq(numImg).click();
 
                 },
                 afterClose:function(){
+
+                    // after fancuybox close events
+
                     $('.slider-body-main, .slider-bottom').slick('unslick');
                     $('.slider-body-main').removeClass('no-opacity');
                     $('.modals-slider .slider-item').remove();
                     clearTimeout(timer);
                 }
             });
+
+            // show hide support images gallery
 
             $(document).on('click', function(e){
 
@@ -236,6 +256,40 @@ try{
                     $('.slider-bottom').removeClass('active');
                     $('.slider-body').removeClass('active');
                 }
+            });
+
+            // print image by clicking print image icon
+
+            $(document).on('click', '.print-img', function(e){
+
+                e.preventDefault();
+
+                window.print();
+
+            });
+
+            // download slide image
+
+            $(document).on('click', '.download-img', function(){
+
+                var imgSrc = $('.slider-body-main .slick-current img').attr('src');
+                $(this).attr('href', imgSrc);
+
+            });
+
+            // zoom img
+
+            $(document).on('click', '.slider-right a', function(e){
+
+                e.preventDefault();
+                if(!$(this).is('.active')){
+                    $(this).addClass('active');
+                    $('.slick-current').addClass('like-zoom');
+                }else{
+                    $(this).removeClass('active');
+                    $('.slick-current').removeClass('like-zoom');
+                }
+
             });
 
         }

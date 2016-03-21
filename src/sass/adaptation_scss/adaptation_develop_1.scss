@@ -283,3 +283,28 @@
 @media screen and (max-width: 320px){
 
 }
+
+@media print{
+
+    .fancybox-lock{
+        .global-wrapper{display:none!important;}
+    }
+
+    .fancybox-overlay, .fancybox-wrap, .fancybox-skin, .fancybox-outer, .fancybox-inner{position: static!important;}
+    .slider-top, .slider-bottom, .slider-body-footer, .button-plus, .button-up.show{display: none!important;}
+
+    .fancybox-slider-wrap{
+        #modals-slider{
+            .slider-body{padding-top: 0!important;height: auto!important;
+                .slider-body-main{padding: 0!important;
+                    .slick-arrow{display: none!important;}
+                    .slick-track{width: 100%!important;transform:translate3d(0px, 0px, 0px)!important;}
+                }
+            }
+            .slider-item{display: none!important;width:100%!important;min-height:100vh!important;text-align: center;
+                &.slick-current{display: flex!important;align-items:center!important;}
+            }
+        }
+    }
+
+}
