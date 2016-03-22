@@ -31,6 +31,7 @@
 
 }
 @media screen and (max-width: 767px){
+    #zapros .opis-row { margin-left: 0px;}
     /* fancy ado */
     .fancybox-form-wrap {max-width: 460px;}
     .modal-body { padding: 40px 20px 0;}
@@ -117,14 +118,24 @@
 }
 
 @media screen and (max-height: 770px){
-    #add-material{
-        .modal-title{ width: calc(100% - 17px);}
-        .modal-footer{ width: calc(100% - 17px);}
+    #add-material{  
+        .conteiner-list{height: 400px;}
     }
-    .mobile{
-        #add-material{
-            .modal-title{ width: calc(100% );}
-            .modal-footer{ width: calc(100%);}
-        }
+}
+@media screen and (max-height: 630px){
+    #add-material{  
+        .conteiner-list{height: 300px;}
+    }
+}
+
+@media screen and (max-height: 530px){
+    #add-material{  
+        .conteiner-list{height: 200px;}
+    }
+}
+@media screen and (max-height: 425px){
+    #add-material{  
+        .conteiner-list{height: 140px;}
+        .modal-footer { height: 70px;}
     }
 }

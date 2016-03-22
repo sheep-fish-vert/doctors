@@ -469,12 +469,12 @@
     }
 }
 
-#add-material {background-color: white; position: relative;
+#add-material {background-color: white; position: relative; overflow: hidden;
     
     .give-me-border{border: 2px solid #767676;
         &:hover{border: 2px solid rgb(255, 116, 116);}
     }
-    .conteiner-list{padding: 0; padding: 70px 0 110px;
+    .conteiner-list{padding: 0; overflow-y: scroll;
         .title-check{font-size: 16px; font-family: "Roboto", sans-serif;  color: rgb(0, 0, 0);   font-weight: bold; line-height: 75px; padding-left: 30px; }
         ul {
             li {width: 100%; border-bottom: 2px solid #efefef; transition: all 0.5s;
@@ -486,8 +486,8 @@
             }
         }
     }
-    .modal-title{position: fixed; top: 0; background-color: white; z-index: 4;width: 100%; }
-    .modal-footer{position: fixed; bottom: 0; background-color: white; width: 100%;}
+    .modal-title{ background-color: white; z-index: 4;width: 100%; }
+    .modal-footer{ background-color: white; width: 100%;}
 }
 
 
@@ -497,9 +497,10 @@
         .contact-form-item{padding: 15px 0 0;}
         .text-area-block{padding-top: 40px;}
     }
+    .select-row{position: relative; z-index: 10;}
     select{width: 0; height: 0; opacity: 0; overflow: hidden;}
     .pop-choose{width: 100%; font-weight: 300; border-bottom: 1px solid #a9a9a9; line-height: 30px; padding-left: 10px; position: relative;
-        .hide-placeholder{display: none; }
+        .hide-placeholder{display: none;}
         .jq-selectbox__select-text{width: 100% !important; color: rgb(84, 84, 84);; cursor: pointer; font-size: 12px; font-family: "Roboto", sans-serif;   line-height: 2;}
         .jq-selectbox__dropdown{right: 0;  @include box-shadow; border-radius: 3px;
             ul{ max-height: 120px !important; background-color: white; border: 1px solid #00adc3; z-index: 102;border-top: 2px solid #00adc3;
@@ -566,13 +567,12 @@
 
 /* block for specials */
 .rover{ position: relative; padding-top: 10px;
-    .placeholder-simplify{position: absolute; top: 10px;font-size: 12px; font-family: "Roboto", sans-serif;  color: rgb(84, 84, 84);line-height: 2; left: 10px;z-index: 2; transition: all 0.5s; }
+    .placeholder-simplify{position: absolute; top: 10px;font-size: 12px; font-family: "Roboto", sans-serif;padding: 0 3px 0; color: rgb(84, 84, 84);line-height: 2; font-weight: 300; left: 7px;z-index: 2; transition: all 0.5s; }
     .form_input{position: relative; z-index: 5;}
     
     .placeholder-textarea{top: 15px; background-color: white; padding: 0 3px 0;}
-    .placeholder-textarea.trans-plato{top: -2px;}
+    .trans-plato-textarea{top: -2px; background-color: white; z-index: 10; }
     .trans-plato{top:-12px; background-color: white; z-index: 10; }
-    
 }
 
 /* more popup */
@@ -586,6 +586,7 @@
         } 
     }
 }
+
 
 
 

@@ -1,3 +1,4 @@
+
 <div class="hidden-block">
 
     <div id="call-back">
@@ -77,7 +78,7 @@
             </div>
             <div class="contact-form-row cfix">
                 <div class="contact-form-item">
-                    <button type="submit" class="contact-submit" >
+                    <button type="submit" class="contact-submit">
                         <span>Отправить заявку</span>
                     </button>
                 </div>
@@ -125,14 +126,15 @@
             </div>
         </form>
     </div>
-    <div id="predlog-zalog">
+    
+    <div id="predlog-zalog" class="easy-popup-form">
         <form action="ajax.php" name="predlog" class="predlog-wrap">
             <div class="contact-form-title modal-title">
                 <h5>Предложение в гостевую книгу</h5>
             </div>
             <div class="contact-form-row cfix modal-body">
-                <div class="contact-form-item">
-                    <div class="contact-form-item-input form_row">
+                <div class="contact-form-item text-area-block">
+                    <div class="contact-form-item-input rover form_row">
                         <a href="" class="title-login">
                             <div class="conteiner">
                                 <div class="convert">
@@ -144,8 +146,10 @@
                             </div>
                         </a>
 
+                        <label for="tromb" class="placeholder-simplify placeholder-textarea ">Введите описание </label>
                         <div class="form_input">
-                            <textarea name="predlog-text" placeholder="Написать комментарий..." required></textarea>
+                            <textarea name="predlog-text" class="tromb" required></textarea>
+                        
                             <p>*Обязательные поля</p>
                             <div class="error-field">
                                 <i class="material-icons">error</i>
@@ -155,6 +159,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="contact-form-row-button cfix modal-footer">
                 <div class="contact-form-item">
                     <div class="contact-submit">
@@ -266,14 +271,15 @@
             <div class="contact-form-title modal-title">
                 <h5>Добавить документ</h5>
             </div>
-            
+
             <div class="modal-body east-contact-form">
                 <div class="contact-form-row cfix">
                     <div class="contact-form-item">
-                        <div class="contact-form-item-input rover form_row">
+                        <div class="contact-form-item-input rover form_row select-row">
+                            <label for="tromb" class="placeholder-simplify">Выберите категорию </label>
                             <div class="form_input">
-                                <select name="choose-category" class="pop-choose" required="required">
-                                    <option value="" disabled selected hidden class="hide-placeholder">Выберите категорию </option>
+                                <select name="choose-category" class="pop-choose tromb" required="required">
+                                    <option value="" disabled selected hidden class="hide-placeholder"> &nbsp </option>
                                     <option value="document">Документ</option>
                                     <option value="foto">Фотографию</option>
                                     <option value="zapis">Запись в блоге</option>
@@ -287,17 +293,25 @@
                         </div>
                     </div>
                     <div class="contact-form-item">
-                        <div class="contact-form-item-input rover-clone form_row">
-                            <div class="form_input">
-                                <input type="text" name="zagolovok" required="required" value="" placeholder="Введите заголовок*">
+                        <div class="contact-form-item">
+                            <div class="contact-form-item-input rover form_row">
+                                <label for="tromb" class="placeholder-simplify">Введите заголовок*</label>
+                                <div class="form_input">
+                                    <input type="text" class="tromb" name="zagolovok" required="required" value="">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="contact-form-item">
-                        <div class="contact-form-item-input form_row">
-                            <div class="form_input spec-padd">
-                                <textarea name="predlog-text" placeholder="Введите описание*" required></textarea>
+                    <div class="contact-form-item text-area-block">
+                        <div class="contact-form-item-input rover form_row">
+                            <label for="tromb" class="placeholder-simplify ">Введите описание*</label>
+                            <div class="form_input">
+                                <textarea name="predlog-text" class="tromb" required></textarea>
                                 <p>*Обязательные поля</p>
+                                <div class="error-field">
+                                    <i class="material-icons">error</i>
+                                    <span class="error-massage">Здесь будет блок ошибки</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -314,14 +328,14 @@
                                         <i class="material-icons">error</i>
                                         <span class="error-massage">Здесь будет блок ошибки</span>
                                     </div>
-                                    
-                                </label>                                
+
+                                </label>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="contact-form-row-button cfix modal-footer">
                 <div class="contact-form-item">
                     <div class="contact-submit">
@@ -331,7 +345,7 @@
                     </div>
                 </div>
                 <div class="contact-form-item">
-                    <button type="submit" class="contact-submit" >
+                    <button type="submit" class="contact-submit">
                         <span>Опубликовать</span>
                     </button>
                 </div>
@@ -339,21 +353,21 @@
         </form>
 
     </div>
-    
-    
+
+
     <div id="zapros" class="easy-popup-form">
         <form action="ajax.php" name="zapros" class="zapros-send">
             <div class="contact-form-title modal-title modal-with-active">
                 <h5>Запрос на авторство</h5>
             </div>
-            
+
             <div class="modal-body east-contact-form">
                 <div class="opis-row">
                     <div class="convert">
                         <img src="images/zapros.png" alt="">
                     </div>
                     <div class="opis">
-                        <b>Введите ваш вопрос</b> 
+                        <b>Введите ваш вопрос</b>
                         <p>и преподаватель свяжется с вами в течение 24</p>
                     </div>
                 </div>
@@ -376,7 +390,7 @@
                     </div>
                     <div class="contact-form-item text-area-block">
                         <div class="contact-form-item-input rover form_row">
-                            <label for="tromb" class="placeholder-simplify " >Введите ваш вопрос</label>
+                            <label for="tromb" class="placeholder-simplify ">Введите ваш вопрос</label>
                             <div class="form_input">
                                 <textarea name="predlog-text" class="tromb" required></textarea>
                                 <p>*Обязательные поля</p>
@@ -389,7 +403,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="contact-form-row-button cfix modal-footer">
                 <div class="contact-form-item">
                     <div class="contact-submit">
@@ -399,7 +413,7 @@
                     </div>
                 </div>
                 <div class="contact-form-item">
-                    <button type="submit" class="contact-submit" >
+                    <button type="submit" class="contact-submit">
                         <span>Опубликовать</span>
                     </button>
                 </div>
@@ -407,7 +421,7 @@
         </form>
 
     </div>
-    
+
     <div id="change-document" class="easy-popup-form">
         <form action="ajax.php" name="change-document" class="change-document">
             <div class="contact-form-title modal-title modal-with-active">
@@ -418,12 +432,12 @@
                     <div class="publick">Сохранено</div>
                 </div>
             </div>
-            
+
             <div class="modal-body east-contact-form">
                 <div class="contact-form-row cfix">
                     <div class="contact-form-item">
                         <div class="contact-form-item-input rover form_row">
-                            <label for="tromb" class="placeholder-simplify" >Введите заголовок <span> Документа 2*</span> </label>
+                            <label for="tromb" class="placeholder-simplify">Введите заголовок <span> Документа 2*</span> </label>
                             <div class="form_input">
                                 <input type="text" class="tromb" name="zagolovok" required="required" value="">
                             </div>
@@ -431,7 +445,7 @@
                     </div>
                     <div class="contact-form-item text-area-block">
                         <div class="contact-form-item-input rover form_row">
-                            <label for="tromb" class="placeholder-simplify placeholder-textarea " >Введите описание <span> Документа 2*</span> </label>
+                            <label for="tromb" class="placeholder-simplify placeholder-textarea ">Введите описание <span> Документа 2*</span> </label>
                             <div class="form_input">
                                 <textarea name="predlog-text" class="tromb" required></textarea>
                                 <p>*Обязательные поля</p>
@@ -446,7 +460,7 @@
                         <div class="contact-form-item-input form_row">
                             <div class="form_input">
                                 <label for="file-load" class="save-planet">
-                                    <input type="file" id="file-load" name="file-load" required="required" value="" >
+                                    <input type="file" id="file-load" name="file-load" required="required" value="">
                                     <p>
                                         <i class="material-icons">attach_file</i>
                                         <span>Загрузить файл</span>
@@ -455,13 +469,13 @@
                                         <i class="material-icons">error</i>
                                         <span class="error-massage">Здесь будет блок ошибки</span>
                                     </div>
-                                    
-                                </label>                                
+
+                                </label>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="slider-row">
                     <div class="sliding-shift">
                         <div class="item active-item">
@@ -478,7 +492,7 @@
                             <div class="checker">
                                 <label>
                                     <input type='checkbox'> Текст
-                                </label>                                
+                                </label>
                             </div>
                             <div class="progress-line"></div>
                         </div>
@@ -519,10 +533,10 @@
                             </div>
                             <div class="checker"></div>
                         </div>
-                    </div>                        
+                    </div>
                 </div>
             </div>
-            
+
             <div class="contact-form-row-button cfix modal-footer">
                 <div class="contact-form-item">
                     <div class="contact-submit">
@@ -532,7 +546,7 @@
                     </div>
                 </div>
                 <div class="contact-form-item">
-                    <button type="submit" class="contact-submit" >
+                    <button type="submit" class="contact-submit">
                         <span>Опубликовать</span>
                     </button>
                 </div>
@@ -540,9 +554,7 @@
         </form>
 
     </div>
-    
-    //= modals-statistic.html
-
-    //= modals-slider.html
-
+  
+    //= modals-statistic.html 
+    //= modals-slider.html  
 </div>

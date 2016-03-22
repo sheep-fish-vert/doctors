@@ -150,13 +150,25 @@ try{
         });
 
         
-        $( ".tromb" ).focusin(function() {           
-            $(this).closest('.rover').find('label').addClass('trans-plato');            
+        $(".tromb").focusin(function() {
+            if ($(this).closest('.contact-form-item').hasClass('text-area-block')){
+                $(this).closest('.rover').find('label').addClass('trans-plato-textarea');
+            }
+            else {
+                $(this).closest('.rover').find('label').addClass('trans-plato');
+            }           
+            
         });
 
         $(".tromb").focusout(function() {
-            if ($(this).val().length == 0) {               
-                $(this).closest('.rover').find('label').removeClass('trans-plato');
+            if ($(this).val().length == 0) {
+
+                if ($(this).closest('.contact-form-item').hasClass('text-area-block')){
+                    $(this).closest('.rover').find('label').removeClass('trans-plato-textarea');
+                }
+                else {
+                    $(this).closest('.rover').find('label').removeClass('trans-plato');
+                }
             }
         });    
 
