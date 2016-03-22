@@ -398,7 +398,6 @@ try{
                 e.preventDefault();
 
                 var tagText = $(this).text();
-                console.log(tagText);
 
                 $('.search-form input').val(tagText);
                 $('.search-form').submit();

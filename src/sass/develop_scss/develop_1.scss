@@ -214,7 +214,13 @@
 
     .single-items{padding-top: 40px;
         .single-items-wrap{display: flex;flex-wrap:wrap;
-            .single-item-wrap{width: calc(33.33% - 14px);margin-bottom: 30px;
+            .single-item-wrap{width: calc(33.33% - 14px);margin-bottom: 30px;transition:box-shadow 300ms ease;
+                &:hover{
+                    .img{
+                        img{transform:translate(-50%, -50%) scale(1.05);}
+                    }
+                    .text{box-shadow:0 4px 6px 0 rgba(0, 0, 0, 0.5);}
+                }
                 a{text-decoration: none;}
                 &:nth-child(3n-1){margin: 0 21px 30px 21px;}
                 .img{height: 320px;position: relative;overflow: hidden;border-radius: 4px 4px 0 0;background-color: #fff;
@@ -244,8 +250,18 @@
                         .text-main{color:#000;font-family:'Helvetica', sans-serif;font-size: 17px;line-height: 23px;}
                     }
                     .text-bottom{display: flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding: 12px 15px 10px 12px;
-                        .user{display: block;display: flex;align-items:center;color:#00acc1;font-size: 14px;line-height:20px;margin-bottom: 5px;
-                            .user-img{display: inline-block;width: 20px;height: 20px;border-radius: 50%;overflow: hidden;margin-right: 5px;}
+                        .user{display: block;display: flex;align-items:center;font-size: 14px;line-height:20px;margin-bottom: 5px;
+                            a{color:#00acc1;
+                                &:hover{
+                                    .user-name{
+                                        &:after{width: 100%;}
+                                    }
+                                }
+                            }
+                            .user-img{display: inline-block;width: 20px;height: 20px;border-radius: 50%;overflow: hidden;margin-right: 5px;vertical-align: middle;}
+                            .user-name{vertical-align: middle;position: relative;top:1px;
+                                &:after{content:'';display: block;position: absolute;top:100%;left:0px;height: 1px;width: 0;background-color: #00acc1;transition:width 300ms ease;}
+                            }
                         }
                         .singularity{font-size: 14px;color:#bababa;margin-bottom: 5px;
                             .date{margin-right: 15px;

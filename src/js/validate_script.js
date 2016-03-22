@@ -129,7 +129,7 @@ function validationCall(form){
 
 /* Отправка формы с файлом */
 function validationCallDocument(form) {
-    
+
     $('button[type="submit"]').attr('disabled', 'disabled');
     $('.save-planet').removeClass('valid');
 
@@ -239,6 +239,27 @@ function fancyCallback(){
     maxWidth:'690'
   })
 }
+
+function searchAjax(form){
+
+    var thisForm = $(form);
+    var formData = new FormData($(form)[0]);
+
+    $.ajax({
+        url: thisForm.attr('action'),
+        type: "POST",
+        data: formData,
+        contentType:false,
+        processData:false,
+        cache:false,
+        success: function(response) {
+
+            /* search code for programmer */
+
+        }
+    });
+
+};
 
 function chat(){
     function isTexrareaEmpty(){
@@ -404,14 +425,14 @@ $(document).ready(function(){
 
     validate('#call-popup .contact-form', {submitFunction:validationCall});
 
-    validate('.search-form');
+    validate('.search-form', {submitFunction:searchAjax});
 
     validate('#predlog-zalog .predlog-wrap',{submitFunction:validationCall});
     validate('#predlog .predlog-wrap',{submitFunction:validationCall});
 
     validate('.add-new-document', { submitFunction: validationCallDocument, unhighlightFunction: AddSomeActive });
 
-    validate('.zapros-send',{submitFunction:validationCall});    
+    validate('.zapros-send',{submitFunction:validationCall});
 
     Maskedinput();
     fancyboxForm();
