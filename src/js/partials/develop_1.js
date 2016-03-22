@@ -156,7 +156,12 @@ try{
                 numImg = $(this).data('imgnum');
 
                 imagesGroups[group].forEach(function(item, i){
-                    $('.slider-body-main, .slider-bottom').append('<div class="slider-item" data-type="'+item.type+'" data-name='+item.name+'><img src="'+item.src+'" alt=""></div>');
+
+                    $('.slider-body-main, .slider-bottom').append('<div class="slider-item" data-type="'+item.type+'" data-name='+item.name+'><div class="slider-img"><img src="'+item.src+'" alt="" /></div></div>');
+                    if(item.descript != undefined){
+                        $('.slider-body-main .slider-item').eq(i).append('<div class="slider-descript">'+item.descript+'</div>');
+                    }
+
                 });
 
             });
