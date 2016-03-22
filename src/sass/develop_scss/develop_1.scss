@@ -364,7 +364,7 @@
                 &.like-zoom{
                     img{transform:scale(1.5);cursor: grab;transition:transform 300ms ease, top 0ms ease, left 0ms ease;}
                 }
-                .slider-img{height: 100%;text-align: center;width: 100%;}
+                .slider-img{height: 100%;text-align: center;width: 100%;overflow: hidden;}
                 .slider-descript{color:#fff;font-style: italic;}
             }
             .slider-body{height: calc(100% - 60px);padding-top: 15px;transition:height 300ms ease;
