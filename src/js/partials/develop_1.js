@@ -146,6 +146,63 @@ try{
             var numImg = null;
             var timer = null;
 
+            //function for adding place for slider descript
+
+            function placeForSliderDescript(){
+
+                if($('.slider-body-main .slider-item').length){
+
+                    $('.slider-body-main .slider-item').each(function(index, el) {
+
+                        var descriptHeight = $(this).find('.slider-descript').outerHeight();
+                        var sliderItemHeight = $(this).height();
+                        var imgWrapHeight = sliderItemHeight - descriptHeight;
+                        var imgWrapHeightPerc = (imgWrapHeight*100)/sliderItemHeight;
+                        $(this).find('.slider-img').css({'height':imgWrapHeightPerc+'%'});
+
+                    });
+
+                }
+
+            }
+
+            // whatch slide zoom
+
+            function moveImgWhenItZoom(){
+
+                var point = 0;
+                var pointCoordX = 0;
+                var pointCoordY = 0;
+
+                $(document).on('mousedown', '.slider-item.like-zoom img', function(e) {
+                   point = 1;
+                   pointCoordX = e.pageX;
+                   pointCoordY = e.pageY;
+                   imgX = parseInt($(this).css('left'));
+                   imgY = parseInt($(this).css('top'));
+
+                });
+                $(document).on('mouseup', function(){
+                    point = 0;
+                });
+
+                $(document).on('mousemove', '.slider-item.like-zoom img', function(e) {
+
+                    if(point == 1){
+                        var currentCoordX = e.pageX;
+                        var currentCoordY = e.pageY;
+                        var imgPosX = imgX + (currentCoordX - pointCoordX);
+                        var imgPosY = imgY + (currentCoordY - pointCoordY);
+
+                        $(this).css({'left':imgPosX+'px','top':imgPosY+'px'});
+                    }
+
+                });
+
+            };
+
+            moveImgWhenItZoom();
+
             // load images from object when clicking on link (fancybox-slider)
 
             $(document).on('click','.fancybox-slider', function(e){
@@ -157,12 +214,19 @@ try{
 
                 imagesGroups[group].forEach(function(item, i){
 
-                    $('.slider-body-main, .slider-bottom').append('<div class="slider-item" data-type="'+item.type+'" data-name='+item.name+'><div class="slider-img"><img src="'+item.src+'" alt="" /></div></div>');
+                    $('.slider-body-main, .slider-bottom').append('<div class="slider-item" data-type="'+item.type+'" data-name='+item.name+'><div class="slider-img vfix-before"><img src="'+item.src+'" alt="" /></div></div>');
                     if(item.descript != undefined){
                         $('.slider-body-main .slider-item').eq(i).append('<div class="slider-descript">'+item.descript+'</div>');
                     }
 
                 });
+
+
+            });
+
+            $(window).resize(function(){
+
+                placeForSliderDescript();
 
             });
 
@@ -184,6 +248,7 @@ try{
                         $('.slider-name-wrap').text($('.slider-body-main .slick-current').data('name')+'.'+$('.slider-body-main .slick-current').data('type'));
                         $('.slider-right a').removeClass('active');
                         $('.slider-item').removeClass('like-zoom');
+                        $('.slider-item img').removeAttr('style');
 
                     });
 
@@ -203,7 +268,8 @@ try{
                         infinite:false,
                         asNavFor:'.slider-bottom',
                         focusOnSelect:true,
-                        draggable:false
+                        draggable:false,
+                        swipe:false
                     });
 
                     $('.slider-bottom').slick({
@@ -213,6 +279,7 @@ try{
                         asNavFor:'.slider-body-main',
                         focusOnSelect:true,
                         draggable:false,
+                        swipe:false,
                         responsive: [
                            {
                                 breakpoint: 992,
@@ -231,6 +298,8 @@ try{
                     });
 
                     // scrolling to current slide
+
+                    placeForSliderDescript();
 
                     $('.slider-body-main .slider-item').eq(numImg).click();
 
@@ -299,6 +368,7 @@ try{
                 }else{
                     $(this).removeClass('active');
                     $('.slick-current').removeClass('like-zoom');
+                    $('.slick-current img').removeAttr('style');
                 }
 
             });
@@ -328,7 +398,6 @@ try{
                 e.preventDefault();
 
                 var tagText = $(this).text();
-                console.log(tagText);
 
                 $('.search-form input').val(tagText);
                 $('.search-form').submit();
