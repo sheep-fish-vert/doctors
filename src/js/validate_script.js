@@ -216,7 +216,7 @@ function fancyboxForm(){
     closeEffect : 'fade',
     autoResize:true,
     wrapCSS:'fancybox-form-wrap',
-    'closeBtn' : true,
+    'closeBtn' : false,
     fitToView:true,
     padding:'0',
     afterShow:function(){
@@ -401,7 +401,7 @@ function AddSomeActive(form) {
 
 $(document).ready(function(){
     chat();
-
+    
     validate('#call-popup .contact-form', {submitFunction:validationCall});
 
     validate('.search-form');
@@ -412,6 +412,8 @@ $(document).ready(function(){
     validate('.add-new-document', { submitFunction: validationCallDocument, unhighlightFunction: AddSomeActive });
 
     validate('.zapros-send',{submitFunction:validationCall});    
+
+    validate('.obratka-send',{submitFunction:validationCall});      
 
     Maskedinput();
     fancyboxForm();

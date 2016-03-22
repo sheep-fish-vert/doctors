@@ -31,7 +31,7 @@
 
 }
 @media screen and (max-width: 767px){
-    #zapros .opis-row { margin-left: 0px;}
+    #zapros .opis-row , #obratka .opis-row { margin-left: 0px;}
     /* fancy ado */
     .fancybox-form-wrap {max-width: 460px;}
     .modal-body { padding: 40px 20px 0;}
