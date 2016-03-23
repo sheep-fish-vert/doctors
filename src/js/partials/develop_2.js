@@ -187,7 +187,7 @@ try{
         /* submit check */        
         $('button[type="submit"]').attr('disabled', 'disabled');
 
-        $('#zapros input, #zapros textarea').on('change', function() {
+        $('#zapros input, #zapros textarea').on('keyup', function() {
             if (($(this).closest('form').find('textarea').val() != '') && ($(this).closest('form').find('input[type=text]').val() != '') && ($(this).closest('form').find('input[type=email]').val() != '')) {
                 $(this).closest('form').find('button[type="submit"]').addClass('active-submit');
                 $(this).closest('form').find('button[type="submit"]').removeAttr('disabled');
@@ -198,7 +198,7 @@ try{
             }
         });
 
-        $('#predlog textarea, #predlog-zalog textarea').on('change', function() {
+        $('#predlog textarea, #predlog-zalog textarea').on('keyup', function() {
             if (($(this).closest('form').find('textarea').val() != '')) {
                 $(this).closest('form').find('button[type="submit"]').addClass('active-submit');
                 $(this).closest('form').find('button[type="submit"]').removeAttr('disabled');
@@ -209,7 +209,7 @@ try{
             }
         });
 
-        $('#obratka input').on('change', function() {
+        $('#obratka input').on('keyup', function() {
             if (($(this).closest('form').find('input[type=email]').val() != '') && ($(this).closest('form').find('input[name=telephone]').val() != '') && ($(this).closest('form').find('input[name=name_fio]').val() != '') ) {
                 $(this).closest('form').find('button[type="submit"]').addClass('active-submit');
                 $(this).closest('form').find('button[type="submit"]').removeAttr('disabled');
