@@ -38,8 +38,8 @@
             .logo{height: 80px;display: flex;align-items:center;
                 a{transition:color 300ms ease;}
                 .logo-img{display: block;}
-                .logo-text{ padding-left: 20px;vertical-align: middle; font-size: 10px;font-family: "Roboto", sans-serif; font-weight: 300;letter-spacing: -0.3px;
-                    span{font-weight: 700; font-size: 24px;}
+                .logo-text{ padding-left: 10px;vertical-align: middle; font-size: 11px;font-family: Tahoma,sans-serif; font-weight: 300;letter-spacing: -0.3px;color: #676464;
+                    span{font-size: 34px;color: #000;}
                 }
                 a{
                     &:hover{color:#00aec3;}
