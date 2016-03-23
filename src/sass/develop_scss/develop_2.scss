@@ -146,7 +146,7 @@
                 strong{display: block; padding: 3px 7px ; color: white; background-color: #ff7474; margin-left: 10px; font-size: 12px; font-weight: 400;}
                 h4{font-family: 'Roboto', sans-serif; font-weight:400; font-size: 16px; color:#00aec3;
                     a{text-decoration: none; font-weight:400; font-size: 16px; color:#00aec3;
-                        &:hover{text-decoration: none;}
+                        &:hover{text-decoration: underline;}
                     }
 
                     span{background-color: white; padding: 0; margin: 0; display: inline;}
@@ -156,7 +156,9 @@
             .frack{padding-top: 15px;
                 b{ font-size: 12px; color: #000000; font-family: 'Roboto', sans-serif; font-weight:300; display: block;
                     span{color: #00aec3;
-                        a{text-decoration: none; color: #00aec3; }
+                        a{text-decoration: none; color: #00aec3; 
+                            &:hover{text-decoration: underline;}
+                        }
                     }
                 }
             }
@@ -180,7 +182,7 @@
             .convert{display: flex; align-items: flex-start; justify-content: flex-start;
                 span{display: block; padding: 3px 7px ; color: white; background-color: #ff7474; margin-left: 10px; font-size: 12px; font-weight: 400;}
                 h4{font-family: 'Roboto', sans-serif; font-weight:700; font-size: 16px; color:#00aec3;
-                    span{background-color: white; padding: 0; margin: 0; display: inline;}
+                    span{background-color: white; padding: 0; margin: 0; display: none;}
                 }
             }
             b{ font-size: 12px; color: #000000; font-family: 'Roboto', sans-serif; font-weight:300; display: block;
