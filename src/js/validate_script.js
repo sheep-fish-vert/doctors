@@ -240,16 +240,6 @@ function fancyCallback(){
 }
 
 function chat(){
-    function isTexrareaEmpty(){
-        $('.main-chat textarea,.not-logged-chat textarea').on('keyup change',function(event) {
-            if( !$(this).val() == ''){
-                $(this).parent().find('button[type=submit]').removeAttr('disabled');
-            }else{
-                $(this).parent().find('button[type=submit]').attr('disabled', true);
-            }
-        });
-    }
-    isTexrareaEmpty();
 
     /*clone main Chat*/
     var cloneChat = null,
@@ -259,6 +249,24 @@ function chat(){
         cloneChat = $('.cloned-chat').clone();
         cloneChat.find('textarea').val("");
     }
+
+    function isTexrareaEmpty(){
+        $('.main-chat textarea,.not-logged-chat textarea').on('keyup change',function(event) {
+            if( !$(this).val() == ''){
+                $(this).parent().find('button[type=submit]').removeAttr('disabled');
+            }else{
+                $(this).parent().find('button[type=submit]').attr('disabled', true);
+            }
+        });
+        $('.cloned-chat textarea').on('keyup',function(event) {
+            if($(this).val().length >= namePerson.length+3){
+                $(this).parent().find('button[type=submit]').removeAttr('disabled');
+            }else{
+                $(this).parent().find('button[type=submit]').attr('disabled', true);
+            }
+        });
+    }
+    isTexrareaEmpty();
 
     /* click on reply */
     function clickOnreply(){
@@ -272,8 +280,9 @@ function chat(){
 
             namePerson = $(this).closest('.chat-item').find('>.chat-person .chat-person-name span').first().text();
 
-            $(this).closest('.chat-item').find('>.text').after(cloneChat).next('.cloned-chat').slideDown(function(){
+            $(this).closest('.chat-item').find('>.text').after(cloneChat).next('.cloned-chat').show(200,function(){
                 $(this).find('textarea').val(namePerson+", ").focus();
+                isTexrareaEmpty();
             });
 
         });
