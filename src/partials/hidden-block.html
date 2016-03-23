@@ -477,9 +477,18 @@
                             <div class="form_input">
                                 <textarea name="predlog-text" class="tromb" required></textarea>
                                 <p>*Обязательные поля</p>
-                                <div class="error-field">
-                                    <i class="material-icons">error</i>
-                                    <span class="error-massage">Здесь будет блок ошибки</span>
+                                <div class="checked-save">
+                                    <input type="checkbox" name='save-document-change' id="save-document-change">
+                                    <label for="save-document-change">                              
+                                        <span class="cinstructive-text done"> 
+                                            <i class="material-icons">check_box</i>
+                                            Изменения сохранены
+                                        </span>
+                                        <span class="cinstructive-text not-done">
+                                            <i class="material-icons">check_box_outline_blank</i>
+                                            Сохранить изменения
+                                        </span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -487,18 +496,17 @@
                     <div class="contact-form-item">
                         <div class="contact-form-item-input form_row">
                             <div class="form_input">
-                                <label for="file-load" class="save-planet">
-                                    <input type="file" id="file-load" name="file-load" required="required" value="">
+                                <label for="file-load-many" class="save-planet">
+                                    <input type="file" id="file-load-many" name="file-load-many" required="required" value="" multiple size="50">
                                     <p>
                                         <i class="material-icons">attach_file</i>
                                         <span>Загрузить файл</span>
                                     </p>
-                                    <div class="error-field">
-                                        <i class="material-icons">error</i>
-                                        <span class="error-massage">Здесь будет блок ошибки</span>
-                                    </div>
-
                                 </label>
+                                <div class="error-field">
+                                    <i class="material-icons">error</i>
+                                    <span class="error-massage">Здесь будет блок ошибки</span>
+                                </div>                                
                             </div>
                         </div>
                     </div>
@@ -506,60 +514,61 @@
 
                 <div class="slider-row">
                     <div class="sliding-shift">
-                        <div class="item active-item">
-                            <div class="close-button-item"></div>
-                            <div class="convert">
-                                <div class="doc-type">
-                                    <img src="images/typer1.jpg" alt="">
+                        <div class="convert-item ">
+                            <div class="item active-item">
+                                <div class="close-button-item"></div>
+                                <div class="convert">
+                                    <div class="doc-type">
+                                        <img src="images/typer1.jpg" alt="">
+                                    </div>
+                                    <div class="description-file">
+                                        <div class="name"> Документ </div>
+                                        <div class="size"> 2 158 Мб </div>
+                                        <div class="done-button">
+                                            <i class="material-icons">check</i>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="description-file">
-                                    <div class="name"> Документ </div>
-                                    <div class="size"> 2 158 Мб </div>
+                                <div class="checker rewerse-checker">
+                                    <div class="done row-check-some">
+                                        <i class="material-icons">check_box_outline_blank</i>
+                                        <span>Основная</span>
+                                    </div>
+                                    <div class="not-done row-check-some">
+                                        <i class="material-icons">check_box</i>
+                                        <span>Основная</span>
+                                    </div>
                                 </div>
+                                <div class="progress-line"></div>
                             </div>
-                            <div class="checker">
-                                <label>
-                                    <input type='checkbox'> Текст
-                                </label>
-                            </div>
-                            <div class="progress-line"></div>
                         </div>
-
-                        <div class="item">
-                            <div class="convert">
-                                <div class="doc-type">
-                                    <img src="images/typer1.jpg" alt="">
+                        <div class="convert-item">
+                            <div class="item">
+                                <div class="close-button-item"></div>
+                                <div class="convert">
+                                    <div class="doc-type">
+                                        <img src="images/typer1.jpg" alt="">
+                                    </div>
+                                    <div class="description-file">
+                                        <div class="name"> Документ </div>
+                                        <div class="size"> 2 158 Мб </div>
+                                        <div class="done-button">
+                                            <i class="material-icons">check</i>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="description-file">
-                                    <div class="name"> Документ </div>
-                                    <div class="size"> 2 158 Мб </div>
+                                <div class="checker">
+                                    <div class="done row-check-some">
+                                        <i class="material-icons">check_box_outline_blank</i>
+                                        <span>Основная</span>
+                                    </div>
+                                    <div class="not-done row-check-some">
+                                        <i class="material-icons">check_box</i>
+                                        <span>Основная</span>
+                                    </div>
                                 </div>
+                                <div class="progress-line"></div>
                             </div>
-                            <div class="checker"></div>
-                        </div>
-                        <div class="item">
-                            <div class="convert">
-                                <div class="doc-type">
-                                    <img src="images/typer1.jpg" alt="">
-                                </div>
-                                <div class="description-file">
-                                    <div class="name"> Документ </div>
-                                    <div class="size"> 2 158 Мб </div>
-                                </div>
-                            </div>
-                            <div class="checker"></div>
-                        </div>
-                        <div class="item">
-                            <div class="convert">
-                                <div class="doc-type">
-                                    <img src="images/typer1.jpg" alt="">
-                                </div>
-                                <div class="description-file">
-                                    <div class="name"> Документ </div>
-                                    <div class="size"> 2 158 Мб </div>
-                                </div>
-                            </div>
-                            <div class="checker"></div>
                         </div>
                     </div>
                 </div>

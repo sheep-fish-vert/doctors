@@ -227,6 +227,25 @@ function fancyboxForm(){
     }
   })
 }
+/* special olimpiad */
+function fancyboxFormSpecial(){
+  $('.fancybox-form-special').fancybox({
+    openEffect  : 'fade',
+    closeEffect : 'fade',
+    autoResize:true,
+    wrapCSS:'fancybox-form-special',
+    'closeBtn' : false,
+    fitToView:true,
+    padding:'0',
+    afterShow:function(){
+        $('.modal-title').addClass('active');
+    },
+    afterClose:function(){
+        $('.modal-title').removeClass('active');
+    }
+  })
+}
+
 function fancyCallback(){
   $('.fancy-callback').fancybox({
     openEffect  : 'fade',
@@ -354,7 +373,7 @@ function chat(){
             success: function() {
                 if( parentForm.hasClass('cloned-chat') ){
                     if(messageLength <= personLength){ //mini validation
-                        console.log('false submit');
+                        //console.log('false submit');
                         return false;
                     }else{
                         parentForm.after(wraper);
@@ -436,6 +455,7 @@ $(document).ready(function(){
 
     validate('.obratka-send',{submitFunction:validationCall});      
 
+    fancyboxFormSpecial();
     Maskedinput();
     fancyboxForm();
     fancyCallback();

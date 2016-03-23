@@ -121,6 +121,8 @@ try{
         });
     }
 
+     
+
     $(document).ready(function(){
         clickanderMulti();
 
@@ -150,17 +152,18 @@ try{
             $('.pop-choose').styler();
         }, 100);
 
-        
-        $('input[type="file"]').on('change', function() {
-            var file = $(this)[0].files[0].name;
-            $('.save-planet>p>span').text(file);
-            $('.save-planet').addClass('valid');
+        //var stackFiles[0] = '';
+
+        $('#add-new-document input[type="file"]').on('change', function() {
+           var file = $(this)[0].files[0].name;
+           $('.save-planet>p>span').text(file);
+           $('.save-planet').addClass('valid');
         });
 
         
 
         $(".tromb, .tel-mask").focusin(function() {
-            console.log($('.tel-mask').val().length);
+            
             if ($(this).closest('.contact-form-item').hasClass('text-area-block')){
                 $(this).closest('.rover').find('label').addClass('trans-plato-textarea');
             }
@@ -207,7 +210,6 @@ try{
         });
 
         $('#obratka input').on('change', function() {
-            console.log($(this).closest('form').find('input[name=telephone]').val());
             if (($(this).closest('form').find('input[type=email]').val() != '') && ($(this).closest('form').find('input[name=telephone]').val() != '') && ($(this).closest('form').find('input[name=name_fio]').val() != '') ) {
                 $(this).closest('form').find('button[type="submit"]').addClass('active-submit');
                 $(this).closest('form').find('button[type="submit"]').removeAttr('disabled');
