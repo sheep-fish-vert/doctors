@@ -287,7 +287,7 @@ function chat(){
         namePerson = null;
 
     function clonedChat(){
-        cloneChat = $('.cloned-chat').clone();
+        cloneChat = $('.width-clone-chat>.cloned-chat').clone();
         cloneChat.find('textarea').val("");
     }
 
@@ -315,13 +315,17 @@ function chat(){
             event.preventDefault();
 
             /* remove all cloned chats*/
-            $('.chat-item-wrap .cloned-chat').remove();
+            //$('.chat-item-wrap .cloned-chat').remove();
+
+            if( $(this).closest('.chat-item').find('>.cloned-chat').length ){
+                return false;
+            }
 
             clonedChat();
 
             namePerson = $(this).closest('.chat-item').find('>.chat-person .chat-person-name span').first().text();
 
-            $(this).closest('.chat-item').find('>.text').after(cloneChat).next('.cloned-chat').show(200,function(){
+            $(this).closest('.chat-item').find('>.text').after(cloneChat).next('.cloned-chat').show(500,function(){
                 $(this).find('textarea').val(namePerson+", ").focus();
                 isTexrareaEmpty();
             });
@@ -342,10 +346,12 @@ function chat(){
         var personImg = $('.main-chat .chat-person-img img').attr('src');
         var personName = $('.main-chat .chat-person-name span').first().text();
         var personLastName = $('.main-chat .chat-person-name span').last().text();
-        var personHref = $('.main-chat .chat-person').data('href');
+        var personHref = $('.main-chat .chat-person').data('href') || $('.cloned-chat').data('href');
         var message = parentForm.find('.chat-form textarea').val();         //MESSEGE
         var messageTag = null;
         var otherButton = "";
+
+        console.log(personHref);
 
         if(parentForm.hasClass('main-chat')){
             namePerson = 0;
@@ -382,7 +388,6 @@ function chat(){
             success: function() {
                 if( parentForm.hasClass('cloned-chat') ){
                     if(messageLength <= personLength){ //mini validation
-                        //console.log('false submit');
                         return false;
                     }else{
                         parentForm.after(wraper);
@@ -450,7 +455,7 @@ function AddSomeActive(form) {
 
 $(document).ready(function(){
     chat();
-    
+
     validate('#call-popup .contact-form', {submitFunction:validationCall});
 
     validate('.search-form', {submitFunction:searchAjax});
@@ -462,7 +467,7 @@ $(document).ready(function(){
 
     validate('.zapros-send',{submitFunction:validationCall});
 
-    validate('.obratka-send',{submitFunction:validationCall});      
+    validate('.obratka-send',{submitFunction:validationCall});
 
     fancyboxFormSpecial();
     Maskedinput();
