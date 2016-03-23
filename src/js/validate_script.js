@@ -128,7 +128,9 @@ function validationCall(form){
 }
 
 /* Отправка формы с файлом */
-function validationCallDocument(form){
+function validationCallDocument(form) {
+
+    $('button[type="submit"]').attr('disabled', 'disabled');
     $('.save-planet').removeClass('valid');
 
     var thisForm = $(form);
@@ -148,7 +150,6 @@ function validationCallDocument(form){
             popNext("#call_success", "call-popup");
         }
     });
-
 }
 
 /* Отправка формы с файлaми */
@@ -215,7 +216,7 @@ function fancyboxForm(){
     closeEffect : 'fade',
     autoResize:true,
     wrapCSS:'fancybox-form-wrap',
-    'closeBtn' : true,
+    'closeBtn' : false,
     fitToView:true,
     padding:'0',
     afterShow:function(){
@@ -226,6 +227,25 @@ function fancyboxForm(){
     }
   })
 }
+/* special olimpiad */
+function fancyboxFormSpecial(){
+  $('.fancybox-form-special').fancybox({
+    openEffect  : 'fade',
+    closeEffect : 'fade',
+    autoResize:true,
+    wrapCSS:'fancybox-form-special',
+    'closeBtn' : false,
+    fitToView:true,
+    padding:'0',
+    afterShow:function(){
+        $('.modal-title').addClass('active');
+    },
+    afterClose:function(){
+        $('.modal-title').removeClass('active');
+    }
+  })
+}
+
 function fancyCallback(){
   $('.fancy-callback').fancybox({
     openEffect  : 'fade',
@@ -238,6 +258,27 @@ function fancyCallback(){
     maxWidth:'690'
   })
 }
+
+function searchAjax(form){
+
+    var thisForm = $(form);
+    var formData = new FormData($(form)[0]);
+
+    $.ajax({
+        url: thisForm.attr('action'),
+        type: "POST",
+        data: formData,
+        contentType:false,
+        processData:false,
+        cache:false,
+        success: function(response) {
+
+            /* search code for programmer */
+
+        }
+    });
+
+};
 
 function chat(){
 
@@ -341,7 +382,7 @@ function chat(){
             success: function() {
                 if( parentForm.hasClass('cloned-chat') ){
                     if(messageLength <= personLength){ //mini validation
-                        console.log('false submit');
+                        //console.log('false submit');
                         return false;
                     }else{
                         parentForm.after(wraper);
@@ -402,22 +443,28 @@ function AddSomeActive(form) {
     {
 
         $(form).find('button[type="submit"]').addClass('active-submit');
+        $(form).find('button[type="submit"]').removeAttr('disabled');
 
     }
 }
 
 $(document).ready(function(){
     chat();
-
+    
     validate('#call-popup .contact-form', {submitFunction:validationCall});
 
-    validate('.search-form');
+    validate('.search-form', {submitFunction:searchAjax});
 
     validate('#predlog-zalog .predlog-wrap',{submitFunction:validationCall});
     validate('#predlog .predlog-wrap',{submitFunction:validationCall});
 
-    validate('.add-new-document',{submitFunction:validationCallDocument, unhighlightFunction:AddSomeActive});
+    validate('.add-new-document', { submitFunction: validationCallDocument, unhighlightFunction: AddSomeActive });
 
+    validate('.zapros-send',{submitFunction:validationCall});
+
+    validate('.obratka-send',{submitFunction:validationCall});      
+
+    fancyboxFormSpecial();
     Maskedinput();
     fancyboxForm();
     fancyCallback();
