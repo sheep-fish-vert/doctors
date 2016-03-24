@@ -39,7 +39,6 @@
 
     .button-up{ width: 64px; height: 64px; background-color: #bdbdbd; border-radius: 50%; overflow: hidden; cursor: auto; bottom:10%; right:40px; position:fixed; z-index: 100; opacity:0;box-shadow: 0 4px 6px 0 rgba(69, 71, 73, .20); transition:opacity 500ms linear, background-color 500ms linear;
         p{display: block;  background-color: transparent;  border-top: 3px solid #fff; border-right: 3px solid #fff; transform:rotate(-45deg);  width: 16px; height: 16px; left:calc(50% - 8px); top:calc(50% - 5px); position: absolute;}
-        &:hover{background-color: #00acc1!important;}
     }
     .show{opacity:1; cursor:pointer;}
 
