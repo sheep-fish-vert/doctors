@@ -451,15 +451,7 @@ body>svg{position: absolute;left: -99999em;top: -99999em;}
             }
 
             .form_input{width: 100%;
-                textarea{width: 100%; height: 145px; border: 2px solid #dddddd; resize: none;font-size: 12px;   font-family: "Roboto", sans-serif; color: #585454;  line-height: 1.2; padding: 15px;  font-weight: 400; }
-                textarea::-webkit-input-placeholder { color:rgb(84, 84, 84);}
-                textarea:-moz-placeholder { color:rgb(84, 84, 84) ;  font-weight: 300;}
-                ::-webkit-input-placeholder {color:rgb(84, 84, 84) ;  font-weight: 300;}
-                ::-moz-placeholder          {color:rgb(84, 84, 84) ;  font-weight: 300;}
-                :-moz-placeholder           {color:rgb(84, 84, 84) ;  font-weight: 300;}
-                :-ms-input-placeholder      {color:rgb(84, 84, 84) ;  font-weight: 300;}
-
-
+                textarea{width: 100%; height: 145px; border: 2px solid #dddddd; resize: none;font-size: 16px;   font-family: "Roboto", sans-serif; color: #585454;  line-height: 1.2; padding: 15px;  font-weight: 300; }
                 p{font-size: 16px; font-family: "Roboto", sans-serif;color: rgb(84, 84, 84);  line-height: 1.5; font-weight: 300; padding-bottom: 30px;}
                 label{display: none !important;}
                 .error-field{font-size: 12px; font-family: "Roboto", sans-serif; padding-bottom: 10px; color: rgb(255, 117, 119);  line-height: 2; display: table; min-height: 12px;display: none;
@@ -508,10 +500,10 @@ body>svg{position: absolute;left: -99999em;top: -99999em;}
     select{width: 0; height: 0; opacity: 0; overflow: hidden;}
     .pop-choose{width: 100%; font-weight: 300; border-bottom: 1px solid #a9a9a9; line-height: 30px; padding-left: 10px; position: relative;
         .hide-placeholder{display: none;}
-        .jq-selectbox__select-text{width: 100% !important; color: rgb(84, 84, 84);; cursor: pointer; font-size: 12px; font-family: "Roboto", sans-serif;   line-height: 2;}
+        .jq-selectbox__select-text{width: 100% !important; color: rgb(84, 84, 84);; cursor: pointer; font-size: 16px; font-family: "Roboto", sans-serif;   line-height: 2;}
         .jq-selectbox__dropdown{right: 0;  @include box-shadow; border-radius: 3px;
             ul{ max-height: 120px !important; background-color: white; border: 1px solid #00adc3; z-index: 102;border-top: 2px solid #00adc3;
-                li{cursor: pointer; font-size: 12px; font-family: "Roboto", sans-serif;  color: rgb(84, 84, 84); line-height: 2; transition: all 0.5s;padding: 0 10px;
+                li{cursor: pointer; font-size: 16px; font-family: "Roboto", sans-serif;  color: rgb(84, 84, 84); line-height: 2; transition: all 0.5s;padding: 0 10px;
                     &:hover{background-color: #00adc3; color: white;}
                 }
             }
@@ -542,16 +534,9 @@ body>svg{position: absolute;left: -99999em;top: -99999em;}
                 }
             }
 
-            input[type=text], input[type=email] {width: 100%; font-weight: 300; border: none; outline: none; border-bottom: 1px solid #a9a9a9; line-height: 30px; padding-left: 10px; font-size: 12px;   font-family: "Roboto", sans-serif;  color: rgb(84, 84, 84);  line-height: 2; background-color: transparent; }
+            input[type=text], input[type=email] {width: 100%; font-weight: 300; border: none; outline: none; border-bottom: 1px solid #a9a9a9; line-height: 30px; padding-left: 10px; font-size: 16px;   font-family: "Roboto", sans-serif;  color: rgb(84, 84, 84);  line-height: 2; background-color: transparent; }
 
-            textarea{width: 100%; height: 90px; border: 1px solid #a9a9a9; resize: none;font-size: 12px;   font-family: "Roboto", sans-serif; color: #585454;  line-height: 1.2; padding: 15px; background-color: transparent;}
-            textarea::-webkit-input-placeholder { color:rgb(84, 84, 84);}
-            textarea:-moz-placeholder { color:rgb(84, 84, 84) ;  font-weight: 300;}
-            ::-webkit-input-placeholder {color:rgb(84, 84, 84) ;  font-weight: 300;}
-            ::-moz-placeholder          {color:rgb(84, 84, 84) ;  font-weight: 300;}
-            :-moz-placeholder           {color:rgb(84, 84, 84) ;  font-weight: 300;}
-            :-ms-input-placeholder      {color:rgb(84, 84, 84) ;  font-weight: 300;}
-
+            textarea{width: 100%; height: 90px; border: 1px solid #a9a9a9; resize: none;font-size: 16px;   font-family: "Roboto", sans-serif; color: #585454;  line-height: 1.2; padding: 15px; background-color: transparent; font-weight: 300;}
             p{font-size: 16px; font-family: "Roboto", sans-serif;color: rgb(84, 84, 84);  line-height: 1.5; font-weight: 300; padding-bottom: 5px; display: inline-block; width: 48%;}
             label{display: none !important;}
             .error-field{font-size: 12px; font-family: "Roboto", sans-serif; padding-bottom: 10px; color: rgb(255, 117, 119);  line-height: 2; display: table; min-height: 12px;display: none;
@@ -589,12 +574,24 @@ body>svg{position: absolute;left: -99999em;top: -99999em;}
 
 /* block for specials */
 .rover{ position: relative; padding-top: 10px;
+   
     .placeholder-simplify{position: absolute; top: 10px;font-size: 16px; font-family: "Roboto", sans-serif;padding: 0 3px 0; color: rgb(84, 84, 84);line-height: 2; font-weight: 300; left: 7px;z-index: 2; transition: all 0.3s; }
     .form_input{position: relative; z-index: 5;}
 
     .placeholder-textarea{top: 15px; background-color: white; padding: 0 3px 0;}
-    .trans-plato-textarea{top: -10px; background-color: white; z-index: 10; }
-    .trans-plato{top:-12px; background-color: white; z-index: 10; }
+    .trans-plato-textarea{top: -6px; left: 2px; background-color: white; z-index: 10; font-size: 14px;
+    }
+    .trans-plato{top:-12px; left: 2px; background-color: white; z-index: 10; font-size: 14px; }
+}
+.convert-input-beutifull{ position: relative; 
+     &:before{content: ''; position: absolute;height: 0px;  left: 50%; right: 50%; background-color:#00aec3; transition: all 0.5s; bottom: 0; z-index: 5; }
+}
+
+.beutifull-hover{
+      &:before{ left: 0; right: 0; height: 2px; }  
+}
+.text-area-block .beutifull-hover{
+      &:before{ bottom: 2px; left: 0; right: 0; height: 2px; }  
 }
 
 /* more popup */

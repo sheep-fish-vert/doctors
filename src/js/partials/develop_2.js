@@ -163,7 +163,7 @@ try{
         
 
         $(".tromb, .tel-mask").focusin(function() {
-            
+            $(this).closest('.rover').find('.convert-input-beutifull').addClass('beutifull-hover');
             if ($(this).closest('.contact-form-item').hasClass('text-area-block')){
                 $(this).closest('.rover').find('label').addClass('trans-plato-textarea');
             }
@@ -174,6 +174,7 @@ try{
         });
 
         $(".tromb, .tel-mask").focusout(function() {
+            $(this).closest('.rover').find('.convert-input-beutifull').removeClass('beutifull-hover');
             if (($(this).val().length == 0) || ($(this).val().indexOf('_')+1)) {
                 if ($(this).closest('.contact-form-item').hasClass('text-area-block')) {
                     $(this).closest('.rover').find('label').removeClass('trans-plato-textarea');

@@ -212,8 +212,8 @@ function Maskedinput(){
 /*fansybox на форме*/
 function fancyboxForm(){
   $('.fancybox-form').fancybox({
-    openEffect  : 'fade',
-    closeEffect : 'fade',
+    openEffect  : 'none',
+    closeEffect : 'none',
     autoResize:true,
     wrapCSS:'fancybox-form-wrap',
     'closeBtn' : false,
