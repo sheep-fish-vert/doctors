@@ -147,7 +147,7 @@ function validationCallDocument(form) {
         cache:false,
         success: function(response) {
             thisForm.trigger("reset");
-            popNext("#call_success", "call-popup");
+           //popNext("#call_success", "call-popup");
         }
     });
 }
@@ -230,8 +230,8 @@ function fancyboxForm(){
 /* special olimpiad */
 function fancyboxFormSpecial(){
   $('.fancybox-form-special').fancybox({
-    openEffect  : 'fade',
-    closeEffect : 'fade',
+    openEffect  : 'none',
+    closeEffect : 'none',
     autoResize:true,
     wrapCSS:'fancybox-form-special',
     'closeBtn' : false,

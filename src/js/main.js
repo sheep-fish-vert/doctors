@@ -7,6 +7,7 @@
 //= partials/plagins/jquery.fancybox.pack.js
 //= partials/plagins/jquery.formstyler.min.js
 //= partials/plagins/snap.svg.js
+//= partials/plagins/dmuploader.js
 
 /* /plagins */
 
