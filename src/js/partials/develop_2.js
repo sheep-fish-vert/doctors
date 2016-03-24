@@ -162,28 +162,19 @@ try{
 
         
 
-        $(".tromb, .tel-mask").focusin(function() {
-            $(this).closest('.rover').find('.convert-input-beutifull').addClass('beutifull-hover');
-            if ($(this).closest('.contact-form-item').hasClass('text-area-block')){
-                $(this).closest('.rover').find('label').addClass('trans-plato-textarea');
-            }
-            else {
-                $(this).closest('.rover').find('label').addClass('trans-plato');
-            }           
-            
+        $(".tromb").focusin(function() {
+            $(this).closest('.rover').find('.mdl-textfield').addClass('is-focused');
         });
 
-        $(".tromb, .tel-mask").focusout(function() {
-            $(this).closest('.rover').find('.convert-input-beutifull').removeClass('beutifull-hover');
-            if (($(this).val().length == 0) || ($(this).val().indexOf('_')+1)) {
-                if ($(this).closest('.contact-form-item').hasClass('text-area-block')) {
-                    $(this).closest('.rover').find('label').removeClass('trans-plato-textarea');
-                }
-                else {
-                    $(this).closest('.rover').find('label').removeClass('trans-plato');
-                }
+        $(".tromb").focusout(function() {
+
+            if (($('#selectQ').val() == null)) {
+                    $(this).closest('.rover').find('.mdl-textfield').removeClass('is-focused');
             }
-        });    
+
+        });
+
+    
 
         /* submit check */        
         $('button[type="submit"]').attr('disabled', 'disabled');

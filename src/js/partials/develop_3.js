@@ -80,7 +80,11 @@ try {
             focusOnSelect: true
         });
 */
-
+        $("#file-load-area").dmUploader({
+            onInit: function(){
+                console.log('Plugin successfully initialized');
+            }
+        });
     });
 
     $(window).load(function(){
