@@ -178,6 +178,8 @@ try{
 
         /* submit check */        
         $('button[type="submit"]').attr('disabled', 'disabled');
+        $('.search-submit button[type="submit"]').removeAttr('disabled');
+
 
         $('#zapros input, #zapros textarea').on('keyup', function() {
             if (($(this).closest('form').find('textarea').val() != '') && ($(this).closest('form').find('input[type=text]').val() != '') && ($(this).closest('form').find('input[type=email]').val() != '')) {
