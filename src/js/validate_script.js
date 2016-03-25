@@ -323,7 +323,10 @@ function chat(){
 
             clonedChat();
 
-            namePerson = $(this).closest('.chat-item').find('>.chat-person .chat-person-name span').first().text();
+            namePerson = $(this).closest('.chat-item').find('>.chat-person .chat-person-name span:not(.before)').first().text();
+
+
+            console.log('namePerson ' , namePerson);
 
             $(this).closest('.chat-item').find('>.text').after(cloneChat).next('.cloned-chat').show(500,function(){
                 $(this).find('textarea').val(namePerson+", ").focus();
@@ -379,7 +382,7 @@ function chat(){
         if(parentForm.hasClass('main-chat')){
             otherButton = '<div class="block-button"><div class="drop drop-share-block"><div class="convert"><i class="material-icons">more_vert</i></div><div class="hide-hipe share-block"><ul><li><a href="#" class="reply-post"><i class="material-icons">reply</i><span>Ответить</span></a></li><li><a href="#" class="block-post"><i class="material-icons">block</i><span>Заблокировать</span></a></li></ul></div></div></div>';
         }
-        var wraper = '<div class="chat-item"><div class="chat-person cfix"><div class="chat-person-img"><img src="'+personImg+'" alt=""></div><div class="chat-person-detail "><div class="chat-person-name"><a href="'+personHref+'"><span>'+personName+'</span> '+'<span>'+personLastName+'</span></a></div><div class="chat-person-date"><i class="fa fa-calendar"></i><span>'+day+'.'+month+'.'+year+'</span><i class="fa fa-clock-o"></i><span>'+hour+'.'+minutes+'</span><span class="reply-post"><i class="material-icons">reply</i><span>Ответить</span></span></div></div></div> <div class="text">'+messageTag+'</div>'+otherButton+'</div>';
+        var wraper = '<div class="chat-item"><div class="chat-person cfix"><div class="chat-person-img"><img src="'+personImg+'" alt=""></div><div class="chat-person-detail "><div class="chat-person-name"><a href="'+personHref+'"><span class="before mdl-color--accent"></span><span>'+personName+'</span> '+'<span>'+personLastName+'</span></a></div><div class="chat-person-date"><i class="fa fa-calendar"></i><span>'+day+'.'+month+'.'+year+'</span><i class="fa fa-clock-o"></i><span>'+hour+'.'+minutes+'</span><span class="reply-post"><i class="material-icons">reply</i><span>Ответить</span></span></div></div></div> <div class="text">'+messageTag+'</div>'+otherButton+'</div>';
 
         $.ajax({
             url: ajaxUrl,
