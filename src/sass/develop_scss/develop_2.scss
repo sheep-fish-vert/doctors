@@ -701,4 +701,5 @@ body>svg{position: absolute;left: -99999em;top: -99999em;}
    .mdl-layout__header {display: block;z-index: 0; box-shadow: none;}
    .main-help.mdl-textfield__label { bottom: auto; left: auto; right: auto; pointer-events: none;position: relative; display: block;top: auto;  overflow: visible;  white-space: nowrap; }
    .main-help.mdl-textfield__label:after { bottom: auto; content: ''; height: auto;visibility: visible; width:auto; }
+   label {margin-bottom: 0;}
 /* /google shit  */
