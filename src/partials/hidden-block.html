@@ -38,6 +38,7 @@
                 <div class="contact-form-item">
                     <button type="submit" class="contact-submit">
                         <span>Отправить заявку</span>
+                        <span class="before mdl-color--primary"></span>
                     </button>
                 </div>
             </div>
@@ -49,12 +50,13 @@
         <form action="ajax.php" name="predlog" class="predlog-wrap">
             <div class="contact-form-title modal-title">
                 <h5>Предложение в гостевую книгу</h5>
+                <span class="before mdl-color--primary"></span>
             </div>
             <div class="contact-form-row cfix modal-body">
                 <div class="contact-form-item">
                     <div class="title-row">
                         <p>Комментарии:</p>
-                        <b>Чтобы оставить комментарий, <a href="">авторизируйтесь</a> или <a href="">зарегистрируйте</a></b>
+                        <b>Чтобы оставить комментарий, <a href="" class="mdl-color-text--primary">авторизируйтесь</a> или <a href="" class="mdl-color-text--primary">зарегистрируйте</a></b>
                     </div>
 
                     <div class="contact-form-item text-area-block">                    
@@ -85,6 +87,7 @@
                 <div class="contact-form-item">
                     <button type="submit" class="contact-submit">
                         <span>Опубликовать</span>
+                        <span class="before mdl-color--primary"></span>
                     </button>
                 </div>
             </div>
@@ -96,6 +99,7 @@
         <form action="ajax.php" name="predlog-zalog" class="predlog-wrap">
             <div class="contact-form-title modal-title">
                 <h5>Предложение в гостевую книгу</h5>
+                <span class="before mdl-color--primary"></span>
             </div>
             <div class="contact-form-row cfix modal-body">
                 <a href="" class="title-login">
@@ -136,6 +140,7 @@
                 <div class="contact-form-item">
                     <button type="submit" class="contact-submit">
                         <span>Опубликовать</span>
+                        <span class="before mdl-color--primary"></span>
                     </button>
                 </div>
             </div>
@@ -146,6 +151,7 @@
         <div class="fancybox-close-btn"></div>
         <div class="contact-form-title modal-title">
             <h5>Добавить материал</h5>
+            <span class="before mdl-color--primary"></span>
         </div>
 
         <div class="conteiner-list cfix modal-body">
@@ -236,6 +242,7 @@
         <form action="ajax.php" name="add-document" class="add-new-document">
             <div class="contact-form-title modal-title">
                 <h5>Добавить документ</h5>
+                <span class="before mdl-color--primary"></span>
             </div>
 
             <div class="modal-body east-contact-form">
@@ -316,6 +323,7 @@
                 <div class="contact-form-item">
                     <button type="submit" class="contact-submit">
                         <span>Опубликовать</span>
+                        <span class="before mdl-color--primary"></span>
                     </button>
                 </div>
             </div>
@@ -329,6 +337,7 @@
         <form action="ajax.php" name="zapros" class="zapros-send">
             <div class="contact-form-title modal-title modal-with-active">
                 <h5>Запрос на авторство</h5>
+                <span class="before mdl-color--primary"></span>
             </div>
 
             <div class="modal-body east-contact-form">
@@ -390,6 +399,7 @@
                 <div class="contact-form-item">
                     <button type="submit" class="contact-submit">
                         <span>Опубликовать</span>
+                        <span class="before mdl-color--primary"></span>
                     </button>
                 </div>
             </div>
@@ -402,6 +412,7 @@
         <form action="ajax.php" name="zapros" class="obratka-send">
             <div class="contact-form-title modal-title modal-with-active">
                 <h5>Обратная связь</h5>
+                <span class="before mdl-color--primary"></span>
             </div>
 
             <div class="modal-body east-contact-form">
@@ -458,6 +469,7 @@
                 <div class="contact-form-item">
                     <button type="submit" class="contact-submit">
                         <span>Опубликовать</span>
+                        <span class="before mdl-color--primary"></span>
                     </button>
                 </div>
             </div>
@@ -470,6 +482,7 @@
         <form action="ajax.php" name="change-document" class="change-document">
             <div class="contact-form-title modal-title modal-with-active">
                 <h5>Добавить документ <b>в ФГОС ДО</b></h5>
+                <span class="before mdl-color--primary"></span>
                 <div class="status-link">
                     <div class="save">Опубликовано</div>
                     <div class="chernovik">Черновик</div>
@@ -478,17 +491,18 @@
             </div>
 
             <div class="modal-body east-contact-form">  
-                <div class="contact-form-row cfix">
+                <div class="contact-form-row spec-padd-move cfix">
+
                     <div class="contact-form-item">
-                        <div class="contact-form-item-input rover form_row">
-                            <label for="tromb" class="placeholder-simplify">Введите заголовок <span> Документа 2*</span> </label>
-                            <div class="form_input">
-                                <div class="convert-input-beutifull">
-                                    <input type="text" class="tromb" name="zagolovok" required="required" value="">
-                                </div>
+                        <div class="contact-form-item-input rover form_row">                          
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+                                <input class="mdl-textfield__input" type="text" name="text-zagolovok" id="input50" required="required">
+                                <label class="mdl-textfield__label" for="input50">Введите заголовок <span> Документа 2*</span></label>
                             </div>
+                            
                         </div>
-                    </div>
+                    </div> 
+                    
                     <div class="contact-form-item text-area-block">                    
                         <div class="contact-form-item-input rover form_row">                     
                             <div class="form_input">
@@ -497,18 +511,20 @@
                                     <label class="mdl-textfield__label" for="target4" >Написать предложение...</label>
                                 </div>
                                 <p>*Обязательные поля</p>
-                                <div class="checked-save">
+                                <div class="checked-save">                                   
+                                    
                                     <input type="checkbox" name='save-document-change' id="save-document-change">
                                     <label for="save-document-change">                              
-                                        <span class="cinstructive-text done"> 
+                                        <span class="cinstructive-text mdl-color-text--primary done mdl-color-text--primary "> 
                                             <i class="material-icons">check_box</i>
                                             Изменения сохранены
                                         </span>
-                                        <span class="cinstructive-text not-done">
+                                        <span class="cinstructive-text mdl-color-text--accent not-done">
                                             <i class="material-icons">check_box_outline_blank</i>
                                             Сохранить изменения
                                         </span>
                                     </label>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -549,6 +565,7 @@
                 <div class="contact-form-item">
                     <button type="submit" class="contact-submit">
                         <span>Опубликовать</span>
+                        <span class="before mdl-color--primary"></span>
                     </button>
                 </div>
             </div>
