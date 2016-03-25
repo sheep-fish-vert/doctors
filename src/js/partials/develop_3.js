@@ -70,6 +70,7 @@ function superUploader() {
         onUploadProgress: function(id, percent) {
             console.log('Upload of #' + id + ' is at %' + percent);
             // do something cool here!
+           // $('')
         },
         onComplete: function() {
             console.log('We reach the end of the upload Queue!');
