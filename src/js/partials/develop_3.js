@@ -4,7 +4,7 @@ try {
         if (type == 'image/jpeg') {
             console.log('its jepeg');
         }
-       var text =  '<div class="convert-item'+ ' classifire-id-'+ id +'"><div class="item"><div class="close-button-item"></div><div class="convert"><div class="doc-type"><img src="" alt=""></div><div class="description-file"><div class="name">' + name + '</div><div class="size">' + Math.round(size/(1024*1024)*100)/100 + ' Мб' + ' </div><div class="done-button"><i class="material-icons">check</i></div></div></div><div class="checker"><div class="done row-check-some"><i class="material-icons">check_box_outline_blank</i><span>Основная</span></div><div class="not-done row-check-some"><i class="material-icons">check_box</i><span>Основная</span>        </div></div > <div class="progress-line"></div></div></div>';
+       var text =  '<div class="convert-item'+ ' classifire-id-'+ id +'" data-file-id="'+id+'"><div class="item"><div class="close-button-item"></div><div class="convert"><div class="doc-type"><img src="" alt=""></div><div class="description-file"><div class="progress-line mdl-color--primary"></div><div class="name">' + name + '</div><div class="size">' + Math.round(size/(1024*1024)*100)/100 + ' Мб' + ' </div><div class="done-button"><i class="material-icons">check</i></div></div></div><div class="checker"><div class="done row-check-some"><i class="material-icons">check_box_outline_blank</i> <span>Основная</span></div><div class="not-done row-check-some"><i class="material-icons">check_box</i><span>Основная</span></div></div > </div></div>';
        return text;
     }
 
@@ -36,7 +36,7 @@ try {
                     if ('size' in file) {
                         betaSize = file.size;
                     }
-                    $(goGOgo).closest('form').find('.sliding-shift').prepend(addHtmlItems(betaName, betaSize));                    
+                    $(goGOgo).closest('form').find('.sliding-shift').append(addHtmlItems(betaName, betaSize));                    
                 } 
             }
         }
@@ -48,7 +48,6 @@ try {
                 dots: false,
                 infinite: false,
                 speed: 300,
-                slidesToShow: 3,
                 adaptiveHeight: true,
                 variableWidth: false,
                 centerMode: false
@@ -59,6 +58,7 @@ try {
     }   
 
     var fileStuck = '';
+
 function superUploader() {
     $("#file-load-area").dmUploader({
         onInit: function(id, file) {
@@ -68,9 +68,19 @@ function superUploader() {
             console.log('Starting to upload #' + id);
         },
         onUploadProgress: function(id, percent) {
-            console.log('Upload of #' + id + ' is at %' + percent);
+           console.log( percent);
             // do something cool here!
-           // $('')
+           var ffff = '.classifire-id-' + id;
+            $('body').find('#change-document').find(ffff).find('.progress-line').css('right', 100 - percent + '%');
+            if (percent == 100) {
+
+                $('body').find('#change-document').find(ffff).find('.done-button').css('opacity', '1');
+
+                $('body').find('#change-document').find(ffff).find('.close-button-item').css('display', 'block');
+
+                $('body').find('#change-document').find(ffff).find('.item').css('opacity', '1');
+                
+            }
         },
         onComplete: function() {
             console.log('We reach the end of the upload Queue!');
@@ -82,15 +92,14 @@ function superUploader() {
             console.log(file);
             console.log(id);
 
+            stackFiles[stackFiles.length] = file;
+
             if ($('.sliding-shift').hasClass('activate-field')) {
                 $('#change-document .sliding-shift').slick('unslick');
                 $('.sliding-shift').removeClass('activate-field');
             };
 
-            //renderFile = file.webkitRelativePath + '/'+file.name;
             $('#file-load-many').closest('form').find('.sliding-shift').prepend(addHtmlItems(file.name, file.size, file.type, id));
-
-            
 
             if (typeof FileReader !== "undefined"){
             
@@ -102,7 +111,6 @@ function superUploader() {
                 var img = $('body').find('#change-document').find('.convert-item').eq(0).find('.doc-type').find('img');
                 console.log(img);
 
-                var renderFile;
                 reader.onload = function (e) {
                     img.attr('src', e.target.result);
                 }
@@ -115,12 +123,28 @@ function superUploader() {
         }
     });
 }
-
+    
+var stackFiles = [];
+    
 $(document).ready(function() {
-    var file;
+
+    
     superUploader();
+
+    $('#change-document ').on('click', '.close-button-item', function() {
+        console.log('click close');
+        console.log(stackFiles);
+    });
+
+    $('.close-button-item').on('click', function() {
+        console.log('click close');
+        console.log(stackFiles);
+    });
+
     $('#change-document input[type=file]').on('change', function() {
-        console.log(file);
+
+        $('.slider-row').css('height', '160px');
+
         setTimeout(function() {
             $('.sliding-shift').addClass('activate-field');
             $('#change-document .sliding-shift').slick({
@@ -136,10 +160,10 @@ $(document).ready(function() {
 
     });
 
-    $('#change-document ').on('click', '.convert-item .item', function() {
+    $('#change-document ').on('click', '.convert-item .item>.convert', function() {
         console.log('click');
         $('#change-document .convert-item .item').removeClass('active-item');
-        $(this).addClass('active-item');
+        $(this).closest('.item').addClass('active-item');
     });
         
     });

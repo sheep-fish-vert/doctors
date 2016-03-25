@@ -152,7 +152,7 @@ try{
             $('.pop-choose').styler();
         }, 100);
 
-        //var stackFiles[0] = '';
+        
 
         $('#add-new-document input[type="file"]').on('change', function() {
            var file = $(this)[0].files[0].name;
