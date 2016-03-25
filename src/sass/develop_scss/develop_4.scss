@@ -21,10 +21,16 @@
 /*/about*/
 
 /*chat*/
-.btn-sub{width: 100%;max-width: 130px;border:1px solid #7e7e7e;border-radius: 0px;background-color:transparent;color: #757575;font-size: 12px;transition:all ease .2s;
-    &:hover{color: white;background-color: #00acc1;border-color:#00acc1;cursor:pointer; }
+.btn-sub{width: 100%;max-width: 130px;border:1px solid #7e7e7e;border-radius: 0px;background-color:transparent;color: #757575;font-size: 12px;transition:all ease .2s;position: relative;
+    span{z-index: 2;position: relative;}
+    span.before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;z-index: 1;opacity: 0;transition:all ease .2s;}
+    &:hover{color: white;background-color: #00acc1;border-color:#00acc1;cursor:pointer;
+        span.before{opacity: 1;}
+    }
     &[disabled]{
-        &:hover{color: inherit;background-color: inherit;border-color: inherit;cursor: default;}
+        &:hover{color: inherit !important;background-color: inherit !important;border-color: inherit !important;cursor: default;
+            span.before{display: none;}
+        }
     }
 }
 .chat-book{padding-top: 50px;
@@ -36,7 +42,7 @@
     .chat-person-img{height: 37px;width: 37px;overflow: hidden;border-radius: 50%;position: relative;margin-right: 11px;
         img{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);    max-width: 110%;}
     }
-    .chat-person-name>a{color: #00acc1;text-decoration: none;position: relative;
+    .chat-person-name>a{text-decoration: none;position: relative;
         &:after{content: '';position: absolute;left: 0;bottom: 0px;height: 1px;width: 0%;background-color: #00acc1;transition:all ease .2s;}
         &:hover:after{width: 100%;}
     }
@@ -79,9 +85,11 @@
         }
         .chat-person-detail{float: left;}
         .chat-person-name{font-size: 14px;font-weight: 500;margin-bottom: 12px;
-            a{color: #00acc1;text-decoration: none;position: relative;
-                &:after{content: '';position: absolute;left: 0;bottom: 0px;height: 1px;width: 0%;background-color: #00acc1;transition:all ease .2s;}
-                &:hover:after{width: 100%;}
+            a{text-decoration: none;position: relative;
+                .before{content: '';position: absolute;left: 0;bottom: 0px;height: 1px;width: 0%;transition:all ease .2s;}
+                &:hover{
+                    .before{width: 100%;}
+                }
             }
         }
         .chat-person-date{color: #bababa;font-size: 14px;vertical-align: top;
