@@ -12,7 +12,7 @@
 
     .main{
         .main-top{position: relative;
-            &:before{content:'';display: block;position: absolute;left: 0;right: 0;top: 0;height: 87px;background-color: #00acc1;}
+            &>.before{display: block;position: absolute;left: 0;right: 0;top: 0;height: 87px;}
         }
     }
 
@@ -21,9 +21,9 @@
 /* title */
 
     .title-page{background-color: #fff;padding-top: 10px;padding-bottom: 10px;display: flex;justify-content:center;align-items:center;min-height: 105px;font-weight: 700;font-size: 34px;color:#000;text-transform:uppercase;position: relative;border-radius:3px;overflow:hidden;@include box-shadow;
-        &:after{content:'';display: block;position: absolute;bottom: 0;left: 0;height: 4px;width: 0%;background-color: #00acc1;transition:width 2000ms ease;}
+        &>.before{display: block;position: absolute;bottom: 0;left: 0;height: 4px;width: 0%;transition:width 2000ms ease;}
         &.active{
-            &:after{width: 100%;}
+            &>.before{width: 100%;}
         }
     }
 
@@ -34,7 +34,7 @@
     .main-top{
         .content-block{ display: inline-block;vertical-align: middle;
             &:last-child{max-width:calc(100% - 232px);}
-            a{text-decoration: none;color:#000;display: flex;align-items:center;}
+            a{text-decoration: none;display: flex;align-items:center;}
             .logo{height: 80px;display: flex;align-items:center;
                 a{transition:color 300ms ease;}
                 .logo-img{display: block;}
@@ -52,7 +52,6 @@
                     }
                 }
                 .user-naming{display: table-cell; vertical-align: middle; font-size: 16px; font-family: "Roboto", sans-serif; line-height: 1.2; font-weight: 400; padding-left: 20px;
-                    .user-name{ color: rgb(0, 174, 195);}
                     .user-specialization{ color: #757575; font-size: 16px;position: relative;
                         &:after{content:'';display: block;position: absolute;top: 100%;height: 1px;width: 0;background-color:#757575;transition:width 300ms ease;}
                     }
@@ -98,32 +97,28 @@
             }
         }
     }
-    .header-nav{position: relative;background-color: #00aec3;
+    .header-nav{position: relative;
         .header-sendwich-wrap{display: none;position: absolute;right:10px;bottom:calc(100% + 25px);
             .header-sedwich{display: block;width: 30px;height: 30px;position: relative;padding-top: 14px;cursor: pointer;
-                &:before, &:after{content: '';display: block;position: absolute;width: 30px;height: 2px;background-color: #757575;transform-origin:0 50%;left:0;transition:all 300ms ease;}
-                &:before{top:2px;}
-                &:after{bottom: 2px;}
-                span{display: block;height: 2px;width: 30px;position: relative;background-color:#757575;transition: transform 300ms ease;}
-                &:hover{
-                    span{background-color: #00aec3;}
-                    &:before, &:after{background-color: #00aec3;}
-                }
+                &>.top, &>.bottom{display: block;position: absolute;width: 30px;height: 2px;transform-origin:0 50%;left:0;transition:all 300ms ease;}
+                &>.top{top:2px;}
+                &>.bottom{bottom: 2px;}
+                span.center{display: block;height: 2px;width: 30px;position: relative;transition: transform 300ms ease;}
                 &.active{
-                    &:before, &:after{left:4px;}
-                    &:before{transform:rotate(45deg);top:3px;}
-                    &:after{transform:rotate(-45deg);bottom:3px;}
-                    span{transform:scale(0);}
+                    &>.top, &>.bottom{left:4px;}
+                    &>.top{transform:rotate(45deg);top:3px;}
+                    &>.bottom{transform:rotate(-45deg);bottom:3px;}
+                    span.center{transform:scale(0);}
                 }
             }
         }
-        .main-menu{ position: relative; z-index: 5;background-color: rgb(0, 174, 195);min-height: 37px;
-            ul{ width: 100%; height: 80px; display: table;
+        .main-menu{position: relative; z-index: 5;min-height: 37px;
+            ul{ width: 100%; height: 80px; display: table;margin-bottom: 0;
                 li{ line-height: 80px; display: table-cell; text-align: center; position: relative;
                     a{text-decoration: none; color: white; text-transform: uppercase;font-size: 14px; font-family: "Roboto";color: rgb(255, 255, 255); text-transform: uppercase;line-height: 1.2;position: relative; padding-bottom: 2px; display: block; line-height: 80px;position: relative;
-                        &:after{content: ''; display:block;position: absolute;  bottom: 0; left: 0; right: 100%; background-color:#ff7474; transition: all 0.5s;  }
+                        &>.before{content: ''; display:block;position: absolute;  bottom: 0; left: 0; right: 100%; background-color:#ff7474; transition: all 0.5s;  }
                         &:hover{
-                             &:after{ right: 0; height: 6px; }
+                             &>.before{ right: 0; height: 6px; }
                         }
                     }
                 }
