@@ -414,7 +414,7 @@ function chat(){
     /*if many chat-items end page "КОПИЛКА"*/
     function chatCountNumber(){
         if($('.post-list-statt .comments-wrap').length > 0 ){
-            var showMore = '<div class="show-more-post"><span>Показать все комментарии</span></div>';
+            var showMore = '<div class="show-more-post mdl-color-text--accent"><span class="before mdl-color--accent"></span><span>Показать все комментарии</span></div>';
             $('.post-list-statt .comments-wrap').each(function(index, el) {
                 var chatItem = $(this).find('.chat-item-wrap>.chat-item');
                 var chatWrapper = chatItem.parent();
