@@ -155,22 +155,33 @@
     .search-row{padding-top: 57px;
         .search-row-wrap{position: relative;}
         form{position: relative;}
-        .search-input{
-            input{width: 100%;padding:0 168px 0 28px;height: 50px;line-height: 50px;font-size: 16px;color:#000;border:2px solid transparent;@include box-shadow;transition:box-shadow 300ms ease, border-color 300ms ease;
+        .search-input{position: relative;
+            input{width: calc(100% - 2px);padding:0 168px 0 28px;height: 46px;line-height: 50px;font-size: 16px;color:#000;border:none;position:relative;left:2px;top:2px;z-index:1;@include box-shadow;transition:box-shadow 300ms ease, border-color 300ms ease;
                 &::-webkit-input-placeholder {font-family: sans-serif;font-size: 16px;color:#000;}
                 &:-moz-placeholder {font-family: sans-serif;font-size: 16px;color:#000;}
                 &::-moz-placeholder {font-family: sans-serif;font-size: 16px;color:#000;}
                 &:-ms-input-placeholder {font-family: sans-serif;font-size: 16px;color:#000;}
-                &.error{box-shadow:0px 0px 12px 0px rgba(229, 115, 115, 0.5);border-color:#e57373;}
-                &:focus{box-shadow:0 0 12px 0 rgba(0, 172, 193, 0.5);border-color:#00acc1;
-                   &::-webkit-input-placeholder {color:transparent;}
-                   &:-moz-placeholder {color:transparent;}
-                   &::-moz-placeholder {color:transparent;}
-                   &:-ms-input-placeholder {color:transparent;}
+                &.error{box-shadow:0px 0px 12px 0px rgba(229, 115, 115, 0.5);
+                    &+.search-background{
+                        &.error-background{opacity: 1;}
+                    }
+                }
+                &:focus{
+                    &::-webkit-input-placeholder {color:transparent;}
+                    &:-moz-placeholder {color:transparent;}
+                    &::-moz-placeholder {color:transparent;}
+                    &:-ms-input-placeholder {color:transparent;}
+                    &+.search-background{
+                        &.focus{opacity:1;}
+                    }
                 }
             }
+            .search-background{opacity: 0;position: absolute;left:0;top:0;z-index:0;width: 100%;height: calc(100% + 4px);transition:opacity 300ms ease;
+                &.error-background{background-color:#ff0000;}
+            }
+
         }
-        .search-submit{position: absolute;top:0;right: 0;bottom: 0;width: 150px;
+        .search-submit{position: absolute;top:2px;right: 0;bottom: -2px;width: 150px;z-index: 2;
             button{width: 100%;padding: 0;margin: 0;height: 100%;border:none;border-radius: 0;color:#fff;transition:background-color 300ms ease;
                 &:hover{background-color:#e57373;}
             }
