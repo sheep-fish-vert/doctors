@@ -680,15 +680,20 @@ body>svg{position: absolute;left: -99999em;top: -99999em;}
 .form_input label {display: none !important;}
 
 /* google shit  */
-                
+    form{            
     .mdl-textfield{width: 100%; }
     
-    label.mdl-textfield__label{display: block !important; top: 0; bottom: 0; font-size: 16px;  padding: 24px 15px;}
-    
-    .mdl-textfield--floating-label.is-invalid .mdl-textfield__label {font-size: 16px;}
-    .mdl-textfield--floating-label.is-invalid.is-focused .mdl-textfield__label {font-size: 12px;}
-    .textarea-fix-class label.mdl-textfield__label {padding-top: 34px;}
-    
-    .is-dirty label.mdl-textfield__label, .is-focused label.mdl-textfield__label {padding: 0;}
-    .mdl-layout__header {display: block;z-index: 0; }
+        label.mdl-textfield__label{display: block !important; top: 0; bottom: 0; font-size: 16px;  padding: 24px 15px;}
+        
+        .mdl-textfield--floating-label.is-invalid .mdl-textfield__label {font-size: 16px;}
+        .mdl-textfield--floating-label.is-invalid.is-focused .mdl-textfield__label {font-size: 12px;}
+        .textarea-fix-class label.mdl-textfield__label {padding-top: 34px;}
+        
+        .is-dirty label.mdl-textfield__label, .is-focused label.mdl-textfield__label {padding: 0;}
+        .mdl-layout__header {display: block;z-index: 0; }
+        
+    }
+   .mdl-layout__header {display: block;z-index: 0; box-shadow: none;}
+   .main-help.mdl-textfield__label { bottom: auto; left: auto; right: auto; pointer-events: none;position: relative; display: block;top: auto;  overflow: visible;  white-space: nowrap; }
+   .main-help.mdl-textfield__label:after { bottom: auto; content: ''; height: auto;visibility: visible; width:auto; }
 /* /google shit  */
