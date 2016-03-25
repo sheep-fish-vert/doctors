@@ -642,6 +642,7 @@ body>svg{position: absolute;left: -99999em;top: -99999em;}
                         i{font-size: 8px; color: black; line-height: 18px;}
                     }
                 }
+                .doc-type{max-height: 100px; overflow: hidden;}
             }
             .checker{ width: 100%;height: 30px; display: flex; align-items: center;
                 .row-check-some{ font-size: 10px;font-family: "Roboto", sans-serif; text-align: center; width: 100%; font-weight: 300; vertical-align: middle;
