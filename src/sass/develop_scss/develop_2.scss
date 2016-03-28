@@ -620,9 +620,9 @@ body>svg{position: absolute;left: -99999em;top: -99999em;}
         b{font-weight: 700;}
     }
     .status-link{display: inline-block;font-size: 16px; font-family: "Roboto", sans-serif;
-        .save{display: none; color: rgb(0, 174, 195);}
+        .save{display: none;color: rgb(0, 193, 21);}
         .chernovik{display: none; color: rgb(255, 117, 119);}
-        .publick{ color: rgb(0, 193, 21);}
+        .publick{display: none; color: rgb(0, 174, 195);}
     }
 }
 .slider-row{  margin: 0 -60px;
@@ -670,7 +670,9 @@ body>svg{position: absolute;left: -99999em;top: -99999em;}
         }
     }
     .activate-field{height: 160px; overflow: visible; }
-
+    .delete-this-element{opacity: 0.3; pointer-events: none; 
+        .item .convert:hover {box-shadow: none;}
+    }
 }
 
 #change-document{ width: 725px; padding: 0 12px; background-color: transparent;
