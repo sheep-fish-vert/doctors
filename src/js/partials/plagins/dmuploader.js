@@ -155,8 +155,7 @@
       if(this.settings.extFilter != null){
         var extList = this.settings.extFilter.toLowerCase().split(';');
 
-        var ext = file.name.toLowerCase().split('.').pop();
-
+        var ext = file.name.toLowerCase().split('.').pop();         
         if($.inArray(ext, extList) < 0){
           this.settings.onFileExtError.call(this.element, file);
 

@@ -1,10 +1,35 @@
 try {
 
-    function addHtmlItems(name, size, type, id,renderFile) {
-        if (type == 'image/jpeg') {
-            console.log('its jepeg');
+    function addHtmlItems(name, size, type, id, renderFile) {
+
+        var a = name.split('.'); 
+        var typeHand = a[a.length-1]; 
+        var srcType = '';
+        switch (typeHand) {
+            case 'jpg':
+                srcType = 'images/typer1.jpg'
+            break
+        case 'pdf':
+            srcType = 'images/slider-pdf.jpg'
+            break
+        case 'doc':
+            srcType = 'images/slider-doc.jpg'
+            break
+        case 'docx':
+            srcType = 'images/slider-doc.jpg'
+            break
+        case 'xls':
+            srcType = 'images/slider-xls.jpg'
+            break
+        case 'txt':
+            srcType = 'images/typer1.jpg'
+            break
+        default:
+            srcType = 'images/typer1.jpg'
         }
-       var text =  '<div class="convert-item'+ ' classifire-id-'+ id +'" data-file-id="'+id+'"><div class="item"><div class="close-button-item"></div><div class="convert"><div class="doc-type"><img src="" alt=""></div><div class="description-file"><div class="progress-line mdl-color--primary"></div><div class="name">' + name + '</div><div class="size">' + Math.round(size/(1024*1024)*100)/100 + ' Мб' + ' </div><div class="done-button"><i class="material-icons">check</i></div></div></div><div class="checker"><div class="done row-check-some"><i class="material-icons">check_box_outline_blank</i> <span>Основная</span></div><div class="not-done row-check-some"><i class="material-icons">check_box</i><span>Основная</span></div></div > </div></div>';
+
+
+       var text =  '<div class="convert-item'+ ' classifire-id-'+ id +'" data-file-id="'+id+'"><div class="item"><div class="close-button-item"></div><div class="convert"><div class="doc-type"><img src="'+ srcType +'" alt=""></div><div class="description-file"><div class="progress-line mdl-color--primary"></div><div class="name">' + name + '</div><div class="size">' + Math.round(size/(1024*1024)*100)/100 + ' Мб' + ' </div><div class="done-button"><i class="material-icons">check</i></div></div></div><div class="checker"><div class="done row-check-some"><i class="material-icons">check_box_outline_blank</i> <span>Основная</span></div><div class="not-done row-check-some"><i class="material-icons">check_box</i><span>Основная</span></div></div > </div></div>';
        return text;
     }
 
@@ -84,6 +109,9 @@ function superUploader() {
         },
         onComplete: function() {
             console.log('We reach the end of the upload Queue!');
+            $('body').find('#change-document').find('.convert-item').each(function() {
+                $(this).find('.progress-line').css('right', '0%');
+            });
         },
         onNewFile: function(id, file) {
             
@@ -101,23 +129,26 @@ function superUploader() {
 
             $('#file-load-many').closest('form').find('.sliding-shift').prepend(addHtmlItems(file.name, file.size, file.type, id));
 
-            if (typeof FileReader !== "undefined"){
+            if (file.type == 'image/jpeg' ){
+
             
-                var reader = new FileReader();
+                if (typeof FileReader !== "undefined"){
+                
+                    var reader = new FileReader();
 
-                // Our <img> object
-                console.log(id);
+                    // Our <img> object
+                    console.log(id);
 
-                var img = $('body').find('#change-document').find('.convert-item').eq(0).find('.doc-type').find('img');
-                console.log(img);
+                    var img = $('body').find('#change-document').find('.convert-item').eq(0).find('.doc-type').find('img');
+                    console.log(img);
 
-                reader.onload = function (e) {
-                    img.attr('src', e.target.result);
+                    reader.onload = function (e) {
+                        img.attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(file);
+
                 }
-                reader.readAsDataURL(file);
-
             }
-
 
             
         }
