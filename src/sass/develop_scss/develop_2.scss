@@ -170,6 +170,8 @@
    }
 }
 
+.collegs-wrap-doc .doctor-row .convers .name-item .convert a{color: #00acc1;}
+.collegs-wrap-doc .doctor-row .convers .name-item .frack b span a{color: #00acc1;}
 /* /single user plans */
 
 /* curator special row */
@@ -261,7 +263,7 @@
 .superlist{padding-top: 50px;}
 .mapper{
     li{
-        a{display: block; width: 100%;line-height: 55px; font-size: 16px; font-family: "Roboto", sans-serif;text-decoration: none; transition: all 0.5s;
+        a{display: block; width: 100%;line-height: 55px; font-size: 16px; font-family: "Roboto", sans-serif;text-decoration: none; transition: all 0.5s;color: #00acc1;
             &:hover{text-decoration: underline;}
         }
     }
@@ -670,7 +672,7 @@ body>svg{position: absolute;left: -99999em;top: -99999em;}
         }
     }
     .activate-field{height: 160px; overflow: visible; }
-    .delete-this-element{opacity: 0.3; pointer-events: none; 
+    .delete-this-element{opacity: 0.3; pointer-events: none;
         .item .convert:hover {box-shadow: none;}
     }
 }

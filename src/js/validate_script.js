@@ -293,14 +293,14 @@ function chat(){
 
     function isTexrareaEmpty(){
         $('.main-chat textarea,.not-logged-chat textarea').on('keyup change',function(event) {
-            if( !$(this).val() == ''){
+            if( $(this).val().length >= 12){
                 $(this).parent().find('button[type=submit]').removeAttr('disabled');
             }else{
                 $(this).parent().find('button[type=submit]').attr('disabled', true);
             }
         });
         $('.cloned-chat textarea').on('keyup',function(event) {
-            if($(this).val().length >= namePerson.length+3){
+            if($(this).val().length >= namePerson.length+2+12){
                 $(this).parent().find('button[type=submit]').removeAttr('disabled');
             }else{
                 $(this).parent().find('button[type=submit]').attr('disabled', true);
