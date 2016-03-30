@@ -235,7 +235,10 @@ function fancyboxFormSpecial(){
     autoResize:true,
     wrapCSS:'fancybox-form-special',
     'closeBtn' : false,
-    fitToView:true,
+    fitToView: true,
+    helpers: {
+        overlay: { closeClick: false } 
+    },
     padding:'0',
     afterShow:function(){
         $('.modal-title').addClass('active');

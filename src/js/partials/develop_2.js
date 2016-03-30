@@ -127,9 +127,8 @@ try{
         clickanderMulti();
 
         $('.fancybox-close-btn').click(function() {
-            $('.fancybox-overlay').click();
+            $.fancybox.close();
         });
-
         
         
         $(".single").each(function() {
@@ -145,7 +144,7 @@ try{
         });  
         
         $('.close-fancybox-please').click(function(){
-            $('.fancybox-overlay').click();
+            $.fancybox.close();
         });
 
         setTimeout(function() {

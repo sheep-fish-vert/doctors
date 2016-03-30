@@ -480,7 +480,7 @@
 
     <div id="change-document" class="easy-popup-form">
         <div class="fancybox-close-btn"></div>
-        <form action="ajax.php" name="change-document" class="change-document">
+        <form name="change-document" class="change-document">
             <div class="contact-form-title modal-title modal-with-active">
                 <h5>Добавить документ <b>в ФГОС ДО</b></h5>
                 <span class="before mdl-color--primary"></span>
@@ -534,7 +534,7 @@
                         <div class="contact-form-item-input form_row">
                             <div class="form_input">
                                 <label for="file-load-many" class="save-planet" id='file-load-area'>
-                                    <input type="file" id="file-load-many" name="files[]" required="required" value="" multiple size="50">
+                                    <input type="file" id="file-load-many" name="files[]" value="" multiple size="50">
                                     <p>
                                         <i class="material-icons">attach_file</i>
                                         <span>Загрузить файл</span>
@@ -564,10 +564,10 @@
                     </div>
                 </div>
                 <div class="contact-form-item">
-                    <button type="submit" class="contact-submit">
+                    <div class="contact-submit sendbutton-good">
                         <span>Опубликовать</span>
                         <span class="before mdl-color--primary"></span>
-                    </button>
+                    </div>
                 </div>
             </div>
         </form>

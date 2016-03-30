@@ -1,4 +1,21 @@
 try {
+    function sendDataToServer(data) {
+        var formData = new FormData(data);
+
+        
+        $.ajax({
+            url: 'ajax.php',
+            type: "POST",
+            data: formData,
+            contentType:false,
+            processData:false,
+            cache:false,
+            success: function(response) {
+
+            }
+        });
+        
+    }
 
     function addHtmlItems(name, size, type, id, renderFile) {
 
@@ -156,6 +173,8 @@ try {
     $(document).ready(function() {
         $('#save-document-change').attr('disabled', 'disabled');
 
+        $('#change-document .sendbutton-good').attr('disabled', 'disabled');
+
         superUploader();
 
         $('#change-document ').on('click', '.close-button-item', function() {
@@ -166,11 +185,6 @@ try {
             $('#target4').val('');
         });
 
-        // delete file
-        $('.close-button-item').on('click', function() {
-            //console.log('click close');
-           // console.log(stackFiles);
-        });
 
         // add file
         $('#change-document input[type=file]').on('change', function() {
@@ -188,8 +202,6 @@ try {
                     variableWidth: false
                 });
             }, 500);
-
-
         });
 
 
@@ -268,6 +280,14 @@ try {
 
                 $('#change-document .convert-item .item').removeClass('active-item');
                 $(this).closest('.item').addClass('active-item');
+            };
+            if ((stackFiles[fileId].newName != undefined) && (stackFiles[fileId].description != undefined) && (stackFiles[fileId].description != '') && (stackFiles[fileId].newName != '') ) {
+                //console.log(stackFiles[fileId].newName, stackFiles[fileId].description);
+                $('.sendbutton-good').removeAttr('disabled');
+                $('.sendbutton-good').addClass('active-submit');
+            } else { 
+                $('.sendbutton-good').attr('disabled', 'disabled');
+                $('.sendbutton-good').removeClass('active-submit');
             }
         });
 
@@ -285,6 +305,16 @@ try {
             $('.status-link').find('.save').css('display', 'block');
             $('.status-link').find('.chernovik').css('display', 'none');
             $('.status-link').find('.publick').css('display', 'none');
+
+            if ((stackFiles[fileId].newName != undefined) && (stackFiles[fileId].description != undefined) && (stackFiles[fileId].description != '') && (stackFiles[fileId].newName != '') ) {
+                //console.log(stackFiles[fileId].newName, stackFiles[fileId].description);
+                $('.sendbutton-good').removeAttr('disabled');
+                $('.sendbutton-good').addClass('active-submit');
+            } else { 
+                $('.sendbutton-good').attr('disabled', 'disabled');
+                $('.sendbutton-good').removeClass('active-submit');
+            }
+
         });
 
         $('#change-document').on('click', '.checker', function() {
@@ -304,6 +334,15 @@ try {
             };
         })
         //rewerse - checker
+
+        // send data to server
+        $('#change-document').on('click', 'div.sendbutton-good', function(){
+            $('.status-link').find('.publick').css('display', 'block');
+            $('.status-link').find('.chernovik').css('display', 'none');
+            $('.status-link').find('.save').css('display', 'none');
+
+            sendDataToServer(stackFiles[fileId] );
+        })
 
     });
 
