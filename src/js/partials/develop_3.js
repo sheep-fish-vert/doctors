@@ -35,7 +35,7 @@ try {
 
     function myFunctionTrain(goGOgo) {
         var x = goGOgo.context;
-        console.log(goGOgo.context.files);
+        //console.log(goGOgo.context.files);
 
         var txt = "";
         if ('files' in x) {
@@ -79,20 +79,20 @@ try {
             });
         }, 500);
 
-        console.log(txt);
+        //console.log(txt);
     }
 
 
     function superUploader() {
         $("#file-load-area").dmUploader({
             onInit: function(id, file) {
-                console.log('Plugin successfully initialized');
+                //console.log('Plugin successfully initialized');
             },
             onBeforeUpload: function(id) {
-                console.log('Starting to upload #' + id);
+                //console.log('Starting to upload #' + id);
             },
             onUploadProgress: function(id, percent) {
-                console.log(percent);
+                //console.log(percent);
                 // do something cool here!
                 var ffff = '.classifire-id-' + id;
                 $('body').find('#change-document').find(ffff).find('.progress-line').css('right', 100 - percent + '%');
@@ -107,7 +107,7 @@ try {
                 }
             },
             onComplete: function() {
-                console.log('We reach the end of the upload Queue!');
+                //console.log('We reach the end of the upload Queue!');
                 $('body').find('#change-document').find('.convert-item').each(function() {
                     $(this).find('.progress-line').css('right', '0%');
                 });
@@ -128,10 +128,10 @@ try {
                         var reader = new FileReader();
 
                         // Our <img> object
-                        console.log(id);
+                        //console.log(id);
 
                         var img = $('body').find('#change-document').find('.convert-item').eq(0).find('.doc-type').find('img');
-                        console.log(img);
+                        //console.log(img);
 
                         reader.onload = function(e) {
                             img.attr('src', e.target.result);
@@ -168,8 +168,8 @@ try {
 
         // delete file
         $('.close-button-item').on('click', function() {
-            console.log('click close');
-            console.log(stackFiles);
+            //console.log('click close');
+           // console.log(stackFiles);
         });
 
         // add file
@@ -205,7 +205,7 @@ try {
             localStoragesApp[fileId].newName = $('#input50').val();
             localStoragesApp[fileId].description = $('#target4').val();
 
-            console.log(localStoragesApp[fileId].newName);
+            //console.log(localStoragesApp[fileId].newName);
 
             $('.status-link').find('.save').css('display', 'none');
             $('.status-link').find('.chernovik').css('display', 'block');
@@ -272,18 +272,38 @@ try {
         });
 
         // save changes
-        $('#change-document ').on('change', '#save-document-change', function() {
+        $('#change-document').on('change', '#save-document-change', function() {
             stackFiles[fileId].id = localStoragesApp[fileId].id;
             stackFiles[fileId].name = localStoragesApp[fileId].name;
             stackFiles[fileId].description = localStoragesApp[fileId].description;
             stackFiles[fileId].newName = localStoragesApp[fileId].newName;
             stackFiles[fileId].status = localStoragesApp[fileId].status;
+            stackFiles[fileId].checkedBase = localStoragesApp[fileId].checkedBase;
+
             saveMod[fileId] = true;
 
             $('.status-link').find('.save').css('display', 'block');
             $('.status-link').find('.chernovik').css('display', 'none');
             $('.status-link').find('.publick').css('display', 'none');
         });
+
+        $('#change-document').on('click', '.checker', function() {
+            $('.checker').removeClass('rewerse-checker');
+            $(this).addClass('rewerse-checker');
+            
+            // change data
+            var current = $(this).closest('.convert-item ').attr('data-file-id');
+            var itemsLenght = $('.convert-item').length;
+
+            for (var i = 0; i < itemsLenght; i++) {
+                if (i == current) {
+                    localStoragesApp[i].checkedBase = true;
+                } else {
+                    localStoragesApp[i].checkedBase = false;
+                }
+            };
+        })
+        //rewerse - checker
 
     });
 
