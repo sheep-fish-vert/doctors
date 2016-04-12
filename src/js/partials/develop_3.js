@@ -1,10 +1,17 @@
 try {
-    function sendDataToServer(data) {
-        var formData = new FormData(data);
+ /* ******************************************************/
+/*               sed PUBLISHED DATA                      */
 
+    var wereSend = '/edu/file';
+    function sendDataToServer(data) {
+        var formData = new FormData();
+
+        formData.append( 'file', data) ;
+        console.log(formData);
         
+        console.log(data);
         $.ajax({
-            url: 'ajax.php',
+            url: wereSend,
             type: "POST",
             data: formData,
             contentType:false,
@@ -13,8 +20,7 @@ try {
             success: function(response) {
 
             }
-        });
-        
+        });        
     }
 
     function addHtmlItems(name, size, type, id, renderFile) {
@@ -341,7 +347,7 @@ try {
             $('.status-link').find('.chernovik').css('display', 'none');
             $('.status-link').find('.save').css('display', 'none');
 
-            sendDataToServer(stackFiles[fileId] );
+            sendDataToServer( stackFiles[fileId] );
         })
 
     });
