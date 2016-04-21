@@ -120,8 +120,11 @@
                         &:hover{
                              &>.before{ right: 0; height: 6px; }
                         }
-                    }
+                    }                    
                 }
+                .active{
+                        a >.before{content: ''; display:block;position: absolute;  bottom: 0; left: 0; right: 100%; background-color:#ff7474; right: 0; height: 6px; }
+                    }
             }
         }
     }
