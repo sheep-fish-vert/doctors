@@ -59,14 +59,14 @@
                 &.no-avatar{
                     .user-face{
                         .convert-img{background-color: #00acc1;position: relative;
-                            &:after{content: '';display: block;position: absolute;width: 10px;height: 14px;background-image: url(../images/no-avatar-header.png);background-repeat: no-repeat;left: calc(50% - 5px);top:calc(50% - 7px);}
+                            &:after{content: '';display: block;position: absolute;width: 10px;height: 14px;background-image: url(../assets/educator/images/no-avatar-header.png);background-repeat: no-repeat;left: calc(50% - 5px);top:calc(50% - 7px);}
                         }
                     }
                 }
                 &.user-enter{
                     .user-face{
                         .convert-img{background-color:transparent;position: relative;
-                            &:after{content: '';display: block;position: absolute;width: 10px;height: 14px;background-image: url(../images/enter-avatar-header.png);background-repeat: no-repeat;left: calc(50% - 5px);top:calc(50% - 7px);}
+                            &:after{content: '';display: block;position: absolute;width: 10px;height: 14px;background-image: url(../assets/educator/images/enter-avatar-header.png);background-repeat: no-repeat;left: calc(50% - 5px);top:calc(50% - 7px);}
                         }
                     }
                     .user-naming{padding-left:0;}
@@ -248,7 +248,7 @@
                             }
                             .text-top-link{display: block;position: absolute;right:0;top:0;
                                 a{position: relative;text-decoration: none;
-                                    &:before, &:after{content:'';display: block;position:absolute;right:0;top:0;background-image:url(../images/single-item-img.png);background-repeat:no-repeat;width: 21px;height: 20px;}
+                                    &:before, &:after{content:'';display: block;position:absolute;right:0;top:0;background-image:url(../assets/educator/images/single-item-img.png);background-repeat:no-repeat;width: 21px;height: 20px;}
                                     &:after{opacity: 0;transition:opacity 300ms ease;}
                                     &:hover{
                                         &:after{opacity: 1;}
@@ -274,10 +274,10 @@
                         }
                         .singularity{font-size: 14px;color:#bababa;margin-bottom: 5px;
                             .date{margin-right: 15px;
-                                &:before{content:'';display: inline-block;width: 10px;height: 10px;background-image:url(../images/calendar-img.png);background-repeat: no-repeat;vertical-align: middle;margin-right: 3px;}
+                                &:before{content:'';display: inline-block;width: 10px;height: 10px;background-image:url(../assets/educator/images/calendar-img.png);background-repeat: no-repeat;vertical-align: middle;margin-right: 3px;}
                             }
                             .time{
-                                &:before{content:'';display: inline-block;width: 10px;height: 10px;background-image:url(../images/clock-img.png);background-repeat: no-repeat;vertical-align: middle;margin-right: 3px;}
+                                &:before{content:'';display: inline-block;width: 10px;height: 10px;background-image:url(../assets/educator/images/clock-img.png);background-repeat: no-repeat;vertical-align: middle;margin-right: 3px;}
                             }
                         }
                     }
