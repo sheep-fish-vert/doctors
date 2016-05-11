@@ -477,26 +477,6 @@ body>svg{position: absolute;left: -99999em;top: -99999em;}
     }
 }
 
-#add-material {background-color: white; position: relative; overflow: hidden;
-
-    .give-me-border{border: 2px solid #767676;
-        &:hover{border: 2px solid rgb(255, 116, 116);}
-    }
-    .conteiner-list{padding: 0; overflow-y: scroll;
-        .title-check{font-size: 16px; font-family: "Roboto", sans-serif;  color: rgb(0, 0, 0);   font-weight: bold; line-height: 75px; padding-left: 30px; }
-        ul {
-            li {width: 100%; border-bottom: 2px solid #efefef; transition: all 0.5s;
-                a {padding: 0 0 0 30px; text-decoration: none; display: flex;  justify-content: flex-start; align-items: center; width: 100%; min-height: 56px;
-                    p{ padding-left: 20px; font-size: 16px;  font-family: "Roboto", sans-serif; color: rgb(0, 0, 0); font-weight: 300;}
-                }
-                &:first-child{border-top: 2px solid #efefef;}
-                &:hover{background-color:#00aec3; }
-            }
-        }
-    }
-    .modal-title{ background-color: white; z-index: 4;width: 100%; }
-    .modal-footer{ background-color: white; width: 100%;}
-}
 
 
 
@@ -716,3 +696,39 @@ body>svg{position: absolute;left: -99999em;top: -99999em;}
    label {margin-bottom: 0;}
 /* /google shit  */
 
+
+
+/* pravki 10.05.2016 */ 
+    
+    #add-material {background-color: white; position: relative; overflow: hidden;
+
+        .give-me-border{border: 2px solid #767676;
+            &:hover{border: 2px solid rgb(255, 116, 116);}
+        }
+        .conteiner-list{padding: 0; overflow-y: scroll;
+            .title-check{font-size: 16px; font-family: "Roboto", sans-serif;  color: rgb(0, 0, 0);   font-weight: bold; line-height: 75px; padding-left: 30px; }
+            ul {
+                li {width: 100%; border-bottom: 2px solid #efefef; transition: all 0.5s;
+                
+                    a {padding: 0 0 0 30px; text-decoration: none; display: flex;  justify-content: flex-start; align-items: center; width: 100%; min-height: 56px; transition: all 0.5s;
+                        span{height: 36px;}
+                        p{ padding-left: 20px; font-size: 16px;  font-family: "Roboto", sans-serif; color: rgb(0, 0, 0); font-weight: 300;}
+                        &:hover{background-color:#00aec3; }
+                    }
+                    &:first-child{border-top: 2px solid #efefef;}
+                    .sub-items{ display: none; 
+                        a{padding-left: 90px;}
+                        li{ 
+                            &:last-child{border: none;}
+                        }
+                    }
+                    
+                }
+            }
+        }
+        .modal-title{ background-color: white; z-index: 4;width: 100%; }
+        .modal-footer{ background-color: white; width: 100%;}
+    }
+
+
+/* pravki */

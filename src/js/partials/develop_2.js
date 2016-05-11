@@ -210,8 +210,24 @@ try{
             }
         });
         /* /submit check */ 
-        
 
+
+/* add menu */         
+        var opener = true; 
+        
+        $('#add-material .contein').on('click', function(event) {
+           event.preventDefault();
+           if (opener){
+                $(this).closest('li').find('.sub-items').show( 300 , function() {
+                    opener = false ;
+                });
+           } else {
+               $(this).closest('li').find('.sub-items').hide( 300 , function() {
+                    opener = true ;
+                });
+           };              
+        });
+/* add menu */
    
 
     });
