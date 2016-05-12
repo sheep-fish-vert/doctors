@@ -218,6 +218,9 @@ function fancyboxForm(){
     wrapCSS:'fancybox-form-wrap',
     'closeBtn' : false,
     fitToView:true,
+    helpers: {
+        overlay: { closeClick: false } 
+    },
     padding:'0',
     afterShow:function(){
         $('.modal-title').addClass('active');

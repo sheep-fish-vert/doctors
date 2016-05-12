@@ -30,6 +30,9 @@
 
 
 }
+
+
+
 @media screen and (max-width: 767px){
     #zapros .opis-row , #obratka .opis-row { margin-left: 0px;}
     /* fancy ado */
@@ -140,3 +143,14 @@
         .modal-footer { height: 70px;}
     }
 }
+
+
+/* add adopt */
+@media screen and (max-width: 790px){
+    #change-document { min-width: 280px; width: 100%;
+        .slider-row {margin: 0px;}
+        .slider-row .sliding-shift .item .checker {background-color: white;}
+        .slick-slide {    float: left;}
+    }
+}
+/* add adopt */
